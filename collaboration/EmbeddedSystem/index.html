@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>自主可控嵌入式系统设计 - Zhihao Li - Zhihao Li&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="msapplication-TileImage" content="/img/logo.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="计科院自主可控嵌入式系统设计课程学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="自主可控嵌入式系统设计"><meta property="og:url" content="https://lzhms.github.io/collaboration/EmbeddedSystem/"><meta property="og:site_name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta property="og:description" content="计科院自主可控嵌入式系统设计课程学习笔记"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.396id0kxg3k0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2h6j83yix7y0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2jcimsa79zk0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4rz8ienuim40.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6yujllvscs40.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.457pxsjc0x20.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2datafyaf328.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4wsqa0d1wby0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.78cpg0xzx9o0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png"><meta property="article:published_time" content="2023-10-13T13:41:08.000Z"><meta property="article:modified_time" content="2023-12-21T09:17:39.916Z"><meta property="article:author" content="Zhihao Li"><meta property="article:tag" content="Embedded System"><meta property="article:tag" content="Collaboration Project"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lzhms.github.io/collaboration/EmbeddedSystem/"},"headline":"自主可控嵌入式系统设计","image":["https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.396id0kxg3k0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2h6j83yix7y0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2jcimsa79zk0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4rz8ienuim40.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6yujllvscs40.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.457pxsjc0x20.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2datafyaf328.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4wsqa0d1wby0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.78cpg0xzx9o0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png"],"datePublished":"2023-10-13T13:41:08.000Z","dateModified":"2023-12-21T09:17:39.916Z","author":{"@type":"Person","name":"Zhihao Li"},"publisher":{"@type":"Organization","name":"Zhihao Li - Zhihao Li's Blog","logo":{"@type":"ImageObject","url":"https://lzhms.github.io/img/logo.png"}},"description":"计科院自主可控嵌入式系统设计课程学习笔记"}</script><link rel="canonical" href="https://lzhms.github.io/collaboration/EmbeddedSystem/"><link rel="icon" href="/img/logo.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>自主可控嵌入式系统设计 - Zhihao Li - Zhihao Li&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="msapplication-TileImage" content="/img/logo.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="计科院自主可控嵌入式系统设计课程学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="自主可控嵌入式系统设计"><meta property="og:url" content="https://lzhms.github.io/collaboration/EmbeddedSystem/"><meta property="og:site_name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta property="og:description" content="计科院自主可控嵌入式系统设计课程学习笔记"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.396id0kxg3k0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2h6j83yix7y0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2jcimsa79zk0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4rz8ienuim40.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6yujllvscs40.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.457pxsjc0x20.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2datafyaf328.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4wsqa0d1wby0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.78cpg0xzx9o0.webp"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1qjho5ioypd.webp"><meta property="article:published_time" content="2023-10-13T13:41:08.000Z"><meta property="article:modified_time" content="2023-12-21T15:05:29.206Z"><meta property="article:author" content="Zhihao Li"><meta property="article:tag" content="Embedded System"><meta property="article:tag" content="Collaboration Project"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lzhms.github.io/collaboration/EmbeddedSystem/"},"headline":"自主可控嵌入式系统设计","image":["https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.396id0kxg3k0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2h6j83yix7y0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2jcimsa79zk0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4rz8ienuim40.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6yujllvscs40.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.457pxsjc0x20.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2datafyaf328.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4wsqa0d1wby0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.78cpg0xzx9o0.webp","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png","https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1qjho5ioypd.webp"],"datePublished":"2023-10-13T13:41:08.000Z","dateModified":"2023-12-21T15:05:29.206Z","author":{"@type":"Person","name":"Zhihao Li"},"publisher":{"@type":"Organization","name":"Zhihao Li - Zhihao Li's Blog","logo":{"@type":"ImageObject","url":"https://lzhms.github.io/img/logo.png"}},"description":"计科院自主可控嵌入式系统设计课程学习笔记"}</script><link rel="canonical" href="https://lzhms.github.io/collaboration/EmbeddedSystem/"><link rel="icon" href="/img/logo.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">ZHIHAO LI&#039;S LOG BOOK</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/knowledge">KNOWLEDGE</a><a class="navbar-item" href="/publications">PUBLICATIONS</a><a class="navbar-item" href="/projects">PROJECTS</a><a class="navbar-item" href="/life">LIFE</a><a class="navbar-item" href="/readings">READINGS</a><a class="navbar-item" href="/collaboration">COLLABORATION</a><a class="navbar-item" href="/archives">ARCHIVES</a><a class="navbar-item" href="/categories">CATEGORIES</a><a class="navbar-item" href="/tags">TAGS</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/LZHMS/LZHMS.github.io"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Gitee" href="https://gitee.com/LZHMS"><i class="fa-brands fa-gofore"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">自主可控嵌入式系统设计</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-10-13T13:41:08.000Z" title="2023-10-13T13:41:08.000Z">2023-10-13</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2023-12-21T09:17:39.916Z" title="2023-12-21T09:17:39.916Z">2023-12-21</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/collaboration/">collaboration</a></span><span class="level-item"><i class="far fa-clock"></i> 24 minutes read (About 3607 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><div class="content"><h2 id="第一讲-嵌入式系统概述"><a href="#第一讲-嵌入式系统概述" class="headerlink" title="第一讲 嵌入式系统概述"></a>第一讲 嵌入式系统概述</h2><h3 id="嵌入式系统三要素"><a href="#嵌入式系统三要素" class="headerlink" title="嵌入式系统三要素"></a>嵌入式系统三要素</h3><ul>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">ZHIHAO LI&#039;S LOG BOOK</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/knowledge">KNOWLEDGE</a><a class="navbar-item" href="/publications">PUBLICATIONS</a><a class="navbar-item" href="/projects">PROJECTS</a><a class="navbar-item" href="/life">LIFE</a><a class="navbar-item" href="/readings">READINGS</a><a class="navbar-item" href="/collaboration">COLLABORATION</a><a class="navbar-item" href="/archives">ARCHIVES</a><a class="navbar-item" href="/categories">CATEGORIES</a><a class="navbar-item" href="/tags">TAGS</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/LZHMS/LZHMS.github.io"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Gitee" href="https://gitee.com/LZHMS"><i class="fa-brands fa-gofore"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">自主可控嵌入式系统设计</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-10-13T13:41:08.000Z" title="2023-10-13T13:41:08.000Z">2023-10-13</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2023-12-21T15:05:29.206Z" title="2023-12-21T15:05:29.206Z">2023-12-21</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/collaboration/">collaboration</a></span><span class="level-item"><i class="far fa-clock"></i> 26 minutes read (About 3966 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><div class="content"><h2 id="第一讲-嵌入式系统概述"><a href="#第一讲-嵌入式系统概述" class="headerlink" title="第一讲 嵌入式系统概述"></a>第一讲 嵌入式系统概述</h2><h3 id="嵌入式系统三要素"><a href="#嵌入式系统三要素" class="headerlink" title="嵌入式系统三要素"></a>嵌入式系统三要素</h3><ul>
 <li>嵌入性：嵌入到对象体系中，有对象环境要求</li>
 <li>专用性：软、硬件按对象要求裁剪</li>
 <li>计算机：实现对象的智能化功能</li>
@@ -213,7 +213,7 @@
 <li>图解: MEM $\rightarrow$ REG $\rightarrow$ ALU $\rightarrow$ MEM</li>
 </ul>
 <h3 id="ARM-指令"><a href="#ARM-指令" class="headerlink" title="ARM 指令"></a>ARM 指令</h3><ul>
-<li>指令分类：数据处理指令，Load/Store 指令，跳转指令，CPSR指令，异常产生指令，协处理器指令;</li>
+<li>指令分类：数据处理指令，Load/Store 指令，跳转指令，CPSR处理指令，异常产生指令，协处理器指令;</li>
 <li>特殊指令：CPSR 处理指令</li>
 <li>ARM 状态下，指令根据 CPSR 中条件码状态和指令条件域条件执行</li>
 <li>嵌入式微处理器指令集：强调指令的灵活性，对称性，简单性</li>
@@ -229,7 +229,14 @@
 <li>bit $12\sim15$: 4 bits 编码表示 $16$ 个通用寄存器</li>
 <li>bit $28\sim31$: 指令条件码占据指令的高 $4$ bits, 并且条件编码 “1111” 为系统保留</li>
 </ul>
-<h4 id="ARM-寻址方式"><a href="#ARM-寻址方式" class="headerlink" title="ARM 寻址方式"></a>ARM 寻址方式</h4><ul>
+<h4 id="ARM-寻址方式"><a href="#ARM-寻址方式" class="headerlink" title="ARM 寻址方式"></a>ARM 寻址方式</h4>  <article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>理解ARM三地址指令格式的特点</p>
+
+        </div>
+    </article>
+<ul>
 <li>立即寻址: 操作数(立即数)包含在指令的 $32$ 位编码中<article class="message is-info is-default">
         
         <div class="message-body">
@@ -263,7 +270,7 @@
 <li>特点: 所有有效位必须小于等于 $8$ 位，右移位数必须为偶数</li>
 </ul>
 </li>
-<li><p><a href="../../17/ARMImmediateNumber">扩散数据原理</a></p>
+<li><p><a href="../../blog/ARMImmediateNumber/">扩散数据原理</a></p>
 </li>
 </ul>
 
@@ -322,8 +329,7 @@
     </article>
 
 <ul>
-<li><p>基址寻址: 存储器地址在寄存器中</p>
-<article class="message is-info is-default">
+<li>基址寻址: 存储器地址在寄存器中<article class="message is-info is-default">
         
         <div class="message-body">
             <ul>
@@ -339,8 +345,7 @@
 
         </div>
     </article></li>
-<li><p>变址寻址: 基址寄存器+地址偏移量</p>
-<article class="message is-info is-default">
+<li>变址寻址: 基址寄存器+地址偏移量<article class="message is-info is-default">
         
         <div class="message-body">
             <ul>
@@ -378,21 +383,29 @@
 </ul>
 
         </div>
+    </article></li>
+</ul>
+<article class="message is-info is-default">
+        <div class="message-header"><p>变址模式</p>
+</div>
+        <div class="message-body">
+            <p>前变址模式</p>
+<ul>
+<li>LDR R$0$, [R$1$, #$4$]        ; R$0$ = Mem$32$[R$1$+$4$]</li>
+</ul>
+<p>自动变址模式(事先更新方式)</p>
+<ul>
+<li>LDR R$0$, [R$1$, #$4$]!        ; R$0$ = Mem$32$[R$1$+$4$], R$1$ = R$1$ + $4$</li>
+</ul>
+<p>后变址模式(事后更新方式)</p>
+<ul>
+<li>LDR R$0$, [R$1$], #$4$        ; R$0$ = Mem$32$[R$1$], R$1$ = R$1$ + $4$</li>
+</ul>
+
+        </div>
     </article>
-<pre><code>&#123;% message color:info title:变址模式 size:default%&#125;
-      前变址模式
-+ LDR R$0$, [R$1$, #$4$]        ; R$0$ = Mem$32$[R$1$+$4$]
-
-自动变址模式(事先更新方式)
-
-+ LDR R$0$, [R$1$, #$4$]!        ; R$0$ = Mem$32$[R$1$+$4$], R$1$ = R$1$ + $4$
-
-后变址模式(事后更新方式)
-
-+ LDR R$0$, [R$1$, #$4$]!        ; R$0$ = Mem$32$[R$1$], R$1$ = R$1$ + $4$
-  &#123;% endmessage %&#125;
-</code></pre>
-</li>
+<p>3种地址偏移格式与3种变址模式，可以组合出9种类型的变址寻址方式。</p>
+<ul>
 <li><p>相对寻址: 基址寄存器是程序计数器 PC</p>
 <article class="message is-info is-default">
         
@@ -412,9 +425,9 @@
             <ul>
 <li>多寄存器传送指令 LDM/STM 的寻址方式</li>
 <li>寄存器组可以是 $16$ 个通用寄存器的任意子集</li>
-<li>Example</li>
+<li>地址增长顺序: IA(Increment After), IB(Increment Before), DA(Decrement After), DB(Decrement Before)</li>
+<li>Example<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1qjho5ioypd.webp" alt="不同地址增长顺序的寻址模式" width="50%"/></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    BL SUBR       ; jump to SUBR</span><br><span class="line">SUBR              ; entry of subprogram</span><br><span class="line">    ....</span><br><span class="line">    MOV PC, R14</span><br></pre></td></tr></table></figure>
 
         </div>
     </article></li>
@@ -424,15 +437,23 @@
         <div class="message-body">
             <ul>
 <li>堆栈形式<ul>
-<li>满递增(LDMFA, STMFA)</li>
-<li>空递增(LDMEA, STMEA)</li>
-<li>满递减(LDMFD, STMFD)</li>
-<li>空递减(LDMFD, STMFD)<br>注：FD(Full Decrement), ED(Empty Decrement), FA(Full Aggrandizement), EA(Empty AdvanceAggrandizement)</li>
+<li>满递增(指令：LDMFA, STMFA)</li>
+<li>空递增(指令：LDMEA, STMEA)</li>
+<li>满递减(指令：LDMFD, STMFD)</li>
+<li>空递减(指令：LDMFD, STMFD)<br>注：FD(Full Decrement), ED(Empty Decrement), FA(Full Aggrandizement), EA(Empty AdvanceAggrandizement)</li>
 </ul>
 </li>
 <li>Example<ul>
-<li>STMFD SP! {R$1$-R$7$, LR}</li>
+<li>ARM指令中的堆栈<ul>
+<li>STMFD SP!, {R$1$-R$7$, LR}</li>
 <li>LDMFD SP!, {R$1$-R$7$, LR}</li>
+</ul>
+</li>
+<li>Thumb指令中的堆栈<ul>
+<li>PUSH {R1-R7, LR}</li>
+<li>POP {R1-R7, PC}</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -444,7 +465,41 @@
 <li>主要完成<strong>寄存器</strong>中数据的算术和逻辑运算操作</li>
 <li>数据宽度：所有操作数都是 $32$ 位宽度</li>
 </ol>
-<h5 id="Load-Store-指令"><a href="#Load-Store-指令" class="headerlink" title="Load/Store 指令"></a>Load/Store 指令</h5><h5 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h5><h5 id="杂项指令"><a href="#杂项指令" class="headerlink" title="杂项指令"></a>杂项指令</h5><h2 id="第五讲-ARM-指令详细介绍"><a href="#第五讲-ARM-指令详细介绍" class="headerlink" title="第五讲 ARM 指令详细介绍"></a>第五讲 ARM 指令详细介绍</h2><article class="message is-info is-default">
+<h5 id="Load-Store-指令"><a href="#Load-Store-指令" class="headerlink" title="Load/Store 指令"></a>Load/Store 指令</h5><p>该类指令用于寄存器与内存中数据传送，因为ALU的数据来源只能是寄存器，寄存器中数据要提前从内存中获取。</p>
+<ul>
+<li>单寄存器存取指令(LDR/STR)(Load Register/Store Register)<ul>
+<li>加载/存储字/半字/字节(32位对齐/16位对齐/8位对齐)</li>
+</ul>
+</li>
+<li>多寄存器存取指令(LDM/STM)(Load Multiple Registers/Store Multiple Registers)<ul>
+<li>堆栈操作和块拷贝</li>
+</ul>
+</li>
+<li>存储器与寄存器交换指令SWP</li>
+</ul>
+<h5 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h5><ul>
+<li>B(Branch) 分支跳转指令，根据条件进行分支跳转<ul>
+<li>B{条件} 目标地址</li>
+<li>不加条件时，表示无条件跳转指令</li>
+</ul>
+</li>
+<li>BL(Branch with Link) 分支链接指令<ul>
+<li>BL{条件} 目标地址</li>
+<li>将下一条指令的地址拷贝到链接寄存器(R14/LR)中，然后跳转到指定的地址运行程序</li>
+</ul>
+</li>
+<li>BX(Branch and eXchange) 分支交换指令<ul>
+<li>BX{条件} 目标地址</li>
+<li>带状态切换的跳转指令</li>
+</ul>
+</li>
+<li>BLX(Branch with Link and eXchange) 分支链接交换指令<ul>
+<li>BLX 目标地址</li>
+<li>带状态切换的分支链接指令</li>
+</ul>
+</li>
+</ul>
+<h5 id="杂项指令"><a href="#杂项指令" class="headerlink" title="杂项指令"></a>杂项指令</h5><h2 id="第五讲-ARM-指令详细介绍"><a href="#第五讲-ARM-指令详细介绍" class="headerlink" title="第五讲 ARM 指令详细介绍"></a>第五讲 ARM 指令详细介绍</h2><article class="message is-info is-default">
         
         <div class="message-body">
             <p>体会 ARM 指令体系的规整性</p>
