@@ -1,0 +1,79 @@
+# Sidebar configurations.
+# Please be noted that a sidebar is only visible when it has at least one widget
+sidebar:
+    # Left sidebar configurations
+    left:
+        # Whether the sidebar sticks to the top when page scrolls
+        sticky: false
+    # Right sidebar configurations
+    right:
+        # Whether the sidebar sticks to the top when page scrolls
+        sticky: false
+# Sidebar widget configurations
+# http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
+widgets:
+    # Profile widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: profile
+        # Author name
+        author: Zhihao Li
+        # Author title
+        author_title: |
+            Computer Science
+            Machine Learning
+            
+        # Author's current location
+        location: Xidian University, China
+        # Author's hometown
+        # URL or path to the avatar image
+        avatar: /img/avatar.webp
+        # Whether show the rounded avatar image
+        avatar_rounded: true
+        # Email address for the Gravatar
+        gravatar:
+        # URL or path for the follow button
+        follow_link: https://github.com/LZHMS
+        # Links to be shown on the bottom of the profile widget
+        social_links:
+            Github:
+                icon: fab fa-github
+                url: https://github.com/LZHMS
+            Cnblog:
+                icon: fa-brands fa-blogger
+                url: https://www.cnblogs.com/MarkStiff/
+            Twitter:
+                icon: fab fa-twitter
+                url: https://twitter.com/ZhihaoLi1376106
+            Email:
+                icon: fa-solid fa-envelope
+                url: mailto:LZH1314521ligao@163.com
+            QQ:
+                icon: fab fa-qq
+                url: https://w.4rxb.com/s/yq3hxp
+    # Table of contents widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: toc
+        # Whether to show the index of each heading
+        index: true
+        depth: 6
+        collapsed: true
+    # Categories widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: categories
+        # Tags widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: tags
+        # How to order tags. For example 'name' to order by name in ascending order, and '-length' to order by number of posts in each tags in descending order
+        order_by: name
+        # Amount of tags to show. Will show all if not set.
+        amount: 
+        # Whether to show tags count, i.e. number of posts in the tag.
+        show_count: true
