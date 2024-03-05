@@ -28,3 +28,25 @@ $$
 
 一些类似的函数特性，对数函数，指数函数分别适合于定义域、值域取值 $0 \sim 1$ 之间的情况，但是对目标域都有所限制，因此这些函数往往没有正切函数具有优良的特性。
 
+## Project Habits
+### Package Management
+#### Miniconda Configuration
+```bash
+############ Conda Environment Installation ############
+
+# Fetch the miniconda script
+export HOME=$PWD
+wget -q https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh -O miniconda.sh
+sh miniconda.sh -b -p $HOME/miniconda3
+rm miniconda.sh
+export PATH=$HOME/miniconda3/bin:$PATH
+
+# Initialize conda
+source $HOME/miniconda3/etc/profile.d/conda.sh
+hash -r
+conda config --set always_yes yes --set changeps1 yes
+
+# Create new environment
+conda create -n my_env python=3.8
+conda activate my_env
+```
