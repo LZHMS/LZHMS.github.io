@@ -233,7 +233,7 @@ widgets:
         location: Xidian University, China
         # Author's hometown
         # URL or path to the avatar image
-        avatar: /img/avatar.webp
+        avatar: /img/avatar.jpg
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -248,15 +248,15 @@ widgets:
             Cnblog:
                 icon: fa-brands fa-blogger
                 url: https://www.cnblogs.com/LZHMS/
-            Twitter:
-                icon: fab fa-twitter
-                url: https://twitter.com/ZhihaoLi1376106
+            Notion:
+                icon: fa-solid fa-desktop
+                url: https://zhihaoli.notion.site/
             Email:
                 icon: fa-solid fa-envelope
-                url: mailto:lizhihaoms@gmail.com
-            QQ:
-                icon: fab fa-qq
-                url: https://w.4rxb.com/s/yq3hxp
+                url: mailto:zhihaoli@stu.xidian.edu.cn
+            WeChat:
+                icon: fa-brands fa-weixin
+                url: https://github.com/LZHMS/picx-images-hosting/raw/master/Profile/56930efa290268fea3e2c4ea5989f0f.5numy6qecuo0.webp
 
     # Table of contents widget configurations
     -
@@ -341,3 +341,8 @@ providers:
     fontcdn: ustc
     # Name or URL of the ome icon font CDN provider
     iconcdn: loli
+
+# DPlayer
+dplayer:
+  enable: true
+  useCDN: true
