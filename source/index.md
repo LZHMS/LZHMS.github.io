@@ -5,7 +5,8 @@ date: 2023-09-22 19:55:07
 ![](/img/name.webp)
 ![Zhihao Li at the Taihu Lake in Wuxi in 2023](/img/avatar.webp)
 
-## <a href="/download/Zhihao Li.pdf" download> MY CV </a>
+## <a href="/download/Zhihao-Li-CV.pdf" download> MY CV </a>
+## <a href="/download/Zhihao-Li-RS.pdf" download> MY RS </a>
 
 ## About Me
 
@@ -26,6 +27,7 @@ I am a person who has many specific plans about the development of the future. T
 - August, 2023: National First Prize of China College Student Service Outsourcing Innovation and Entrepreneurship Competition(**Top 0.3%**)
 - November, 2023: National Second Prize of China Undergraduate Mathematical Contest in Modeling (CUMCM)(**Top <1.53%**)
 - June, 2023: Top prize of Shaanxi Province Higher Mathematics Competition for College Students
+- May, 2024: First Prize of American Collegiate Mathematical Modeling Contest
 - May, 2023: Second Prize of American Collegiate Mathematical Modeling Contest
 - January, 2023: Provincial First Prize in National Mathematics Competition for University Students
 - December, 2022: Provincial Second Prize of National Student Mathematical Modeling Competition
@@ -39,6 +41,7 @@ I am a person who has many specific plans about the development of the future. T
 
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/服创获奖证书.5q776fqwvt.webp" alt="FWWB 2023" />
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/数模国赛.101y81crot.webp" alt="CUMCM 2023" />
+<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/2024美赛.esbgwgyw9.webp" alt="MCM/ICM 2024" />
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/2023美赛.3d4kp8b3nq.webp" alt="MCM/ICM 2023" />
 
 ## Technology Stack

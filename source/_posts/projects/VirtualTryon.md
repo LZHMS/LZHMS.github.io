@@ -7,8 +7,7 @@ tags:
 categories: projects
 excerpt: This post is the introduction about my project of 2D Virtual Try-on Based on Deep Learning.
 ---
-
-{% dplayer "url=https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/videos/2D%E8%99%9A%E6%8B%9F%E8%AF%95%E8%A1%A3.mp4"  "autoplay=true" "preload=metadata" "hotkey=true" %}
+{% dplayer "url=https://lzhms.oss-cn-hangzhou.aliyuncs.com/videos/projects/2DVirtualTryon.mp4" "autoplay=false" "preload=metadata" "hotkey=true" "lang=en"%}
 
 ### 项目介绍
 
@@ -33,7 +32,6 @@ excerpt: This post is the introduction about my project of 2D Virtual Try-on Bas
 |      pytorch      |  2.0.0  | torch-pruning | 1.1.9 |
 |   intel-openmp   | 2021.4.0 |              |        |
 
-
 ### 模型结构介绍
 
 本项目基于 $PFAFN$ 模型重新设计各个网络模块，具体结构如下图所示：
@@ -46,6 +44,7 @@ excerpt: This post is the introduction about my project of 2D Virtual Try-on Bas
 ![项目工程化部署总图](https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/project.1dom5gtegs2o.webp)
 
 ### 项目详细技术文档
+
 <iframe src="/pdfjs/web/viewer.html?file=/pdf/projects/详细技术文档.pdf" style='width:100%;height:800px'></iframe>
 
 #### 实验结果：通道剪枝
@@ -89,15 +88,16 @@ excerpt: This post is the introduction about my project of 2D Virtual Try-on Bas
 
 #### 实验结果：`img2col` 优化加速
 
-|Runtimes|CorrTorch(s)|Img2Col(s)|FPS|Acceleration Rate|
-|:------:|:----------:|:--------:|:----:|:------------:|
-|n=1000|147.8491|94.7902|10.81|1.5598|
-|n=10000|1489.1325|927.4293|10.77|1.6057|
-|Average Time|0.1488|0.029|10.79|1.6017|
+|   Runtimes   | CorrTorch(s) | Img2Col(s) |  FPS  | Acceleration Rate |
+| :----------: | :----------: | :--------: | :---: | :---------------: |
+|    n=1000    |   147.8491   |  94.7902  | 10.81 |      1.5598      |
+|   n=10000   |  1489.1325  |  927.4293  | 10.77 |      1.6057      |
+| Average Time |    0.1488    |   0.029   | 10.79 |      1.6017      |
 
 ### 参考文献
+
 + Y. Ge, Y. Song, R. Zhang, C. Ge, W. Liu, and P. Luo, "Parser-Free Virtual Try-on via Distilling Appearance Flows," arXiv preprint arXiv:2103.04559, 2021.
 + Y. Cheng, D. Wang, P. Zhou and T. Zhang, "Model Compression and Acceleration for Deep
-Neural Networks: The Principles, Progress, and Challenges," in IEEE Signal Processing Magazine,
-vol. 35, no. 1, pp. 126-136, Jan. 2018, doi: 10.1109/MSP.2017.2765695.
+  Neural Networks: The Principles, Progress, and Challenges," in IEEE Signal Processing Magazine,
+  vol. 35, no. 1, pp. 126-136, Jan. 2018, doi: 10.1109/MSP.2017.2765695.
 + [PyTorch Quantization Aware Training](https://leimao.github.io/blog/PyTorch-Quantization-Aware-Training/)
