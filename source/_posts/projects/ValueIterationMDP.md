@@ -5,6 +5,7 @@ toc: true
 tags:
     - Deep Reinforcement Learning
 categories: projects
+cover: https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/DRL/optimalPolicy.2wskea2qtzi0.gif
 excerpt: Using the taxi example of OpenAI Gym to achieve and tune MDP model in Reinforcement Learning based on value iteration.
 ---
 ## Theories

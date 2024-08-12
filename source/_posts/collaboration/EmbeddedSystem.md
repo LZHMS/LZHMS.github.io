@@ -6,6 +6,7 @@ tags:
     - Embedded System
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp11706207-tech-support-wallpapers.jpg
 excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
 ---
 ## 第一讲 嵌入式系统概述
@@ -242,7 +243,8 @@ ARM有37个32位长的寄存器：
 + ASR(Arithmetic Shift Right)
 + ROR(Rotate Right)
 + RRX(Rotate Right Extended by 1 Place)
-+ <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png" alt="移位方式图解" width="50%"/>
+
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png" alt="移位方式图解" width="50%"/>
 
 {% endmessage %}
 
@@ -294,7 +296,7 @@ ARM有37个32位长的寄存器：
 + 主要用于分支指令
 + Example
 
-```x86
+```arm
     BL SUBR       ; jump to SUBR
 SUBR              ; entry of subprogram
     ....
@@ -2064,7 +2066,8 @@ $\mu$C/OS-II将内存按分区来处理
 【ARM异常处理】
 + 当中断发生时，系统执行完当前指令后，会跳转到相应的异常中断处理程序处执行；
 + 执行完成后，程序返回到发生中断的指令的下一条指 令处执行；
-+ 进入异常中断处理程序时要保存现场，返回时要恢复 现场
++ 进入异常中断处理程序时要保存现场，返回时要恢复现场；
+
 【异常向量表】
 + 当异常发生时，处理器会把PC设置为一个特定的存储器地址；
 + 这一地址放在被称为向量表(vector table)的特定地址范围内，用于对不同模式的异常提供异常处理程序的入口；
@@ -2939,7 +2942,3 @@ END ; 结束汇编
 
 + [Zhihao Li](https://lzhms.github.io/)
 + [Jiawei Hu](https://github.com/Echo-flipped)
-
-## References
-
-+ [Kamal, R.(n.d.). 嵌入式系统 体系结构、编程与设计(第 3 版) (郭俊凤, Trans.)](http://www.tup.tsinghua.edu.cn/booksCenter/book_07232301.html)

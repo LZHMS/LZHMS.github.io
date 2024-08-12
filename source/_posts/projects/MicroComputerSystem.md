@@ -5,6 +5,7 @@ toc: true
 tags:
     - Computer Principle
 categories: projects
+cover: https://github.com/LZHMS/picx-images-hosting/raw/master/EBlog/Learning/image.2yy8hktzil.webp
 excerpt: This post introduces how to design a micro computer system taking the example of traffic signal lights system.
 ---
 ## Introduction
@@ -16,4 +17,5 @@ This weekend I undertook a project to design a micro computer system taking the 
 <iframe src="/pdfjs/web/viewer.html?file=/pdf/projects/微机原理与系统课程设计讲义.pdf" style='width:100%;height:800px'></iframe>
 
 ## Contributors
+
 + [Zhihao Li](https://lzhms.github.io/)

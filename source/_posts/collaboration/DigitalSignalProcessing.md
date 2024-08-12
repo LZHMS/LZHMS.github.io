@@ -5,6 +5,7 @@ toc: true
 tags:
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp9391562-music-wave-wallpapers.jpg
 excerpt: This project is developed about how to process digital signals perfectly and design very useful signal filters.
 ---
 ## Thoeries
@@ -106,8 +107,8 @@ For complex values, that means its real part is even symmetric about the middle 
 
 + Samping Frequency $F_s = 3F_c(F_s > 2F_c)$
   We use the sampling frequency of $F_s=90$Hz under the condition of $T_p=3T_c$.
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_90Hz_Sampling.qkarodnm2tc.png" alt="Sampled Signal" width="50%"/>`
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_90Hz_DFT.1oearbvg9zq8.webp" alt="Spectral Analysis Graph" width="50%"/>`
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_90Hz_Sampling.qkarodnm2tc.png" alt="Sampled Signal" width="50%"/>
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_90Hz_DFT.1oearbvg9zq8.webp" alt="Spectral Analysis Graph" width="50%"/>
 + Conclusions
   The sampling frequency satisfies the Time Domain Sampling Theorem so we can see there is no overlap in frequency domain about the amplitude-frequency characteristic. And when $f=10$Hz, $f=20$Hz, $f=30$Hz, we can get the amplitude very close to $1$ which is us defined in analop signal.
 
@@ -115,8 +116,8 @@ For complex values, that means its real part is even symmetric about the middle 
 
 + Samping Frequency $F_s = 2F_c(F_s = 2F_c)$
   We use the sampling frequency of $F_s=60$Hz under the condition of $T_p=3T_c$.
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_60Hz_Sampling.6gd816c8cxg0.png" alt="Sampled Signal" width="50%"/>`
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_60Hz_DFT.57gxppdnrrg0.webp" alt="Spectral Analysis Graph" width="50%"/>`
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_60Hz_Sampling.6gd816c8cxg0.png" alt="Sampled Signal" width="50%"/>
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_60Hz_DFT.57gxppdnrrg0.webp" alt="Spectral Analysis Graph" width="50%"/>
 + Conclusions
   The sampling frequency equals the threhold of Time Domain Sampling Theorem so we can easily see that it will just become overlapping in frequency domain. And when $f=30$Hz that is also $F_s/2$ point, we can get this point very close to its symmetric frequency point.
 
@@ -124,8 +125,8 @@ For complex values, that means its real part is even symmetric about the middle 
 
 + Samping Frequency $F_s = \frac{4}{3}F_c(F_s < 2F_c)$
   We use the sampling frequency of $F_s=40$Hz under the condition of $T_p=3T_c$.
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_40Hz_Sampling.48kfqsokcha0.webp" alt="Sampled Signal" width="50%"/>`
-  `<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_40Hz_DFT.kf1tgvtvhgg.webp" alt="Spectral Analysis Graph" width="50%"/>`
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_40Hz_Sampling.48kfqsokcha0.webp" alt="Sampled Signal" width="50%"/>
+  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Np3_40Hz_DFT.kf1tgvtvhgg.webp" alt="Spectral Analysis Graph" width="50%"/>
 + Conclusions
   The sampling frequency do not equal the Time Domain Sampling Theorem so we can obviously see that it has discarded the third frequency $f=30$Hz, which is caused by overlapping in frequency domain.
 
@@ -133,13 +134,11 @@ Note: in order to clearly analyse spectral of sampled signal, we also select the
 
 ## Results
 
-### Experiment I: $F_s=40$Hz
-
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/2.tnk4hwphuh.webp"/>
 
 ## Codes
 
-```matlab
+```matlab main
 %% Project Introduction:
 %   This project is developed to design some signal filters based on digital
 % signal processing.
@@ -224,7 +223,7 @@ firlBandStop(fsl, fsu, xn2, fs2, f1, Np, 'Digital Filter With Band Stop Using Ha
 firlBandStop(7, 15, xn3, fs3, f1, Np, 'Digital Filter With Band Band Stop Hamming Window(fs < 2fc)');
 ```
 
-```matlab
+```matlab ProduceSamplingSignal
 function xn = ProduceSamplingSignal(f1, f2, f3, fs, Np, Alltitle)
 % Function Description: 
 %        We want to make a digital signal composed of three frequency
@@ -268,7 +267,7 @@ function xn = ProduceSamplingSignal(f1, f2, f3, fs, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab DFTAnalysis
 function DFTAnalysis(xn, fs, Alltitle)
 % Function Description:
 %       This function calculates the DFT[x(n)] and do spectral analysis.
@@ -326,7 +325,7 @@ function DFTAnalysis(xn, fs, Alltitle)
 end
 ```
 
-```matlab
+```matlab ellipBandPass
 function ellipBandPass(fpl, fpu, fsl, fsu, rp, rs, x, fs, f1, Np, Alltitle)
     wp = [2*fpl/fs, 2*fpu/fs];
     ws = [2*fsl/fs, 2*fsu/fs];
@@ -381,7 +380,7 @@ function ellipBandPass(fpl, fpu, fsl, fsu, rp, rs, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab ellipHighPass
 function ellipHighPass(fpz, fsz, rp, rs, x, fs, f1, Np, Alltitle)
     wpz = 2*fpz/fs;
     wsz = 2*fsz/fs;
@@ -438,7 +437,7 @@ function ellipHighPass(fpz, fsz, rp, rs, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab ellipLowPass
 function ellipLowPass(fpz, fsz, rp, rs, x, fs, f1, Np, Alltitle)
     wpz = 2*fpz/fs;
     wsz = 2*fsz/fs;
@@ -495,7 +494,7 @@ function ellipLowPass(fpz, fsz, rp, rs, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab ellipBandStop
 function ellipBandStop(fpl, fpu, fsl, fsu, rp, rs, x, fs, f1, Np, Alltitle)
     wp = [2*fpl/fs, 2*fpu/fs];
     ws = [2*fsl/fs, 2*fsu/fs];
@@ -552,7 +551,7 @@ function ellipBandStop(fpl, fpu, fsl, fsu, rp, rs, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab firlHighPass
 function firlHighPass(fpz, fsz, x, fs, f1, Np, Alltitle)
     wpz = 2 * pi * fpz / fs;
     wsz = 2 * pi * fsz / fs;
@@ -617,7 +616,7 @@ function firlHighPass(fpz, fsz, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab firlLowPass
 function firlLowPass(fpz, fsz, x, fs, f1, Np, Alltitle)
     wpz = 2 * pi * fpz / fs;
     wsz = 2 * pi * fsz / fs;
@@ -682,7 +681,7 @@ function firlLowPass(fpz, fsz, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab firlBandPass
 function firlBandPass(fpl, fpu, x, fs, f1, Np, Alltitle)
     wpl = 2 * fpl / fs;
     wpu = 2 * fpu / fs;
@@ -744,7 +743,7 @@ function firlBandPass(fpl, fpu, x, fs, f1, Np, Alltitle)
 end
 ```
 
-```matlab
+```matlab firlBandStop
 function firlBandStop(fsl, fsu, x, fs, f1, Np, Alltitle)
     wsl = 2 * fsl / fs;
     wsu = 2 * fsu / fs;

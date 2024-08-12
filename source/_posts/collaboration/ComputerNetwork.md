@@ -6,6 +6,7 @@ tags:
     - Computer Network
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg
 excerpt: 计科院数据通信与网络课程学习笔记
 ---
 ## 数据通信与网络课件
@@ -1542,7 +1543,6 @@ TCP将多个字节组合在一起成为一个分组，称为段
 
 + [Zhihao Li](https://lzhms.github.io/)
 + [Jiawei Hu](https://github.com/Echo-flipped)
-+ [Changrong You](https://cryoushiwo.github.io/)
 
 ## References
 

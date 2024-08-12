@@ -5,6 +5,7 @@ toc: true
 tags:
     - Computer Vision
 categories: projects
+cover: https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/model.4ax0n6qbtbs0.webp
 excerpt: This post is the introduction about my project of 2D Virtual Try-on Based on Deep Learning.
 ---
 {% dplayer "url=https://lzhms.oss-cn-hangzhou.aliyuncs.com/videos/projects/2DVirtualTryon.mp4" "autoplay=false" "preload=metadata" "hotkey=true" "lang=en"%}

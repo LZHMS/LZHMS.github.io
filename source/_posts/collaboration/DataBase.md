@@ -5,6 +5,7 @@ toc: true
 tags:
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp2347580-database-wallpapers.jpg
 excerpt: 计科院数据库系统概论课程学习笔记
 ---
 ## 第一讲 数据库系统概述
@@ -62,19 +63,11 @@ excerpt: 计科院数据库系统概论课程学习笔记
     - 层次模型
       - 树状结构: 每个节点是基本单位称为记录，记录之间的联系以树形结构存储
       - 特点: 只能处理一对多联系，无法处理多对多联系
-
-    <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Untitled.5ceybzxpnf8.webp" width="70%"/>
-
     - 网状模型
       - 网状结构(有向图): 记录之间的联系用连线表达，联系必须标注名称
       - 特点: 将多对多联系转换为多个一对多联系
-
-    <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Untitled-1.2x0fz0z0k820.webp" width="70%"/>
-
     - 关系模型
       - 实体和联系都作为数据文件存储
-
-    <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Untitled-2.j78fapnbim8.webp" width="70%"/>
   - 物理模型
 
 ### 数据库系统结构
@@ -185,7 +178,8 @@ excerpt: 计科院数据库系统概论课程学习笔记
 4. 关系完整性约束：实体完整性、参照完整性、用户定义完整性约束
 5. 关系数据库语言的共同特点：非过程化的集合操作语言
 6. 关系数据语言：关系代数语言、关系演算语言、SQL
-7. 
+
+
 ## 第三讲 数据库完整性
 
 数据库完整性包括实体完整性、参照完整性和用户定义完整性。
@@ -280,11 +274,6 @@ excerpt: 计科院数据库系统概论课程学习笔记
 + **Defination**: $R\in 1NF$, for any $X\rightarrow Y(Y\nsubseteq X)$ and $X$ 必包含码, denotes $R\in BCNF$
 + Notes
   + 每一个函数依赖的决定因素都包含码
-
-#### 范式定理
-
-+ If $R\in 3NF$, then $R\in 2NF$
-+ 
 
 ## Handwritten Notes
 

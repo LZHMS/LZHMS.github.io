@@ -6,6 +6,7 @@ tags:
     - Microcomputer
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6272742-computer-hardware-and-network-hd-wallpapers.jpg
 excerpt: 计科院微型计算机原理与系统设计课程学习笔记
 ---
 ## 第一章 绪论：微型计算机概述
@@ -1486,33 +1487,6 @@ test al, 00001001H      ; 检查 al 操作数第 0 位和第 3 位是否同时�
     + 功能: 将目的操作数右移指定的位数，高位空出来的位用源操作数的低位填充
     + 影响标志: SF, ZF, AF, PF, CF
 
-#### ASCII和十进制调整指令
-
-+ ASCII
-  + AAA 加法之后进行ASCII码调整
-    + 例题
-      ![AAA](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231011_102512_com.huawei.hinote.4r0veo1tltk0.webp)
-  + AAS 减法之后进行ASCII码调整
-    + 例题
-      ![AAS](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231011_102551_com.huawei.hinote.u34ci0r568g.webp)
-  + AAM 乘法之后进行ASCII码调整
-    + 例题
-      ![AAM](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231011_105301_com.huawei.hinote.7l321jj64300.webp)
-  + AAD 除法之后进行ASCII码调整
-    + 例题
-      ![AAD](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231011_105311_com.huawei.hinote.2c0fqfmqsnvo.webp)
-  + 调整算法
-    ![调整算法](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231012_191653_com.huawei.hinote.3bkdcd8gmpk0.webp)
-+ 十进制
-  + DAA
-    + 将ADD或ADC指令执行后AL中的结果转换成压缩的十进制格式
-  + DAS
-    + 将SUB或SBB指令执行后AL中的结果转换成压缩的十进制格式
-  + 例题
-    ![例](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231011_111453_com.huawei.hinote.6tbxxh206k80.webp)
-  + 调整算法
-    ![调整算法](https://cdn.jsdelivr.net/gh/15645jngfkj/picx-images-hosting@master/Screenshot_20231012_192019_com.huawei.hinote.4ikwoxnpuzy.webp)
-
 #### 字符串操作指令
 
 + 寻址方式
@@ -2340,6 +2314,7 @@ II. 电气特性、引脚功能
           + 直接写IVT
           + 利用都是功能调用：功能号25H是写IVT
 3. 编写中断处理程序
+
 ### 第四讲 直接存取方式DMA
 #### 工作过程
 + 特点
@@ -2358,6 +2333,7 @@ II. 电气特性、引脚功能
 5. 外设与内存 或 内存与内存 直接数据传送
 6. DMA自动修改地址和字节计数器，传完后，撤HOLD
 7. CPU撤HLDA，下一时钟周期控制总线
+
 #### DMA控制器8237（DMAC）
 + 特点
      + 4个独立DMA通道，级联扩展为最多16个
@@ -2643,39 +2619,35 @@ $$
 
 ### 第三章 8086汇编语言程序设计
 - [x] 常用汇编指令
-- [ ] 基本汇编程序编写
-  - [ ] 基本表达式计算
-  - [ ] 数据段中数组数据进行排序
+- [x] 基本汇编程序编写
+  - [x] 基本表达式计算
+  - [x] 数据段中数组数据进行排序
 
 ### 第四章 总线与驱动控制
 - [x] 常用数据总线特点(ISA, PCI, USB)
-- [ ] **总线驱动控制电路设计与分析**
-  - [ ] 单向驱动器: 74LS224
-  - [ ] 双向驱动器: 74LS245
-  - [ ] 数据锁存器: 74LS373
+- [x] **总线驱动控制电路设计与分析**
+  - [x] 单向驱动器: 74LS224
+  - [x] 双向驱动器: 74LS245
+  - [x] 数据锁存器: 74LS373
 - [x] 总线驱动与控制参数计算
 
 ### 第五章 存储器设计
-- [ ] SRAM, DRAM, EPROM, EEPROM 特点
-- [ ] 数字比较器、PROM 作为译码电路的实现机制
-- [ ] **基于 SRAM 芯片的8086/88系统主存电路设计与分析**
-  - [ ] 位扩展+字扩展设计方法(8086系统16位存储设计)
+- [x] SRAM, DRAM, EPROM, EEPROM 特点
+- [x] 数字比较器、PROM 作为译码电路的实现机制
+- [x] **基于 SRAM 芯片的8086/88系统主存电路设计与分析**
+  - [x] 位扩展+字扩展设计方法(8086系统16位存储设计)
   - [x] 8086系统8位读写以及16位读写
   - [x] 总线驱动设计: 单向驱动与双向驱动
   - [x] 基于 EEPROM 芯片的 IO 接口设计(Busy的处理) 
-  - [ ] 存储器设计中总线驱动器件使能端设计
+  - [x] 存储器设计中总线驱动器件使能端设计
 
 ### 第六章 输入/输出技术
-- [ ] 中断处理响应过程
-- [ ] 8259工作方式(状态字)
+- [x] 中断处理响应过程
+- [x] 8259工作方式(状态字)
   - [x] 级联: 特殊全嵌套与一般嵌套
   - [x] 中断结束: 自动EOI, 特殊/指定EOI, 一般/非指定EOI
   - [x] 优先级: 固定优先级, 自动循环优先级, 指定循环优先级
- 
-### 必要细节处理
-...
-### Extend Points
-...
+
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)

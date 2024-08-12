@@ -1,11 +1,12 @@
 ---
-title: 大学物理
+title: 大学物理之电磁场学
 date: 2023-09-13 22:46:09
 toc: true
 tags:
     - Eletromagnetic Physics
     - Collaboration Project
 categories: collaboration
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp12647050-physics-equation-wallpapers.jpg
 excerpt: 计科院大学物理课程学习笔记
 ---
 ## 第一章 静电场
@@ -1127,6 +1128,7 @@ I_d = \frac{d\Phi_D}{dt}
 $$
 
 <center>$\Rightarrow$ 位移电流密度 $j_d = \frac{I_d}{S}$</center>
+
 + 位移电流激发的磁场 $B$
 $$
 \oint_L\boldsymbol{H}\cdot d\boldsymbol{l}=j_dS
@@ -1145,7 +1147,7 @@ $$
 | :------------------------------------------------------: |
 |     对于描述力学现象的规律而言，所有惯性系都是等价的     |
 | 力学规律的数学表达式应具有伽利略坐标变换的不变性(协变性) |
-|                     {% endmessage %}                     |
+{% endmessage %}
 
 #### 1.2 伽利略坐标变化式
 
@@ -1163,7 +1165,7 @@ $$
 | :----------------------------------------------------------: |
 | 在所有惯性系中，一切物理学定理都相同，即具有相同的数学表达式 |
 |     对于描述一切物理现象的规律而言，所有惯性系都是等价的     |
-|                       {% endmessage %}                       |
+{% endmessage %}
 
 {% message color:info title:光速不变原理 size:default%}
 

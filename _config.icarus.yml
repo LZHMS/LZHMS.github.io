@@ -149,7 +149,7 @@ article:
         # Show copy code button
         clipboard: true
         # Default folding status of the code blocks. Can be "", "folded", "unfolded"
-        fold: unfolded
+        fold: "unfolded"
     # Whether to show estimated article reading time
     readtime: true
     # Whether to show updated time. For "auto", shows article update time only when page.updated is set and it is different from page.date
@@ -304,9 +304,9 @@ widgets:
         # Hint text under the email input
         description: 
         # Subscription form action URL
-        action_url: ''
+        action_url: 'https://api.follow.it/subscription-form/MUlhbUpwUW5ra0pneVRkNWlJSWwxS2VOeDVtWEtzUzRUcHYwRmR3Uld4Ym1YY2VkQktrZjFEYTg3ZWhSN2ozQ3ZVdHpZTXAyTjFNMWpqa2NOMFY3Nm9aeXRGdkFNSjAzWWM0Vk1LcUMvUG5jdm9sRXg5eXBlbVQvQ1loVmgxNHl8Wm1vREw3Sk5PaXZMVmZJc3pTeVJTbTFneW8wRmlMdUFqN2lvbzdYTHc3RT0=/21'
         # Feed claiming verification code
-        verification_code: ''
+        verification_code: '9wSCtL5bT19tB18CXfYP'
 # Plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:

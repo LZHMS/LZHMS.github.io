@@ -5,6 +5,7 @@ toc: true
 tags:
     - Computer Principle
 categories: projects
+cover: https://github.com/LZHMS/picx-images-hosting/raw/master/EBlog/Learning/image.77dfreui3s.webp
 excerpt: This post introduces how to design a basic computer model which can achieve commmon stack functions.
 ---
 ## Introduction

@@ -5,13 +5,22 @@ date: 2023-09-22 19:55:07
 ![](/img/name.webp)
 ![Zhihao Li at the Taihu Lake in Wuxi in 2023](/img/avatar.webp)
 
+<center><span style="font-family: 'KaiTi'; font-weight: bold; font-size: 22px;">慕松柏</span></center>
+<center><span style="font-family: 'KaiTi'; font-size: 16px;">萧落落。衰叶已凋尽，露枝犹霜。茫茫眼下，唯翠枝两三；</span></center>
+<center><span style="font-family: 'KaiTi'; font-size: 16px;">雾漫漫，古村已隐尽，落山如雪。苍苍望去，只白雾一道。</span></center>
+<center><span style="font-family: 'KaiTi'; font-size: 16px;">于凌冬岁月，我仍傲青翠。</span></center>
+<br>
+<hr style="width: 100%; margin: auto;">
+<div style="text-align: right;">
+    <span style="font-family: 'KaiTi'; font-size: 14px;">记于松山北上</span>
+</div>
+
 ## <a href="/download/Zhihao-Li-CV.pdf" download> MY CV </a>
-## <a href="/download/Zhihao-Li-RS.pdf" download> MY RS </a>
 
 ## About Me
 
 Hi, I'm Zhihao Li. This is a brief introduction about me.
-I am a junior student at Xidian University, and my favorite research direction is deep learning and large language models. As a new blogger, I am very excited to share with you the learning experience and technical points in the major, and discuss the tricky problems in the technical field together.
+I am a junior student at Xidian University, and my favorite research direction is 3D Vision and Digital Human. As a new blogger, I am very excited to share with you the learning experience and technical points in the major, and discuss the tricky problems in the technical field together.
 
 ## Development Planning
 
