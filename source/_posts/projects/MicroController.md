@@ -5,7 +5,7 @@ toc: true
 tags:
     - Computer Principle
 categories: projects
-cover: https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image-20240428133219625.101ywato4a.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194153.png
 excerpt: This post introduces how to design a micro controller using the VHDL language and verify its functions.
 ---
 ## 一、实验目的
@@ -22,7 +22,7 @@ excerpt: This post introduces how to design a micro controller using the VHDL la
 
 ### 微程序控制器基本结构
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image-20240428133219625.101ywato4a.webp" alt="微程序控制器基本结构" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194209.png" alt="微程序控制器基本结构" width="80%"/>
 
     在该实验中，微程序控制器主要由控制存储器CM、微指令寄存器$\mu$IR、微地址形成电路、微地址寄存器$\mu$AR模块组成，其中各模块功能分析如下：
 
@@ -78,13 +78,13 @@ excerpt: This post introduces how to design a micro controller using the VHDL la
 
 ### 微指令编码设计
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.1zi29gvuf5.webp" alt="微指令编码结构" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194228.png" alt="微指令编码结构" width="80%"/>
 
 根据实验手册，设计 48 位的微指令各编码段如上图所示，对应所有控制信号和寄存器；
 
 #### 取指公操作：微程序入口地址 00H
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.54xk8f1owc.webp" alt="取指公操作编码设计" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194240.png" alt="取指公操作编码设计" width="80%"/>
 
 该微指令的入口地址为 00H，当指令寄存器加载地址 00H时会将该条取指指令加载出来形成取指操作；同理，可以设计出其他所有的微指令；
 
@@ -92,7 +92,7 @@ excerpt: This post introduces how to design a micro controller using the VHDL la
 
 #### MOV Ri, #data：微程序入口地址 24H
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.4912sz3w13.webp" alt="机器指令微程序设计" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194252.png" alt="机器指令微程序设计" width="80%"/>
 
 + 一条机器指令MOV操作被分解为3条微指令，形成一个微程序；
 + 该段微程序入口地址为 24H，即当执行该条机器指令时，首先由取指共操作取出该条指令，然后根据 IR 寄存器进入到改微程序入口，开始顺序执行每一条微指令；
@@ -224,7 +224,7 @@ begin
     next_arr <= uir(7 downto 0);    --   下条地址字段
     arr <= uar;    --  当前地址
   
----clkk   50000000   
+-- clkk   50000000   
 process(clk_mc)
     variable count: integer range 0 to 60000000;
     begin
@@ -253,6 +253,7 @@ end process;
 
 end Behavioral;
 ```
+
 
 ### 控制存储器模块设计
 
@@ -492,25 +493,25 @@ end Behavioral;
 
 #### 系统复位状态
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.7p3euk5ie.webp" alt="系统复位" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194357.png" alt="系统复位" width="80%"/>
 
 当系统复位时，即 rst = 1，系统输出为最低为数码管显示 0 其余关闭；
 
 #### 取指令公操作
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.syr15lhc8.webp" alt="取指令操作" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194411.png" alt="取指令操作" width="80%"/>
 
     根据仿真结果可以看出，其16个数码管的编码值依次为 00 00 00 003119F378，微控制器默认处于取指令操作，所以该条指令下一条微指令仍然回到取指操作；
 
 #### IR实现指令跳转
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.99t5ku5a59.webp" alt="指令跳转" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194423.png" alt="指令跳转" width="80%"/>
 
     根据仿真结果可以看出，其16个数码管的编码值依次为 00 01 02 8031717379，m_ua为高电平，将 IR=01H 对应地址的微指令加载到当前控制器中，所以显示正在执行当前地址为 01 的微指令，其下一条微指令的地址为 02H；
 
 #### 指令顺序执行
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.6bgvhc4dqd.webp" alt="指令顺序执行" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194437.png" alt="指令顺序执行" width="80%"/>
 
     根据仿真结果可以看出，当一个微程序执行完毕后，微控制器再次返回到取指操作对应的微指令，等待进入下一条机器指令对应的微程序入口。
 
@@ -518,9 +519,9 @@ end Behavioral;
 
 根据实验进一步验证，可知功能完全正确，如下图示为 IR 加载地址为 03H 的的微指令然后顺序执行一段微程序的结果。
 
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/162a010ca7d48613a592e2ccb39b2e6.2obbttu7i6.webp" alt="当前地址为03H,下一条地址为04H" width="80%"/>
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/6eb3e289021af33a3ab9a58f9e3cedc.5xafqhiap6.webp" alt="当前地址为04H,下一条地址为05H" width="80%"/>
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/36eb118e7673aa9a2444b6c6b6bfcac.64dnlx4tzm.webp" alt="当前地址为05H,下一条地址为06H" width="80%"/>
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/154d7e41098f4cddcf37b9ce2102837.lvj5rwx8g.webp" alt="当前地址为06H,下一条地址为07H" width="80%"/>
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/6f331eec9a9f5e597af978763e764b7.2h83ye9ty2.webp" alt="当前地址为08H,下一条地址为00H" width="80%"/>
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/3865dff0a0b0fead74c141de3099051.lvj5rxoo8.webp" alt="当前地址为00H,下一条地址为00H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194452.png" alt="当前地址为03H,下一条地址为04H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194506.png" alt="当前地址为04H,下一条地址为05H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194519.png" alt="当前地址为05H,下一条地址为06H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194536.png" alt="当前地址为06H,下一条地址为07H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194553.png" alt="当前地址为08H,下一条地址为00H" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194605.png" alt="当前地址为00H,下一条地址为00H" width="80%"/>

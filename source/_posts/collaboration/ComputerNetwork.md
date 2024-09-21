@@ -9,6 +9,11 @@ categories: collaboration
 cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg
 excerpt: 计科院数据通信与网络课程学习笔记
 ---
+## 前言
+{% message color:info %}
+[课程复习、期末试题资源详见阿里云盘链接](https://www.alipan.com/s/rJAV6soimWs)
+{% endmessage %}
+
 ## 数据通信与网络课件
 
 ### 第一章 概述
@@ -561,9 +566,10 @@ $$
 
 1、比特率和波特率
 $Define:$
-
-<center>$r = log_2L$</center>
-<center>S=N\times\frac{1}{r}</center>
+$$
+r = log_2L\newline
+S=N\times\frac{1}{r}
+$$
 其中，$L$ 表示不同类型的信号元素个数(数字传输中 $L$ 为电平个数)
 
 2、数字到模拟转换的概念
@@ -876,7 +882,7 @@ $$
 6、校检和及其计算方法
 {% message color:info size:default%}
 需要将数据划分为多组的16bits数据
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306071401639.5wwy3ga0kmw0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823223707.png" alt="校检和计算" width="80%"/>
 {% endmessage %}
 
 #### 第11章 数据链路控制
@@ -941,13 +947,14 @@ ARQ技术就是自动请求重发技术，结合了流控和自动重发技术�
 | 发送方窗口大小$2^m-1$ (一定要小于 $2^m$)，接收方窗口大小为 $1$ |
 | :------------------------------------------------------------------: |
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306071441707.3qti5p3yqd60.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224115.png" alt="后退N帧ARQ窗口变化" width="80%"/>
+
 5、选择重发ARQ——有噪声通道
 {% message color:info size:default%}
 发送方窗口大小 $\leq2^{m-1}$，接收方窗口大小与发送方一致
 {% endmessage %}
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306071445177.2t6oxizi2j40.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224214.png" alt="选择重发ARQ" width="80%"/>
 
 6、高级数据链路控制（HDLC）
 {% message color:info size:default%}
@@ -1250,7 +1257,7 @@ VPI定义特定的VP，VCI定义特定的VC
 
 1、IPv4地址分类，掩码，子网和超网的概念
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101025244.43661ipe4ow0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224349.png" alt="IPv4地址划分" width="80%"/>
 
 | 类别 | 可指派网络号范围      | 可指派的网络数 | 可分配的IP地址数 |
 | ---- | --------------------- | -------------- | ---------------- |
@@ -1276,7 +1283,7 @@ VPI定义特定的VP，VCI定义特定的VC
 1. 子网掩码用连续 $1$ 表示对应的网络号和子网号；连续 $0$ 表示主机号
 2. 将IPv4地址与子网掩码“相与”，即可得到所在子网的网络地址
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101026253.dm64zi6jdco.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224429.png" width="80%" alt=""/>
 
 由子网掩码说明只借用了主机号一位，所以共划分出两个子网，每个子网可分配的地址数为：
 
@@ -1284,7 +1291,7 @@ $$
 2^7-2
 $$
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101027707.cup5z767vsw.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224508.png" width="80%" alt=""/>
 
 3、NAT
 
@@ -1292,7 +1299,7 @@ $$
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
 
 4、IPv6地址及其缩短形式
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101027511.1dcb2b423y4g.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224537.png" alt="IPv6地址" width="80%"/>
 
 #### 第20章 IP协议
 
@@ -1301,9 +1308,9 @@ $$
 | 固定首部+数据载荷 |
 | :---------------: |
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101028333.3rqoq1qk0ve0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224622.png" alt="" width="80%"/>
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101028857.6lyvl3cmt900.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224651.png" alt="" width="80%"/>
 
 2、分片与MTU
 
@@ -1324,14 +1331,14 @@ $$
 | 更多操作将校验和置$0$，以 $16$bit为一组求校验和 |
 | --------------------------------------------------- |
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101029181.1aapt3p68pr4.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224719.png" alt="" width="80%"/>
 
 4、IPv6分组格式
 
 | 基本头部固定为$40$B，有效载荷 $Max=65536$B |
 | :--------------------------------------------: |
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101029716.6qrs33zh2vk0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224742.png" alt="" width="80%"/>
 
 5、IPv4和IPv6混合
 
@@ -1347,10 +1354,10 @@ $$
 | **逻辑地址映射到物理地址，** **ARP** **（**Address Resolution Protocol） |
 | ------------------------------------------------------------------------------------ |
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101029356.76r7c5cx0a00.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224807.png" alt="" width="80%"/>
 
 【**过程**】
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101030747.6cu3th3z4k80.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224832.png" alt="" width="80%"/>
 
 2、DHCP的概念
 
@@ -1360,9 +1367,9 @@ $$
 3、ICMP
 
 【**概念作用**】
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101030177.7cl4na5ayb00.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224853.png" alt="" width="80%"/>
 【**差错报告**】
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101030468.1l5pttuwi1og.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224919.png" alt="" width="80%"/>
 ICMP**差错报文总是将报文传递给源方**
 
 4、IGMP
@@ -1382,7 +1389,7 @@ ICMP**差错报文总是将报文传递给源方**
 + 特定主机/特定网络方法
 
 2、路由表、地址聚合和最长掩码匹配
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101031069.2vaszjynlfm0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224951.png" alt="" width="80%"/>
 3、单播路由协议
 
 【RIP】：以距离向量衡量，用于应用层
@@ -1391,8 +1398,8 @@ ICMP**差错报文总是将报文传递给源方**
 
 【BGP】：以路径向量衡量，用于应用层
 
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101031623.67x17q48gz.webp)
-![](https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/计网202306101031363.3b6vpvhq2oy0.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225013.png" alt="" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225032.png" alt="" width="80%"/>
 
 4、多播的概念和多播路由协议（了解）
 

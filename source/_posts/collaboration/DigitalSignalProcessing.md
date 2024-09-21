@@ -805,6 +805,13 @@ function firlBandStop(fsl, fsu, x, fs, f1, Np, Alltitle)
 end
 ```
 
+## 数字信号处理学习笔记
+{% message color:info %}
+本章节主要是在课程学习过程中整理出的笔记文档。
+{% endmessage %}
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/DigitalSignalProcessingNotes.pdf" style='width:100%;height:800px'></iframe>
+
+
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)

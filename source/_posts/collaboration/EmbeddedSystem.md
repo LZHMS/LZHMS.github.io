@@ -29,8 +29,8 @@ excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
 
 ### 嵌入式系统的分类
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2ev8elgr7nfo.png" alt="硬件范畴上的分类" width="40%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.396id0kxg3k0.webp" alt="软件范畴上的分类" width="40%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225539.png" alt="硬件范畴上的分类" width="40%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225602.png" alt="软件范畴上的分类" width="40%"/>
 
 ### 嵌入式处理器的分类
 
@@ -49,7 +49,7 @@ excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
 + 非实时操作系统: Linux
 + 实时操作系统: RTOS (Real-Time Operating System, 程序对时间要求十分严格: 计算的正确性不仅取决于程序的逻辑正确性，更取决于结果产生的时间)
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2h6j83yix7y0.webp" alt="MCU与MPU的结构区别" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225623.png" alt="MCU与MPU的结构区别" width="70%"/>
 
 ## 第二讲 嵌入式系统基础
 ### 体系结构-存储器组织
@@ -81,7 +81,7 @@ excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
   + RICS大多数指令单周期运行，分开的Load/Store结构的存取指令，固定指令格式
   + CISC强调硬件的复杂性，RISC注重编译器的复杂性
   + 数据通道对比(RISC的任何运算只能在REG上执行，ALU的数据来源只能是REG，提高执行效率，对比CISC有数量级上的改善)
-  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2jcimsa79zk0.webp" alt="CISC与RISC数据通道对比" width="50%"/>
+  <img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225646.png" alt="CISC与RISC数据通道对比" width="50%"/>
 
 ### 多任务程序结构
 #### 前后台程序结构
@@ -131,7 +131,7 @@ excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
 + 开始执行代码时处于ARM状态；异常处理时也处于ARM状态；异常处理返回时，可以返回到Thumb状态
 
 #### 运行模式
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4rz8ienuim40.webp" alt="处理器运行模式" width="60%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225714.png" alt="处理器运行模式" width="60%"/>
 
 + 特权模式：除了用户模式外的其他模式
 + 异常模式：除了用户模式、系统模式外的其他模式
@@ -145,7 +145,7 @@ excerpt: 计科院自主可控嵌入式系统设计课程学习笔记
 ARM有37个32位长的寄存器：
 + 1个PC(Program Counter), 30个通用寄存器, 1个CPSR(Current Program Status Register), 1个SPSR(Saved Program Status Register)
 + 31个通用32位寄存器，6个状态寄存器
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6yujllvscs40.webp" alt="寄存器的模式分布" width="60%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225738.png" alt="寄存器的模式分布" width="60%"/>
 
 + 寄存器功能说明
   + R0$\sim$R13: 保存数据/地址值的通用寄存器，无特殊用途
@@ -166,7 +166,7 @@ ARM有37个32位长的寄存器：
 
 #### Thumb 状态下的寄存器
 可以直接访问的寄存器: 8个通用寄存器R0$\sim$R7，程序计数器(PC)，堆栈指针(SP)，链接寄存器(LR)，程序状态寄存器(CPSR)，程序状态保存寄存器(SPSR)
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.457pxsjc0x20.webp" alt="两种状态下的寄存器映射" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225756.png" alt="两种状态下的寄存器映射" width="70%"/>
 
 ## 第四讲 ARM 指令系统
 
@@ -182,11 +182,11 @@ ARM有37个32位长的寄存器：
 + ARM 状态下，指令根据 CPSR 中条件码状态和指令条件域条件执行
 + 嵌入式微处理器指令集：强调指令的灵活性，对称性，简单性
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2datafyaf328.webp" alt="ARM指令基本格式" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225820.png" alt="ARM指令基本格式" width="50%"/>
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4wsqa0d1wby0.webp" alt="ARM指令集编码" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225837.png" alt="ARM指令集编码" width="70%"/>
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.78cpg0xzx9o0.webp" alt="ARM指令条件码表" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225922.png" alt="ARM指令条件码表" width="50%"/>
 
 指令编码说明:
 
@@ -244,7 +244,7 @@ ARM有37个32位长的寄存器：
 + ROR(Rotate Right)
 + RRX(Rotate Right Extended by 1 Place)
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7dv7kh8v3ww0.png" alt="移位方式图解" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225944.png" alt="移位方式图解" width="50%"/>
 
 {% endmessage %}
 
@@ -311,7 +311,7 @@ SUBR              ; entry of subprogram
 + 寄存器组可以是 $16$ 个通用寄存器的任意子集
 + 地址增长顺序: IA(Increment After), IB(Increment Before), DA(Decrement After), DB(Decrement Before)
 + Example
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1qjho5ioypd.webp" alt="不同地址增长顺序的寻址模式" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230002.png" alt="不同地址增长顺序的寻址模式" width="50%"/>
 
 {% endmessage %}
 
@@ -684,7 +684,7 @@ ARM中支持的批量数据加载/存储指令可以一次在一片连续的存�
 + 指令格式: STM{条件}{类型} 基址寄存器{!}, 寄存器列表{^}
 + 指令说明: 多个寄存器中字数据传送到基址寄存器指向的连续存储器单元中
 + 类型——地址增长顺序: IA(Increment After), IB(Increment Before), DA(Decrement After), DB(Decrement Before)
-  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1qjho5ioypd.webp" alt="不同地址增长顺序的寻址模式" width="50%"/>
+  <img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230035.png" alt="不同地址增长顺序的寻址模式" width="50%"/>
   
 + Example:
   + STMFD R0!, {r1-r4}
@@ -1206,7 +1206,7 @@ I/O（Input/Output）接口是一个微控制器必须具备的最基本的外�
 
 + 后台行为: 应用程序是一个无限的循环，循环中调用相应的函数完成相应的操作，这部分可以看成后台行为
 + 前台行为: 中断服务程序处理异步事件，这部分可以看成前台行为
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2p36ytfd2820.webp" alt="前后台结构" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230117.png" alt="前后台结构" width="50%"/>
 
 
 ### 多任务系统的相关概念 
@@ -1231,7 +1231,7 @@ I/O（Input/Output）接口是一个微控制器必须具备的最基本的外�
 + 初始数据: 程序执行所需的相关数据
 + 堆栈: 保存局部变量和现场的存储区
 + 任务控制块: 包含任务相关信息的数据结构以及任务执行过程中所需要的所有信息
-  <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5tlpgmimsnw0.webp" alt="多任务模型结构" width="50%"/>
+  <img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230135.png" alt="多任务模型结构" width="50%"/>
 
 【任务的特点】
   动态性(就绪, 运行或等待), 并行性(同时存在多个任务, 宏观上并行), 异步独立性(各任务相互独立,运行速度不可预知)
@@ -1243,7 +1243,7 @@ I/O（Input/Output）接口是一个微控制器必须具备的最基本的外�
 	任务正等待着某一事件的发生而暂时停止执行; 这时，即使给它CPU控制权，它也无法执行, 则称该任务处于阻塞态
 - 就绪状态(ready)
 	任务已获得除CPU之外的运行所必需的资源，一旦得到CPU控制权，立即可以运行
-	<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.49pw2ebd07u0.webp" alt="任务的状态转换" width="50%"/>
+	<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230151.png" alt="任务的状态转换" width="50%"/>
 1. 就绪$\longrightarrow$运行
 	+ 调度程序选择一个新的进程运行(进程被调度)
 2. 运行$\longrightarrow$就绪
@@ -1289,7 +1289,7 @@ I/O（Input/Output）接口是一个微控制器必须具备的最基本的外�
 	+ 低优先级任务继续运行;
 	+ 低优先级任务完成或因其它原因被阻塞而释放CPU，内核进行任务调度，切换到就绪的高优先级任务;【调度点】
 	+ 高优先级任务运行
-	<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4k969m0t0ro0.webp" alt="非抢占式调度" width="50%"/>
+	<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230216.png" alt="非抢占式调度" width="50%"/>
 	+ 特点
 		+ 任务运行空间是封闭的，几乎**不需要使用信号量保护共享数据**
 		+ 内核的**任务级响应时间是不确定的**，完全取决于当前任务何时释放CPU
@@ -1302,7 +1302,7 @@ I/O（Input/Output）接口是一个微控制器必须具备的最基本的外�
 	+ 高优先级任务运行;
 	+ 高优先级任务完成或因其它原因被阻塞而释放CPU，内核进行任务调度;【调度点】
 	+ 低优先级任务获得CPU，从被中断的代码处继续运行
-	<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.3l2j6xuvjqm0.webp" alt="抢占式调度" width="50%"/>
+	<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230232.png" alt="抢占式调度" width="50%"/>
 	+ 特点
 		+ 最高优先级的任务一旦就绪，总能得到CPU的控制权
 		+ **任务运行空间不再是封闭的**，任务不可使用不可重入型函数
@@ -1351,7 +1351,7 @@ void swap(int *x, int *y)
 + 禁止任务切换
 + 使用测试并置位指令
 + 使用信号量（提供任务间通信、同步和互斥的最优选择
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.38pa1gn72z40.webp" alt="互斥方法对比" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230252.png" alt="互斥方法对比" width="50%"/>
 
 ### 实时内核的重要性能指标
 【时间性能指标】
@@ -1392,7 +1392,7 @@ $\mu$C/OS–II支持最多64个任务，每个任务有一个特定的优先级�
 	正在运行的任务是可以被中断的，除非该任务将中断关闭; 被中断了的任务进入了中断服务态
 + 休眠态(不属于多任务管理的范围)
 	任务创建之前的状态，仅驻留在程序空间，还没有交给$\mu$C/OS-II管理
-	<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5liuelv5fg80.webp" alt="任务状态转换" width="50%"/>
+	<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230312.png" alt="任务状态转换" width="50%"/>
 
 【任务控制块(TCB)】
 任务控制块是管理任务的数据结构:
@@ -1418,7 +1418,7 @@ $\mu$C/OS–II支持最多64个任务，每个任务有一个特定的优先级�
 
 #### 优先级位图算法
 【任务就绪表】
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.738rxu8f8a80.webp" alt="任务就绪表" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230328.png" alt="任务就绪表" width="50%"/>
 【注解】
 
 1. 优先级位图: 任务状态分为就绪态和非就绪态，对应两个状态，一比特位编码
@@ -1487,9 +1487,9 @@ void OSSched(void)
 + 将较高优先级任务的寄存器值出栈，回复到CPU寄存器中
 
 <div class="justified-gallery">
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1u2bdyt83h34.webp" alt="挂起任务入栈前" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2s2wvg21v5y0.webp" alt="挂起任务入栈" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.76nutiyphyo0.webp" alt="挂起任务入栈后" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230350.png" alt="挂起任务入栈前" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230407.png" alt="挂起任务入栈" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230421.png" alt="挂起任务入栈后" />
 </div>
 
 #### 调度器上锁机制
@@ -1542,7 +1542,7 @@ void OSSchedUnlock(void)
 	+ 有更高优先级任务就绪，返回更高优先级任务
 	+ 否则，返回到被中断任务
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.16lowytutogw.webp" alt="中断级调度过程" width="60%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230445.png" alt="中断级调度过程" width="60%"/>
 
 ```c OSIntEnterFunction
 void OSIntEnter(void)
@@ -1834,33 +1834,33 @@ INT8U OSTaskSuspend(INT8U prio)
 }
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.3ro10oxfync0.webp" alt="OSTaskResume Function" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.w1pwhlh3tyo.webp" alt="OSTaskResume Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230511.png" alt="OSTaskResume Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230524.png" alt="OSTaskResume Function" width="50%"/>
 
 
 【任务的状态】——只能清除对应的位，不能清除其他位
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.167ih7zqnalc.webp" alt="任务的状态位" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230539.png" alt="任务的状态位" width="50%"/>
 
 ### 任务延迟 OSTimeDly 的实现机制
 + 时钟中断
 定时器的中断由硬件完成，通过OSTimeTick()实现
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6x1d086d8rg0.webp" alt="OSTimeDly Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230555.png" alt="OSTimeDly Function" width="50%"/>
 
 + 把当前任务从就绪表中删除
 + 将ticks赋值给任务控制块的Delay属性
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.15rk3t1hmcs.webp" alt="OSTimeTick Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230609.png" alt="OSTimeTick Function" width="50%"/>
 
 【改变任务状态的两套机制】
 + 任务的挂起与恢复机制
 + 任务延迟(自动恢复)
 
 时钟节拍的精度：10ms一次触发时钟中断，10ms做为操作系统的精度；但是精度不能无限制地提高；
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.d1vxk25h280.webp" alt="时钟延迟" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230626.png" alt="时钟延迟" width="50%"/>
 
 【OSTimeDlyResume】
 + 被延时的任务可以不等待延时期满，而通过OSTimeDlyResume()函数来恢复
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6kcahmkqjh80.webp" alt="OSTimeDlyResume Function" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.4lej1jfrb3e0.webp" alt="OSTimeDlyResume Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230657.png" alt="OSTimeDlyResume Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230711.png" alt="OSTimeDlyResume Function" width="50%"/>
 
 ## 第十四讲 $\mu$COS-II的任务通信机制
 ### 任务通信的基本知识
@@ -1880,16 +1880,16 @@ $\mu$C/OS-II将信号量、邮箱和队列统称为事件,在事件控制块中�
 事件可以改变任务的状态,任务等待某个事件,基于事件驱动的多任务管理,有限状态机中事件的发生与状态的转换
 【事件控制块】
 各种事件控制函数实现的基本数据结构 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.11gkve3lm39c.webp" alt="事件控制块数据结构" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230726.png" alt="事件控制块数据结构" width="70%"/>
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.kvlbwm9tpc0.webp" alt="事件控制块形象表示" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230742.png" alt="事件控制块形象表示" width="70%"/>
 
 {% message color:info %}
 事件控制块是$\mu$C/OS-II任务管理的实现机制，统一了信号量，邮箱和队列三种方式
 {% endmessage %}
 
 【等待任务列表实现机制】
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2exee336u2m8.webp" alt="等待任务列表" width="70%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230802.png" alt="等待任务列表" width="70%"/>
 
 【对等待事件任务列表的三种操作】
 + 将任务置于等待事件任务列表(加入等待事件)
@@ -1914,18 +1914,18 @@ $\mu$C/OS-II将信号量、邮箱和队列统称为事件,在事件控制块中�
 
 【对事件控制块的操作】
 + 初始化事件控制块: 只初始化等待事件任务列表
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2mxwdh9pa500.webp" alt="OSEventWaitListInit Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230823.png" alt="OSEventWaitListInit Function" width="50%"/>
 
 + 使当前任务进入等待某事件的状态(P操作)
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1a8y08c3snk0.webp" alt="OSEventTaskWait Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230840.png" alt="OSEventTaskWait Function" width="50%"/>
 
 + 当前任务不就绪,并将该任务放置等待任务列表中
 + 操作系统实现多个等待队列, 每个事件维护一个队列
 + 任务不是出于就绪队列(任务就绪表)中,就是在等待队列(事件等待任务列表)中
 
 + 使一个任务就绪（脱离等待状态）(V操作)
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.28s8zhj55yas.webp" alt="OSEventTaskRdy Function" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6h21asqymos0.webp" alt="OSEventTaskRdy Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823230941.png" alt="OSEventTaskRdy Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231002.png" alt="OSEventTaskRdy Function" width="50%"/>
 
 OSTCBStat任务状态可以等待多个事件,等信号量,邮箱,队列等,这几种机制互不影响
 
@@ -1933,20 +1933,20 @@ OSTCBStat任务状态可以等待多个事件,等信号量,邮箱,队列等,这�
 
 ### $\mu$C/OS-II 中信号量的实现机制
 【创建信号量】
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.gx0lkgaxtmo.webp" alt="OSSemCreate Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231022.png" alt="OSSemCreate Function" width="50%"/>
 
 【P操作, 等待一个信号量】
 {% message color:info%}
 P操作不能在中断服务程序中进行
 {% endmessage %}
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.6c1y1aqspac0.webp" alt="OSSemPend Function" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.19llwtd7wreo.webp" alt="OSSemPend Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231046.png" alt="OSSemPend Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231105.png" alt="OSSemPend Function" width="50%"/>
 
 【V操作, 发出一个信号量】
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1argesewgxz4.webp" alt="OSSemPost Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231140.png" alt="OSSemPost Function" width="50%"/>
 
 ### 信号量超时机制
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2n18ri7rb1s.webp" alt="等待超时时间" width="60%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231159.png" alt="等待超时时间" width="60%"/>
 
 ## 第十五讲 $\mu$COS-II的任务通信机制II
 ### 优先级反转的概念
@@ -1975,44 +1975,44 @@ $\mu$C/OS-II中，在处理互斥型信号量时，**没有被占用的**、**�
 只能做互斥操作，信号量属于二值信号量;Mutex是事件的一种, 只能供任务使用并且因为牵扯到优先级继承优先级等任务级的处理，所以不能用于中断
 
 + 建立一个互斥型信号量
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1d1kozjbmqyo.webp" alt="OSMutexCreate Function" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.23o4e0554m0w.webp" alt="OSMutexCreate" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5327ni0oro80.webp" alt="Mutex的TCB结构" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231307.png" alt="OSMutexCreate Function" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231322.png" alt="OSMutexCreate" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231342.png" alt="Mutex的TCB结构" width="50%"/>
 
 OSEventCnt被划分为高8位和低8位，其中高8位表示保留优先级；低8位为全1时表示信号量有效没有被占用，当信号量被占用时，低8位标识占有该信号量的任务优先级即0$\sim$63
 
 + 等待一个互斥型信号量(P操作)
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.pl1rlhnreeo.webp" alt="OSMutexPend" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.1730s7q94jc0.webp" alt="OSMutexPend" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5xgxo8wyktg0.webp" alt="OSMutexPend" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.75zc6stgb1k0.webp" alt="OSMutexPend" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231402.png" alt="OSMutexPend" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231424.png" alt="OSMutexPend" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231443.png" alt="OSMutexPend" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231459.png" alt="OSMutexPend" width="50%"/>
 
 + 释放一个互斥型信号量(V操作)
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.516ymbc2ihc0.webp" alt="OSMutexPost" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.2fgzschhjksg.webp" alt="OSMutexPost" width="50%"/>
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.7k15c1128xc0.webp" alt="OSMutexPost" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231521.png" alt="OSMutexPost" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231541.png" alt="OSMutexPost" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231602.png" alt="OSMutexPost" width="50%"/>
 
 ### 其它任务间通信机制
 + 消息邮箱
 $\mu$C/OS-II中的另一种基于事件的通信机制，可以使一个任务或者中断服务程序向另一个任务发送一个指针型的变量。该指针指向了一个包含了“消息”的特定数据结构
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.76g2se1bs9c0.webp" alt="消息邮箱的TCB结构" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231712.png" alt="消息邮箱的TCB结构" width="50%"/>
 
 + 消息队列
 消息队列是$\mu$C/OS-II中又一种基于事件的通信机制。可以使一个任务或者中断服务程序向另一个任务发送多个以指针方式定义的变量。
 	+ 根据具体应用，每个指针指向的数据结构可以有所不同
 	+ 可看做多个邮箱组成的数组，只是共用了同一个等待任务列表
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5kd3g8tohj40.webp" alt="消息队列的TCB结构" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231727.png" alt="消息队列的TCB结构" width="50%"/>
 
 + 事件标志组
 $\mu$C/OS-II中任务可以等待多个事件的到来。一个任务也可以发出多个事件，任务和事件之间有着多对多的映射关系。
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.741izrs6wsc0.webp" alt="事件标志组的TCB结构" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231746.png" alt="事件标志组的TCB结构" width="50%"/>
 
 ### $\mu$C/OS-II的内存分区管理 
 $\mu$C/OS-II将内存按分区来处理
 + 可以分配和释放固定大小的内存块
 + 解决了内存碎片问题
 + 分配、释放函数执行时间确定了
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.68sdnqhexhg0.webp" alt="内存分区管理机制" width="50%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231802.png" alt="内存分区管理机制" width="50%"/>
 
 ## 题型分析
 ### 简答题
@@ -2043,7 +2043,7 @@ $\mu$C/OS-II将内存按分区来处理
 + 稳定性和可靠性
 对于嵌入式实时系统来说，稳定性和可靠性至关重要。系统在长时间运行中不能发生崩溃，而且对于异常情况的处理必须是可靠的
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5q68eicvuvc0.webp"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823231903.png"/>
 
 #### CPU寄存器与内存的区别
 + CPU寄存器是位于CPU内部的小型、高速存储单元，用于临时存储和快速访问指令和数据；
@@ -2055,7 +2055,7 @@ $\mu$C/OS-II将内存按分区来处理
 + 指令译码逻辑：CISC指令集采用微指令技术增加了硬件复杂度，而RISC采用硬连线的指令译码逻辑，开发简单；
 + 指令执行分析：CISC指令长度不一，执行单条指令需要多个周期，而RISC指令长度固定，一个周期执行一条指令，通过少量常用指令的组合实现复杂的功能，容易实现高性能；
 + Load/Store结构：RISC还采用Load/Store结构进行优化，完成数据在寄存器和存储器之间的传输，保证处理器直接从寄存器中获取操作数，能够加快运算的执行效率，实现更高的性能。
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.3k3od8ma9z20.webp"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823234724.png"/>
 
 #### 简述宏和函数的区别？二者各自的优缺点是什么？
 + 编译阶段：编译器会将相关代码放到宏名出现的每一个地方并且宏内容会被直接展开到代码中，宏的代码在任何出现宏名的地方都会编译一次；而函数的代码只需要编译一次，在编译时定义，但是实际在执行发生在运行时
@@ -2130,7 +2130,7 @@ $\mu$C/OS-II将内存按分区来处理
 + 存储器结构：冯诺依曼体系结构中程序指令存储器和数据存储器共用同一个存储体，而哈佛体系结构使用两个独立的存储器模块，分别存储指令和数据；
 + 位宽：冯诺依曼体系结构中程序指令和数据宽度相同，而哈佛体系结构可以不同；
 + 总线：冯诺依曼体系结构使用一条总线传输，而哈佛体系结构采用两条独立的总线，互不影响。
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/image.5o8ir39c2xs0.webp"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823234756.png"/>
 
 #### 理解Load/Store结构
 + 在通用寄存器中操作，从存储器中读某个值到寄存器，操作完再将其放回存储器中
@@ -2937,6 +2937,27 @@ DoSub ; 子程序DoSub执行减法操作
     MOV pc, lr
 END ; 结束汇编
 ```
+## 自主可控嵌入式系统总结文档
+{% message color:info %}
+本章节主要是对学习笔记整理出的 PDF 文档，方便查阅。
+{% endmessage %}
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/EmbeddedSystem.pdf" style='width:100%;height:800px'></iframe>
+
+## 自主可控嵌入式系统随课实验
+### 实验一 基于华为鲲鹏云服务器的 ARM 开发
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/embeddedsystem/report_1.pdf" style='width:100%;height:800px'></iframe>
+
+### 实验二 基于 S3C2410 的基本接口实验
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/embeddedsystem/report_2.pdf" style='width:100%;height:800px'></iframe>
+
+### 实验三 基于液晶显示屏的人机接口实验
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/embeddedsystem/report_3.pdf" style='width:100%;height:800px'></iframe>
+
+### 实验四 $\mu$C/OS-II 系统原理实验
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/embeddedsystem/report_4.pdf" style='width:100%;height:800px'></iframe>
+
+### 实验五 简易计算器设计
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/embeddedsystem/report_5.pdf" style='width:100%;height:800px'></iframe>
 
 ## Contributors
 

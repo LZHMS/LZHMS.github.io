@@ -8,7 +8,7 @@ tags:
     - Noisy Label Learning
     - Visual Language Models
 categories: projects
-cover: https://github.com/LZHMS/picx-images-hosting/raw/master/EBlog/Paper/MutualDistance.5fkgzddyoi.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194054.png
 excerpt: This post introduces my current research project about how to construct two similarities for better filtering noisy samples and pseudo labels enhancement with the balance between model ability and feature structures.
 ---
 ## 研究背景
@@ -36,7 +36,7 @@ excerpt: This post introduces my current research project about how to construct
 
 ## Double Similarities Supervision For Filtering Noisy Samples
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/Framework_V1.361eyqxfdw.webp" alt="POMA Framework" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194107.png" alt="POMA Framework" />
 
 ### Prompt Similarities By Matrix Learners
 

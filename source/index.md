@@ -2,11 +2,9 @@
 title: 
 date: 2023-09-22 19:55:07
 ---
-![](/img/name.webp)
-![Zhihao Li at the Taihu Lake in Wuxi in 2023](/img/avatar.webp)
 
 <center><span style="font-family: 'KaiTi'; font-weight: bold; font-size: 22px;">慕松柏</span></center>
-<center><span style="font-family: 'KaiTi'; font-size: 16px;">萧落落。衰叶已凋尽，露枝犹霜。茫茫眼下，唯翠枝两三；</span></center>
+<center><span style="font-family: 'KaiTi'; font-size: 16px;">萧落落，衰叶已凋尽，露枝犹霜。茫茫眼下，唯翠枝两三；</span></center>
 <center><span style="font-family: 'KaiTi'; font-size: 16px;">雾漫漫，古村已隐尽，落山如雪。苍苍望去，只白雾一道。</span></center>
 <center><span style="font-family: 'KaiTi'; font-size: 16px;">于凌冬岁月，我仍傲青翠。</span></center>
 <br>
@@ -48,10 +46,10 @@ I am a person who has many specific plans about the development of the future. T
 
 ## Awards
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/服创获奖证书.5q776fqwvt.webp" alt="FWWB 2023" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/数模国赛.101y81crot.webp" alt="CUMCM 2023" />
-<img src="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/2024美赛.esbgwgyw9.webp" alt="MCM/ICM 2024" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/Profile/2023美赛.3d4kp8b3nq.webp" alt="MCM/ICM 2023" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/%E6%9C%8D%E5%88%9B%E8%8E%B7%E5%A5%96%E8%AF%81%E4%B9%A6.png" alt="FWWB 2023" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B.png" alt="CUMCM 2023" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/2024%E7%BE%8E%E8%B5%9B.png" alt="MCM/ICM 2024" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/2023%E7%BE%8E%E8%B5%9B.png" alt="MCM/ICM 2023" />
 
 ## Technology Stack
 

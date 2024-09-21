@@ -5,7 +5,7 @@ toc: true
 tags:
     - Computer Vision
 categories: projects
-cover: https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/model.4ax0n6qbtbs0.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194730.png
 excerpt: This post is the introduction about my project of 2D Virtual Try-on Based on Deep Learning.
 ---
 {% dplayer "url=https://lzhms.oss-cn-hangzhou.aliyuncs.com/videos/projects/2DVirtualTryon.mp4" "autoplay=false" "preload=metadata" "hotkey=true" "lang=en"%}
@@ -14,7 +14,7 @@ excerpt: This post is the introduction about my project of 2D Virtual Try-on Bas
 
 本项目主要面向第 $14$ 届全国服务外包创新创业比赛 $A16$ 赛道虚拟试衣赛题，采用 $2D$ 虚拟试衣技术依托于 $VITON$ 开源数据集训练 $DNN$ 网络并着重进行工程化落地应用；项目选用了前沿顶刊论文的 $PFAFN$ 模型，在此基础上对模型进行优化改进，实现了模型压缩和推理加速并使用 $OpenVINO$ 框架进行部署应用，出色地完成了赛题的要求。
 
-![项目示例](https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/examples.4u074u4fgio0.webp)
+![项目示例](https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194749.png)
 
 ### 项目开发环境
 
@@ -37,12 +37,12 @@ excerpt: This post is the introduction about my project of 2D Virtual Try-on Bas
 
 本项目基于 $PFAFN$ 模型重新设计各个网络模块，具体结构如下图所示：
 
-![DNN网络结构](https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/model.4ax0n6qbtbs0.webp)
+![DNN网络结构](https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194730.png)
 
 ### 项目工程化落地
 
 为了满足赛题方的要求，本项目开展了工程化落地部分，主要分为两个部分，模型训练和模型剪枝量化。项目工程化部署总图如下所示：
-![项目工程化部署总图](https://cdn.statically.io/gh/LZHMS/picx-images-hosting@master/Profile/project.1dom5gtegs2o.webp)
+![项目工程化部署总图](https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194833.png)
 
 ### 项目详细技术文档
 

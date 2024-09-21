@@ -2648,6 +2648,15 @@ $$
   - [x] 中断结束: 自动EOI, 特殊/指定EOI, 一般/非指定EOI
   - [x] 优先级: 固定优先级, 自动循环优先级, 指定循环优先级
 
+## 微机原理与系统课程实验
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/Microcomputer.pdf" style='width:100%;height:800px'></iframe>
+
+## 微机原理与系统课程设计
+{% message color:info %}
+本章节主要是课程设计部分，以《交通信号灯自动控制模拟指示系统设计》为课设项目完成的实验报告。
+{% endmessage %}
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/MicrocomputerProject.pdf" style='width:100%;height:800px'></iframe>
+
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)

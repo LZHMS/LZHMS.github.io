@@ -5,7 +5,7 @@ toc: true
 tags:
     - Computer Principle
 categories: projects
-cover: https://github.com/LZHMS/picx-images-hosting/raw/master/EBlog/Learning/image.77dfreui3s.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193430.png
 excerpt: This post introduces how to design a basic computer model which can achieve commmon stack functions.
 ---
 ## Introduction
@@ -14,16 +14,17 @@ Last weekend I undertook a project to design a basic computer model from clock g
 
 ## My Report
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page1.55g66elkjf00.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page2.m4scjgzw040.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page3.4r29186sbg60.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page4.5woocb2961o0.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page5.4tmpiemxq8m0.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page6.3gk5z2geo3k0.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page7.4gcnz0jhlvk0.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page8.6xxr7na5fw00.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page9.61wcjq6mml80.webp" width="80%" />
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/ComputerModel_Page10.p8u7zat3tnk.webp" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193521.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193552.png" width="80%" />
+
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193614.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193632.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193652.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193713.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193737.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193801.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193823.png" width="80%" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193845.png" width="80%" />
 
 ## Contributors
 

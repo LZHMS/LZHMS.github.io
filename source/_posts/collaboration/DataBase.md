@@ -287,6 +287,12 @@ excerpt: 计科院数据库系统概论课程学习笔记
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page8.2wdw8hhua8u0.webp" />
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page9.3ehx9lj0jui0.webp" />
 
+## 数据库系统期末复习笔记
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/DatabaseNotes.pdf" style='width:100%;height:800px'></iframe>
+
+## 数据库系统课程实验报告
+<iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/DatabaseSystem.pdf" style='width:100%;height:800px'></iframe>
+
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)

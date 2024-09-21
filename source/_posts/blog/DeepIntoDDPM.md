@@ -6,7 +6,7 @@ tags:
     - Diffusion Model
     - AIGC
 categories: blog
-cover: https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/ZBlog/PDFImage/image.lvk7w9t0s.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/20240921192349.png
 excerpt: The blog discusses Denoising Diffusion Probabilistic Models for image generation.
 ---
 {% message color:info%}
@@ -183,7 +183,7 @@ $$
 其中，$\epsilon\sim N(0, I)$ 表示在时间步 $t$ 采样的纯噪声，$\epsilon_\theta(x_t,t)$ 表示构建的神经网络，噪声预测采用 MSE 计算损失。
 
 ## 训练流程
-<img src="https://huggingface.co/blog/assets/78_annotated-diffusion/training.png" alt="Training Algorithm" width='50%'/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/20240921192538.png" alt="Training Algorithm" width='50%'/>
 
 1. 从真实数据分布 $q(x_0)$ 中随机采样 $x_0$；
 2. 从 $1\sim T$ 中均匀随机采样噪声水平/时间步 $t$；

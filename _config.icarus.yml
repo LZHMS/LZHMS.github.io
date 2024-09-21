@@ -233,7 +233,7 @@ widgets:
         location: Xidian University, China
         # Author's hometown
         # URL or path to the avatar image
-        avatar: /img/avatar.jpg
+        avatar: /img/avatar.png
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -336,9 +336,9 @@ plugins:
 # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
 providers:
     # Name or URL template of the JavaScript and/or stylesheet CDN provider 
-    cdn: cdnjs
+    cdn: loli
     # Name or URL template of the webfont CDN provider
-    fontcdn: ustc
+    fontcdn: loli
     # Name or URL of the ome icon font CDN provider
     iconcdn: loli
 

@@ -28,7 +28,7 @@ widgets:
         location: Xidian University, China
         # Author's hometown
         # URL or path to the avatar image
-        avatar: /img/avatar.jpg
+        avatar: /img/avatar.png
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar

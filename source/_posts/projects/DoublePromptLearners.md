@@ -8,7 +8,7 @@ tags:
     - Noisy Label Learning
     - Visual Language Models
 categories: projects
-cover: https://github.com/LZHMS/picx-images-hosting/raw/master/EBlog/Paper/Model.3nrgjq37da.webp
+cover: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193925.png
 excerpt: This post introduces my current research project about how to design two prompt learners as classifier and discriminator for filtering clean samples and pseudo labels enhancement.
 ---
 ## 研究背景
@@ -35,7 +35,7 @@ excerpt: This post introduces my current research project about how to design tw
 
 #### Visual-Language Models
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Paper/image.1020a9vqpi.webp" alt="Visual-Language Models" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921193952.png" alt="Visual-Language Models" />
 
 #### Findings
 
@@ -52,7 +52,7 @@ excerpt: This post introduces my current research project about how to design tw
 
 #### Framework
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Paper/image.7sn1wqn1jr.webp" alt="VLM-CPL Framework" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194008.png" alt="VLM-CPL Framework" />
 
 + 利用VLM的零样本推理获得基于提示的伪标签；
 + 在特征空间中对样本进行聚类获得基于特征的伪标签；
@@ -100,7 +100,7 @@ CLIP 利用类别提示特征与图像特征之间的余弦相似度进行分类
 
 ## Framework
 
-<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Paper/Model.3nrgjq37da.webp" alt="DPL Framework" />
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/projects/20240921194025.png" alt="DPL Framework" />
 
 ### 特点分析
 
