@@ -20,36 +20,20 @@ date: 2023-09-22 19:55:07
 Hi, I'm Zhihao Li. This is a brief introduction about me.
 I am a junior student at Xidian University, and my favorite research direction is 3D Vision and Digital Human. As a new blogger, I am very excited to share with you the learning experience and technical points in the major, and discuss the tricky problems in the technical field together.
 
-## Development Planning
-
-I am a person who has many specific plans about the development of the future. There are two basic principles that I formed in my growth. The one is that I very hate wasting time and the other is that I very advocate gathering my distracted time and energy. Therefore, I develop this module to show my personal plans on my future just as my personal characteristics to be known for you.
-
-+ Development Goal: Become an advanced researcher in some field.
-+ First Stage: Determine the research field to be work on in the future (**Spend at least a month, completed**)
-+ Second Stage: Prepare myself with enough knowledge to explore about this research field (**Spend at least one or two years, currently working**)
-+ Third Stage: Explore as much as possible to find interesting things to promote the scientific research (**Spend as many as possible years, to be completed**)
-
-## Competitions
-
-- August, 2023: National First Prize of China College Student Service Outsourcing Innovation and Entrepreneurship Competition(**Top 0.3%**)
-- November, 2023: National Second Prize of China Undergraduate Mathematical Contest in Modeling (CUMCM)(**Top <1.53%**)
-- June, 2023: Top prize of Shaanxi Province Higher Mathematics Competition for College Students
-- May, 2024: First Prize of American Collegiate Mathematical Modeling Contest
-- May, 2023: Second Prize of American Collegiate Mathematical Modeling Contest
-- January, 2023: Provincial First Prize in National Mathematics Competition for University Students
-- December, 2022: Provincial Second Prize of National Student Mathematical Modeling Competition
-
-## Honors
-
-- December, 2022: Youth Model Honorary Title of Xidian University(**Top 1%**)
-- September, 2022: Excellent Student Title of Xidian University(**Top 5%**)
-
-## Awards
-
-<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/%E6%9C%8D%E5%88%9B%E8%8E%B7%E5%A5%96%E8%AF%81%E4%B9%A6.png" alt="FWWB 2023" />
-<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B.png" alt="CUMCM 2023" />
-<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/2024%E7%BE%8E%E8%B5%9B.png" alt="MCM/ICM 2024" />
-<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/profile/xdu/2023%E7%BE%8E%E8%B5%9B.png" alt="MCM/ICM 2023" />
+## Recent News
+<div style="width: 100%; max-width: 800px; max-height: 300px; overflow-y: scroll; padding: 10px;">
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li>[<b>September, 2024</b>] Honored with the Outstanding Student Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 1%</b>)</li>
+        <li>[<b>September, 2024</b>] Awarded the National Scholarship of Xidian University  <i class="fas fa-award" style="color: gold;"></i> (<b>Top 1%</b>)</li>
+        <li>[<b>May, 2024</b>] Won the International First Prize of American Collegiate Mathematical Modeling Contest <i class="fas fa-trophy" style="color: gold;"></i> <a href="https://www.comap.com/contests/mcm-icm"><b>MCM/ICM</b></a> (<b>Top 6%</b>)</li>
+        <li>[<b>November, 2023</b>] Awarded the Huameng Scholarship of Xidian University <i class="fas fa-award" style="color: gold;"></i> </li>
+        <li>[<b>November, 2023</b>] Honored with the Excellent Student Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 5% </b>)</li>
+        <li>[<b>November, 2023</b>] Won the National Second Prize of China Undergraduate Mathematical Contest in Modeling <i class="fas fa-trophy" style="color: silver;"></i> <a href="https://www.mcm.edu.cn/"><b>CUMCM</b></a> (<b>Top 1.53% </b>)</li>
+        <li>[<b>August, 2023</b>] Won the National First Prize in the China College Student Service Outsourcing Innovation and Entrepreneurship Competition <i class="fas fa-trophy" style="color: gold;"></i> <a href="http://www.fwwb.org.cn/"><b>FWWB</b></a> (<b>Top 0.3%</b>)</li>
+        <li>[<b>June, 2023</b>] Received an award for the Top prize of Shaanxi Province Higher Mathematics Competition for College Students</li>
+        <li>[<b>December, 2022</b>] Honored with the Youth Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 1%</b>)</li>
+    </ul>
+</div>
 
 ## Technology Stack
 
