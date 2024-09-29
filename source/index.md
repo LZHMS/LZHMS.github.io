@@ -20,23 +20,17 @@ date: 2023-09-22 19:55:07
 Hi, I'm Zhihao Li. This is a brief introduction about me.
 I am a junior student at Xidian University, and my favorite research direction is 3D Vision and Digital Human. As a new blogger, I am very excited to share with you the learning experience and technical points in the major, and discuss the tricky problems in the technical field together.
 
-## Recent News
-<div style="width: 100%; max-width: 800px; max-height: 300px; overflow-y: scroll; padding: 10px;">
+## News @ ZHao
+<div style="width: 100%; max-width: 800px; max-height: 400px; overflow-y: scroll; padding: 10px;">
     <ul style="list-style-type: none; padding: 0; margin: 0;">
         <li>[<b>September, 2024</b>] Honored with the Outstanding Student Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 1%</b>)</li>
         <li>[<b>September, 2024</b>] Awarded the National Scholarship of Xidian University  <i class="fas fa-award" style="color: gold;"></i> (<b>Top 1%</b>)</li>
-        <li>[<b>May, 2024</b>] Won the International First Prize of American Collegiate Mathematical Modeling Contest <i class="fas fa-trophy" style="color: gold;"></i> <a href="https://www.comap.com/contests/mcm-icm"><b>MCM/ICM</b></a> (<b>Top 6%</b>)</li>
-        <li>[<b>November, 2023</b>] Awarded the Huameng Scholarship of Xidian University <i class="fas fa-award" style="color: gold;"></i> </li>
-        <li>[<b>November, 2023</b>] Honored with the Excellent Student Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 5% </b>)</li>
-        <li>[<b>November, 2023</b>] Won the National Second Prize of China Undergraduate Mathematical Contest in Modeling <i class="fas fa-trophy" style="color: silver;"></i> <a href="https://www.mcm.edu.cn/"><b>CUMCM</b></a> (<b>Top 1.53% </b>)</li>
-        <li>[<b>August, 2023</b>] Won the National First Prize in the China College Student Service Outsourcing Innovation and Entrepreneurship Competition <i class="fas fa-trophy" style="color: gold;"></i> <a href="http://www.fwwb.org.cn/"><b>FWWB</b></a> (<b>Top 0.3%</b>)</li>
-        <li>[<b>June, 2023</b>] Received an award for the Top prize of Shaanxi Province Higher Mathematics Competition for College Students</li>
+        <li>[<b>May, 2024</b>] <a href="./MCMICM2024">Won the International First Prize of American Collegiate Mathematical Modeling Contest</a> <i class="fas fa-trophy" style="color: gold;"></i> <a href="https://www.comap.com/contests/mcm-icm"><b>MCM/ICM</b></a> (<b>Top 6%</b>)</li>
+        <li>[<b>November, 2023</b>] <a href="./HuamengScholarship2023">Awarded the Huameng Scholarship of Xidian University</a> <i class="fas fa-award" style="color: gold;"></i> </li>
+        <li>[<b>November, 2023</b>] <a href="./ExcellentStudent2023">Honored with the Excellent Student Model Award of Xidian University</a> <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 5% </b>)</li>
+        <li>[<b>November, 2023</b>] <a href="./CUMCM2023">Won the National Second Prize of China Collegiate Mathematical Modeling Contest <i class="fas fa-trophy" style="color: silver;"></i></a> <a href="https://www.mcm.edu.cn/"><b>CUMCM</b></a> (<b>Top 1.53% </b>)</li>
+        <li>[<b>August, 2023</b>] <a href="./FWWB2023">Won the National First Prize in the China College Student Service Outsourcing Innovation and Entrepreneurship Competition</a> <i class="fas fa-trophy" style="color: gold;"></i> <a href="http://www.fwwb.org.cn/"><b>FWWB</b></a> (<b>Top 0.3%</b>)</li>
+        <li>[<b>June, 2023</b>] <a href="./AMC2023">Received an award for the Top prize of Shaanxi Province Advanced Mathematical Competition for College Students</a></li>
         <li>[<b>December, 2022</b>] Honored with the Youth Model Award of Xidian University <i class="fas fa-graduation-cap" style="color: #1E90FF;"></i> (<b>Top 1%</b>)</li>
     </ul>
 </div>
-
-## Technology Stack
-
-- Programming Languages: Python, C++, Matlab, C (Arrange In Order)
-- Mastered Libraries: Pandas, Numpy, Sklearn, Matplotlib, Pytorch Frame
-- Grasped Tools: Git, Github, MySQL, React with Echarts, Linux Commands
