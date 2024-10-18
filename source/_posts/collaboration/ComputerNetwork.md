@@ -1552,5 +1552,15 @@ TCP将多个字节组合在一起成为一个分组，称为段
 + [Jiawei Hu](https://github.com/Echo-flipped)
 
 ## References
-
 + [Behrouz, a.forouzan. (n.d.). 数据通信与网络 (原书第 4 版)](http://m.cmpedu.com/books/book/2011466.htm)
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>杨力. 2023年春, 计算机通信与网络, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/231806185.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/231806185.html
+        </a>
+    </p>
+</div>
+
+

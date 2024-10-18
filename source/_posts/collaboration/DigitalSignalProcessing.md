@@ -815,3 +815,13 @@ end
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)
+
+## Reference
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>王文俊. 2023年秋, 数字信号处理, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/236249651.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/236249651.html
+        </a>
+    </p>
+</div>

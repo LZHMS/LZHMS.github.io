@@ -819,3 +819,13 @@ close(fd);
 return 0;
 }
 ```
+
+## References
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>付少峰. 2024年春, 嵌入式程序设计, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/240785528.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/240785528.html
+        </a>
+    </p>
+</div>

@@ -2963,3 +2963,13 @@ END ; 结束汇编
 
 + [Zhihao Li](https://lzhms.github.io/)
 + [Jiawei Hu](https://github.com/Echo-flipped)
+
+## References
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>陈勉. 2023年秋, 自主可控嵌入式系统, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/236249665.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/236249665.html
+        </a>
+    </p>
+</div>

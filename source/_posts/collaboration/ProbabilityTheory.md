@@ -16,3 +16,13 @@ excerpt: 计科院概率论与数理统计课程学习笔记
 ## 概率论与数理统计笔记总结文档
 
 <iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/ProbabilityTheory.pdf" style='width:100%;height:800px'></iframe>
+
+## References
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>郭杏莉. 2022年秋, 概率论与数理统计, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/227062626.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/227062626.html
+        </a>
+    </p>
+</div>

@@ -174,35 +174,23 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: disqus
-    # Disqus shortname
-    shortname: eblog-5
-# Donate plugin configurations
-# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
-donates:
-    # Alipay donate button configurations
-    -
-        type: alipay
-        # Alipay qrcode image URL
-        qrcode: /img/pay.png
-    # Wechat donate button configurations
-    -
-        type: wechat
-        # Wechat qrcode image URL
-        qrcode: /img/wechat.png
-    # "Buy me a coffee" donate button configurations
-    -
-        type: buymeacoffee
-        # URL to the "Buy me a coffee" page
-        url: https://www.buymeacoffee.com/ZhihaoLi
-    
+    type: disqusjs
+    shortname: ZHao's Blog
+    siteName: ZHao's Blog
+    api_key: Qyl7JFOCqIEmep6wYkdtx3lZi9PoQFqMp02dLV2E4Pf5nghJeRwKYKPllrFUImt4
+    api: https://disqus.skk.moe/disqus/     # 可选填
+    nocomment: 'No comments yet. Be the first to comment!'
+    admin: LZHMS                         # 可选填
+    admin_label: ZHao                      # 可选填
+    nesting: 4                              # 可选填
 
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
     type: sharethis
     # URL to the ShareThis share plugin script
-    install_url: https://platform-api.sharethis.com/js/sharethis.js#property=64ad5faad2ddeb0019614bc5&product=inline-share-buttons&source=platform
+    install_url: https://platform-api.sharethis.com/js/sharethis.js#property=670f50c9dfdd420019b8d15c&product=inline-reaction-buttons&source=platform
+
 # Sidebar configurations.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:

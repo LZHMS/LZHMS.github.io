@@ -1486,3 +1486,13 @@ $$
 ## Contributors
 
 + [Zhihao Li](https://lzhms.github.io/)
+
+## References
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>郭恒. 2022年秋, 大学物理(II), 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/227063073.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/227063073.html
+        </a>
+    </p>
+</div>

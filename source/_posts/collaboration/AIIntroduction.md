@@ -15,3 +15,14 @@ excerpt: 计科院人工智能导论课程学习笔记
 
 ## 复习思维导图
 <iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/AIIntroduction.pdf" style='width:100%;height:800px'></iframe>
+
+## References
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>杨利英. 2024年春, 人工智能导论, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/240785494.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/240785494.html
+        </a>
+    </p>
+</div>

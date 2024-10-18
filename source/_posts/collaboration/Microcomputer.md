@@ -2659,9 +2659,31 @@ $$
 
 ## Contributors
 
-+ [Zhihao Li](https://lzhms.github.io/)
-+ [Xiaoyue Li](https://github.com/2754143707)
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Zhihao Li</p>
+    <p>
+        <a href="https://zhihaoli.top">
+            https://zhihaoli.top
+        </a>
+    </p>
+</div>
 
 ## References
 
-+ [微型计算机原理及接口技术(第三版)](https://www.xduph.com/Pages/BookDetail.aspx?doi=09a5a856-0f2e-4260-b9c4-17b78c1e7701)
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>张剑贤. 2023年秋, 微机原理与系统设计, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/236212950.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/236212950.html
+        </a>
+    </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>微型计算机原理及接口技术(第三版)</p>
+    <p>
+        <a href="https://www.xduph.com/Pages/BookDetail.aspx?doi=09a5a856-0f2e-4260-b9c4-17b78c1e7701">
+            https://www.xduph.com/Pages/BookDetail.aspx?doi=09a5a856-0f2e-4260-b9c4-17b78c1e7701
+        </a>
+    </p>
+</div>

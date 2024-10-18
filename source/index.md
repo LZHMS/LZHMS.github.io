@@ -3,6 +3,9 @@ title:
 date: 2023-09-22 19:55:07
 ---
 
+![](/img/name.webp)
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/IMG_20241003_225004.jpg" alt="Zhihao Li at the Qinling Mountains in Xi'an, China, in October 2024"/>
+
 <center><span style="font-family: 'KaiTi'; font-weight: bold; font-size: 22px;">慕松柏</span></center>
 <center><span style="font-family: 'KaiTi'; font-size: 16px;">萧落落，衰叶已凋尽，露枝犹霜。茫茫眼下，唯翠枝两三；</span></center>
 <center><span style="font-family: 'KaiTi'; font-size: 16px;">雾漫漫，古村已隐尽，落山如雪。苍苍望去，只白雾一道。</span></center>

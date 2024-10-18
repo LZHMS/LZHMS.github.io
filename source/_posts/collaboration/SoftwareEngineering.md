@@ -16,3 +16,13 @@ excerpt: 计科院软件工程课程学习笔记
 
 ## 期末复习笔记
 <iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/SoftwareEngineering.pdf" style='width:100%;height:800px'></iframe>
+
+## References
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>赵辉. 2024年秋, 软件工程, 西安电子科技大学.</p>
+    <p>
+        <a href="https://mooc1.chaoxing.com/mooc-ans/course/240785498.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/240785498.html
+        </a>
+    </p>
+</div>
