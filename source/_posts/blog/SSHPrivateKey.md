@@ -26,13 +26,16 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub zhli@cwfang.tpddns.cn
 
 ## WinSCP Configuration
 + Firstly, we need to open the WinSCP and click the 'Tools' button to `Run PuTTYgen`:
+
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Learning/image.4106n24rk6g0.webp" alt="Run PuTTYgen" width='70%'/>
 
 + Then, click `Load ` button to find previously generated private key file(`id_rsa`):
+
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Learning/image.3zpig86yuiw0.webp" alt="Load Private Key" width='70%'/>
 
 There when we choose the key file, it's necessary to switch target file type to `All Files(*.*)` for matching.
 + After that, just wait for processing and finally we can `Save private key` in the format of `.ppk`:
+
 <img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Learning/image.2ibzjru2nwu0.webp" alt="Save Private Key" width='70%'/>
 
 `.ppk` format is a need for WinSCP to obtain the local computer's authorization to the linux server.
