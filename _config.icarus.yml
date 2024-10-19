@@ -3,7 +3,8 @@ version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.png
+logo: /img/logo_light.png
+logo_dark: /img/logo_dark.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
@@ -174,15 +175,19 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: disqusjs
-    shortname: ZHao's Blog
-    siteName: ZHao's Blog
-    api_key: Qyl7JFOCqIEmep6wYkdtx3lZi9PoQFqMp02dLV2E4Pf5nghJeRwKYKPllrFUImt4
-    api: https://disqus.skk.moe/disqus/     # 可选填
-    nocomment: 'No comments yet. Be the first to comment!'
-    admin: LZHMS                         # 可选填
-    admin_label: ZHao                      # 可选填
-    nesting: 4                              # 可选填
+    type: giscus
+    repo: LZHMS/Discussion                   # 必填项
+    repoId: R_kgDOMsC_6Q             # 必填项
+    category: Announcements          # 可选填，默认为 Announcements
+    categoryId: DIC_kwDOMsC_6c4CiKeP # 必填项
+    mapping: pathname                # 可选填，默认为 pathname
+    strict: false                    # 可选填
+    reactionsEnabled: true          # 可选填
+    emitMetadata: false              # 可选填
+    inputPosition: top               # 可选填，默认为 top
+    theme: noborder_light            # 可选填
+    lang: en                         # 可选填，默认为 en
+    lazy: true                       # 可选填，默认为 false
 
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/

@@ -65,6 +65,8 @@ excerpt: This is a post about how to go into computer graphics.
 ### 计算机图形学系统
 <img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/learning/20241018152212.png" alt="计算机图形学系统" width="70%"/>
 
+#### 几何变换
+
 ## References
 
 <div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
