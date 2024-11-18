@@ -3,12 +3,12 @@ version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo_light.png
-logo_dark: /img/logo_dark.png
+logo: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png
+logo_dark: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_dark.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/logo.png
+    favicon: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -120,10 +120,10 @@ navbar:
     # Links to be shown on the right of the navigation bar
     links:
         GitHub:
-            icon: fab fa-github
-            url: https://github.com/LZHMS/LZHMS.github.io
+            icon: iconfont icon-github
+            url: https://github.com/LZHMS
         Gitee:
-            icon: fa-brands fa-gofore
+            icon: iconfont icon-gitee1
             url: https://gitee.com/LZHMS
 # Page footer configurations
 footer:
@@ -131,15 +131,15 @@ footer:
     copyright: ' '
     # Links to be shown on the right of the footer section
     links:
-        Creative Commons:
-            icon: fab fa-creative-commons
-            url: https://creativecommons.org/
-        Attribution 4.0 International:
-            icon: fab fa-creative-commons-by
-            url: https://creativecommons.org/licenses/by/4.0/
-        GitHub:
-            icon: fab fa-github
-            url: https://github.com/LZHMS/LZHMS.github.io
+        HuggingFace:
+            icon: iconfont icon-huggingface
+            url: https://huggingface.co/LZHMS
+        ZhiHu:
+            icon: iconfont icon-zhihu
+            url: https://www.zhihu.com/people/zhao.li
+        CSDN:
+            icon: iconfont icon-csdn
+            url: https://blog.csdn.net/weixin_63554791
 # Article related configurations
 article:
     # Code highlight settings
@@ -175,26 +175,31 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: giscus
-    repo: LZHMS/Discussion                   # 必填项
-    repoId: R_kgDOMsC_6Q             # 必填项
-    category: Announcements          # 可选填，默认为 Announcements
-    categoryId: DIC_kwDOMsC_6c4CiKeP # 必填项
-    mapping: pathname                # 可选填，默认为 pathname
-    strict: false                    # 可选填
-    reactionsEnabled: true          # 可选填
-    emitMetadata: false              # 可选填
-    inputPosition: top               # 可选填，默认为 top
-    theme: noborder_light            # 可选填
-    lang: en                         # 可选填，默认为 en
-    lazy: true                       # 可选填，默认为 false
+    type: twikoo
+    env_id: https://twikoo-netlify-comment.netlify.app/.netlify/functions/twikoo
+    region: ap-guangzhou     # 可选填
+    lang: en              # 可选填
+    
+    # type: giscus
+    # repo: LZHMS/Discussion                   # 必填项
+    # repoId: R_kgDOMsC_6Q             # 必填项
+    # category: Announcements          # 可选填，默认为 Announcements
+    # categoryId: DIC_kwDOMsC_6c4CiKeP # 必填项
+    # mapping: pathname                # 可选填，默认为 pathname
+    # strict: false                    # 可选填
+    # reactionsEnabled: true          # 可选填
+    # emitMetadata: false              # 可选填
+    # inputPosition: top               # 可选填，默认为 top
+    # theme: noborder_light            # 可选填
+    # lang: en                         # 可选填，默认为 en
+    # lazy: true                       # 可选填，默认为 false
 
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
     type: sharethis
     # URL to the ShareThis share plugin script
-    install_url: https://platform-api.sharethis.com/js/sharethis.js#property=670f50c9dfdd420019b8d15c&product=inline-reaction-buttons&source=platform
+    install_url: https://platform-api.sharethis.com/js/sharethis.js#property=6713c7a4f9d5250012f5d817&product=inline-reaction-buttons&source=platform
 
 # Sidebar configurations.
 # Please be noted that a sidebar is only visible when it has at least one widget
@@ -220,13 +225,13 @@ widgets:
         # Author title
         author_title: |
             Computer Science
-            Machine Learning
+            Graphics & 3D Vision
             
         # Author's current location
-        location: Xidian University, China
+        location: Xidian University, Xi'an, China
         # Author's hometown
         # URL or path to the avatar image
-        avatar: /img/avatar.png
+        avatar: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/avatar.png
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -235,22 +240,21 @@ widgets:
         follow_link: https://github.com/LZHMS
         # Links to be shown on the bottom of the profile widget
         social_links:
-            Github:
-                icon: fab fa-github
-                url: https://github.com/LZHMS
+            Bilibili:
+                icon: iconfont icon-bilibili
+                url: https://space.bilibili.com/2079836440
             Cnblog:
-                icon: fa-brands fa-blogger
+                icon: iconfont icon-cnblogs
                 url: https://www.cnblogs.com/LZHMS/
-            Notion:
-                icon: fa-solid fa-desktop
-                url: https://zhihaoli.notion.site/
-            Email:
-                icon: fa-solid fa-envelope
-                url: mailto:zhihaoli@stu.xidian.edu.cn
+            QQ:
+                icon: iconfont icon-QQ1
+                url: https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/1730463517285_temp_qrcode_share_9993.64dv175zqu.webp
             WeChat:
-                icon: fa-brands fa-weixin
-                url: https://github.com/LZHMS/picx-images-hosting/raw/master/Profile/56930efa290268fea3e2c4ea5989f0f.5numy6qecuo0.webp
-
+                icon: iconfont icon-wechat-
+                url: https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/0add852711e38990022788ba88dd062.3nrmm9y3ql.webp
+            Email:
+                icon: iconfont icon-email2
+                url: mailto:zhihaoli@stu.xidian.edu.cn
     # Table of contents widget configurations
     -
         # WhereEmail should the widget be placed, left sidebar or right sidebar

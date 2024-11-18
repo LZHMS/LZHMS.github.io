@@ -4,7 +4,7 @@
  */
 const { Component } = require('inferno');
 const { toMomentLocale } = require('hexo/dist/plugins/helper/date');
-const { cacheComponent } = require('../../include/util/cache');
+const { cacheComponent } = require('hexo-component-inferno/lib/util/cache');
 
 /**
  * Archives widget JSX component.

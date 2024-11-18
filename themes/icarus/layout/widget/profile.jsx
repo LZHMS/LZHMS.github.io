@@ -37,9 +37,9 @@ class Profile extends Component {
                             <figure class="image is-96x96 mx-auto mb-2">
                                 <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
                             </figure>
-                            {author ? <p class="title is-size-4 is-block" style="line-height: 'inherit'; font-family: Times New Roman">{author}</p> : null}
-                            {authorTitle ? <p style="white-space: pre-line; font-style: italic; font-family: Times New Roman; margin-bottom: 0.50rem; font-size: 1.0em">{authorTitle}</p> : null}
-                            {location ? <p class="is-size-5 is-flex justify-content-center" style="font-family: Times New Roman">
+                            {author ? <p class="title is-size-4 is-block" style="line-height: 'inherit';">{author}</p> : null}
+                            {authorTitle ? <p style="white-space: pre-line; font-style: italic; margin-bottom: 0.50rem; font-size: 1.0em">{authorTitle}</p> : null}
+                            {location ? <p class="is-size-5 is-flex justify-content-center">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                 <span>{location}</span>
                             </p> : null}

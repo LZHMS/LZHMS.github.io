@@ -25,10 +25,10 @@ widgets:
             Machine Learning
             
         # Author's current location
-        location: Xidian University, China
+        location: Xidian University, Xi'an, China
         # Author's hometown
         # URL or path to the avatar image
-        avatar: /img/avatar.png
+        avatar: https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/avatar.png
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -37,21 +37,21 @@ widgets:
         follow_link: https://github.com/LZHMS
         # Links to be shown on the bottom of the profile widget
         social_links:
-            Github:
-                icon: fab fa-github
-                url: https://github.com/LZHMS
+            Bilibili:
+                icon: iconfont icon-bilibili
+                url: https://space.bilibili.com/2079836440
             Cnblog:
-                icon: fa-brands fa-blogger
-                url: https://www.cnblogs.com/MarkStiff/
-            Notion:
-                icon: fa-solid fa-desktop
-                url: https://zhihaoli.notion.site/
-            Email:
-                icon: fa-solid fa-envelope
-                url: mailto:zhihaoli@stu.xidian.edu.cn
+                icon: iconfont icon-cnblogs
+                url: https://www.cnblogs.com/LZHMS/
+            QQ:
+                icon: iconfont icon-QQ1
+                url: https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/1730463517285_temp_qrcode_share_9993.64dv175zqu.webp
             WeChat:
-                icon: fa-brands fa-weixin
-                url: https://github.com/LZHMS/picx-images-hosting/raw/master/Profile/56930efa290268fea3e2c4ea5989f0f.5numy6qecuo0.webp
+                icon: iconfont icon-wechat-
+                url: https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/0add852711e38990022788ba88dd062.3nrmm9y3ql.webp
+            Email:
+                icon: iconfont icon-email2
+                url: mailto:zhihaoli@stu.xidian.edu.cn
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar

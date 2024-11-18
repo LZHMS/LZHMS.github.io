@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3684051 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1731819118975') format('woff2'),
+       url('iconfont.woff?t=1731819118975') format('woff'),
+       url('iconfont.ttf?t=1731819118975') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github2:before {
+  content: "\e7ac";
+}
+
+.icon-github5:before {
+  content: "\e731";
+}
+
+.icon-GitHub:before {
+  content: "\ea09";
+}
+
+.icon-github6:before {
+  content: "\e603";
+}
+
+.icon-github7:before {
+  content: "\e63a";
+}
+
+.icon-hexo:before {
+  content: "\e6cc";
+}
+
+.icon-email:before {
+  content: "\e60d";
+}
+
+.icon-email1:before {
+  content: "\e66f";
+}
+
+.icon-email2:before {
+  content: "\e76b";
+  font-size: 22px;
+}
+
+.icon-wechat-:before {
+  content: "\e621";
+  font-size: 20px;
+}
+
+.icon-github:before {
+  content: "\ea0b";
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.icon-QQ1:before {
+  content: "\e667";
+  font-size: 20px;
+}
+
+.icon-icon-test:before {
+  content: "\e604";
+  font-size: 20px;
+}
+
+.icon-logo_gitee_g_red:before {
+  content: "\e607";
+}
+
+.icon-notion:before {
+  content: "\ec37";
+}
+
+.icon-bokeyuan1:before {
+  content: "\e608";
+}
+
+.icon-QQ2:before {
+  content: "\ea94";
+}
+
+.icon-gitee1:before {
+  content: "\e616";
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.icon-cnblogs:before {
+  content: "\e60a";
+  font-size: 20px;
+}
+
+.icon-zhihu:before {
+  content: "\e635";
+}
+
+.icon-csdn:before {
+  content: "\e638";
+}
+
+.icon-bilibili-copy:before {
+  content: "\e600";
+}
+
+.icon-zhihu3:before {
+  content: "\ea8b";
+}
+
+.icon-csdn1:before {
+  content: "\e601";
+}
+
+.icon-bilibili:before {
+  content: "\e609";
+  font-size: 20px;
+}
+
+.icon-bilibili1:before {
+  content: "\e606";
+}
+
+.icon-huggingface:before {
+  content: "\e624";
+}
+
+.icon-bilibili3:before {
+  content: "\eb78";
+}
+
+.icon-huggingface1:before {
+  content: "\e7d1";
+}
+
+.icon-drxx67:before {
+  content: "\e702";
+}
+
+.icon-bijiben1:before {
+  content: "\e627";
+}
+
+.icon-shijian:before {
+  content: "\e68c";
+}
+
+.icon-wenjianjia:before {
+  content: "\e60b";
+}
+
+.icon-tongjibaobiao:before {
+  content: "\e62a";
+}
+
+.icon-icon:before {
+  content: "\e64c";
+}
+
+.icon-biaoqian:before {
+  content: "\e610";
+}
+
