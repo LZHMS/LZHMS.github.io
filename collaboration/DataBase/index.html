@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>数据库系统概论 - Zhihao Li - Zhihao Li&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="msapplication-TileImage" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="计科院数据库系统概论课程学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="数据库系统概论"><meta property="og:url" content="https://lzhms.github.io/collaboration/DataBase/"><meta property="og:site_name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta property="og:description" content="计科院数据库系统概论课程学习笔记"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp2347580-database-wallpapers.jpg"><meta property="article:published_time" content="2023-10-19T12:10:12.000Z"><meta property="article:modified_time" content="2024-11-20T11:17:28.554Z"><meta property="article:author" content="Zhihao Li"><meta property="article:tag" content="Collaboration Project"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp2347580-database-wallpapers.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lzhms.github.io/collaboration/DataBase/"},"headline":"数据库系统概论","image":["https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp2347580-database-wallpapers.jpg"],"datePublished":"2023-10-19T12:10:12.000Z","dateModified":"2024-11-20T11:17:28.554Z","author":{"@type":"Person","name":"Zhihao Li"},"publisher":{"@type":"Organization","name":"Zhihao Li - Zhihao Li's Blog","logo":{"@type":"ImageObject","url":"https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"}},"description":"计科院数据库系统概论课程学习笔记"}</script><link rel="canonical" href="https://lzhms.github.io/collaboration/DataBase/"><link rel="icon" href="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/icons/iconfont.css"><link data-pjax rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img class="logo-img" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_dark.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">ZHIHAO LI&#039;S LOG BOOK</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/knowledge">KNOWLEDGE</a><a class="navbar-item" href="/publications">PUBLICATIONS</a><a class="navbar-item" href="/projects">PROJECTS</a><a class="navbar-item" href="/essay">ESSAY</a><a class="navbar-item" href="/readings">READINGS</a><a class="navbar-item" href="/collaboration">COLLABORATION</a><a class="navbar-item" href="/archives">ARCHIVES</a><a class="navbar-item" href="/categories">CATEGORIES</a><a class="navbar-item" href="/tags">TAGS</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/LZHMS"><i class="iconfont icon-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Gitee" href="https://gitee.com/LZHMS"><i class="iconfont icon-gitee1"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp2347580-database-wallpapers.jpg" alt="数据库系统概论"></span></div><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">数据库系统概论</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-10-19T12:10:12.000Z" title="2023-10-19T12:10:12.000Z">2023-10-19</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-11-20T11:17:28.554Z" title="2024-11-20T11:17:28.554Z">2024-11-20</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/collaboration/">collaboration</a></span><span class="level-item"><i class="far fa-clock"></i> 17 minutes read (About 2524 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><div class="content"><h2 id="第一讲-数据库系统概述"><a href="#第一讲-数据库系统概述" class="headerlink" title="第一讲 数据库系统概述"></a>第一讲 数据库系统概述</h2><h3 id="数据库基本概念"><a href="#数据库基本概念" class="headerlink" title="数据库基本概念"></a>数据库基本概念</h3><article class="message is-info">
+        <div class="message-header"><p>数据库(DataBase,DB)</p>
+</div>
+        <div class="message-body">
+            <ul>
+<li>概念: 长期存储在计算机内、有组织、可共享的数据集合</li>
+<li>特点: 永久存储、有组织、可共享</li>
+</ul>
+
+        </div>
+    </article>
+
+<article class="message is-info">
+        <div class="message-header"><p>数据库管理系统(DataBaseManagementSystem,DBMS)</p>
+</div>
+        <div class="message-body">
+            <ul>
+<li>概念: 专门用于管理数据库的软件</li>
+<li>组成: 相互关联的数据集合、访问数据的程序</li>
+</ul>
+
+        </div>
+    </article>
+
+<article class="message is-info">
+        <div class="message-header"><p>数据库系统(DataBaseSystem,DBS)</p>
+</div>
+        <div class="message-body">
+            <ul>
+<li>概念: 引入数据库之后的计算机系统</li>
+<li>特点: DBS &#x3D; DB + OS + DBMS + App + DBA +Users</li>
+</ul>
+
+        </div>
+    </article>
+
+<h3 id="数据库发展阶段"><a href="#数据库发展阶段" class="headerlink" title="数据库发展阶段"></a>数据库发展阶段</h3><ul>
+<li>人工管理阶段<ul>
+<li>数据不保存</li>
+<li>用户&#x2F;应用程序管理数据</li>
+<li>数据不共享，不独立</li>
+<li>数据无结构</li>
+</ul>
+</li>
+<li>文件系统阶段<ul>
+<li>数据可以长期保存</li>
+<li>文件系统管理数据</li>
+<li>数据共享性差，冗余度大</li>
+<li>物理独立性好，逻辑独立性差</li>
+<li>记录内有结构，整体无结构</li>
+</ul>
+</li>
+<li>数据库系统阶段<ul>
+<li>数据可以永久保存</li>
+<li>数据由DBMS管理</li>
+<li>数据共享性高，冗余度小</li>
+<li>具有高度的物理独立性，较好的逻辑独立性</li>
+<li>统一数据模型，整体结构化</li>
+</ul>
+</li>
+</ul>
+<p>数据库管理系统采用<em>外模式-模式-内模式</em>三级模式，<em>外模式&#x2F;模式</em>和<em>模式&#x2F;内模式</em>两级映像结构来实现的。</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><ul>
+<li>是数据及其联系在计算机中的表示和组织形式的描述</li>
+<li>组成三要素: 数据结构、数据操纵、数据完整性约束</li>
+<li>数据库模型<ul>
+<li><p>概念模型</p>
+<ul>
+<li>E-R图</li>
+</ul>
+</li>
+<li><p>逻辑模型</p>
+<ul>
+<li>层次模型<ul>
+<li>树状结构: 每个节点是基本单位称为记录，记录之间的联系以树形结构存储</li>
+<li>特点: 只能处理一对多联系，无法处理多对多联系</li>
+</ul>
+</li>
+<li>网状模型<ul>
+<li>网状结构(有向图): 记录之间的联系用连线表达，联系必须标注名称</li>
+<li>特点: 将多对多联系转换为多个一对多联系</li>
+</ul>
+</li>
+<li>关系模型<ul>
+<li>实体和联系都作为数据文件存储</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>物理模型</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据库系统结构"><a href="#数据库系统结构" class="headerlink" title="数据库系统结构"></a>数据库系统结构</h3><ul>
+<li>数据<strong>逻辑独立性</strong>：由<strong>外模式&#x2F;模式</strong>映像保证（当模式改变，仅修改映像，即可保证外模式不变）</li>
+<li>数据<strong>物理独立性</strong>：由<strong>模式&#x2F;内模式</strong>映像保证（当内模式改变，仅修改映像，即可保证模式不变）</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/Untitled-3.5x31v922ayk0.webp" width="70%"/>
+
+<h2 id="第二讲-关系模型"><a href="#第二讲-关系模型" class="headerlink" title="第二讲 关系模型"></a>第二讲 关系模型</h2><h3 id="关系数据结构"><a href="#关系数据结构" class="headerlink" title="关系数据结构"></a>关系数据结构</h3><p>关系模式: $R(U, D, Dom(), F)$ (简称: $R(U)$)<br>其中，$R$ 表示关系名，$U$ 表示属性集，$D$ 表示关系的域，$Dom$ 表示属性到域上的映射关系，$F$ 表示数据依赖</p>
+<h3 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h3><ul>
+<li>关系代数(Relational Algebra)是<strong>过程化</strong>的查询语言，是以<strong>集合</strong>为基础的运算表达式</li>
+</ul>
+<h4 id="传统集合运算"><a href="#传统集合运算" class="headerlink" title="传统集合运算"></a>传统集合运算</h4><ul>
+<li>并(Union): From the row angle</li>
+</ul>
+<center> $R \cup S$={$t|t\in R\vee t\in S$}</center>
+
+<ul>
+<li>差(Difference): From the row angle</li>
+</ul>
+<center>$R - S$={$t|t\in R\wedge t\notin S$}</center>
+
+<ul>
+<li>交(Intersection): From the row angle</li>
+</ul>
+<center>$R \cap S$ = {$t|t\in R\wedge t\in S$}=$R-(R-S)$</center>
+
+<ul>
+<li>广义笛卡尔积(Cartesian Product): From the row angle</li>
+</ul>
+<center>$R \times S$ = {$\widehat{t_rt_s}|t_r\in R\wedge t_s\in S$}</center>
+
+<p>注: R:$(k_1, n)$, S:$(k_2,m)\Longrightarrow$R$\times$S:$(k_1+k_2, n+m)$</p>
+<h4 id="专门关系运算"><a href="#专门关系运算" class="headerlink" title="专门关系运算"></a>专门关系运算</h4><ul>
+<li>选择(Selection): From the row angle</li>
+</ul>
+<center>$\sigma_F(R)$ ={$t|t\in R\wedge F(t)=True$}</center>
+
+<ul>
+<li>投影(Projection): From the column angle</li>
+</ul>
+<center>$\pi_A(R)$ = {$t[A]|t\in R$}</center>
+注: 选择出原关系中某些属性列，为避免重复，还可能会取消某些元组
+
+<ul>
+<li>连接(Join): From the cross angle</li>
+</ul>
+<center>$R\underset{A\theta B}{\bowtie} S$ = {$t_r\cup t_s|t_r\in R\wedge t_s\in S\wedge t_r[A]\theta t_s[B]$}</center>
+
+<ul>
+<li>Solution Steps For $\theta$ Join:<ul>
+<li>Step 1: 确定结果中的属性列</li>
+<li>Step 2: 确定参与比较的属性列</li>
+<li>Step 3: 逐一取R中的元组分别和S中与其符合条件的元组进行拼接</li>
+</ul>
+</li>
+<li>等值连接(Equi-Join): $\theta$ is “&#x3D;”</li>
+</ul>
+<center>$R\underset{A=B}{\bowtie} S$ = {$t_r\cup t_s|t_r\in R\wedge t_s\in S\wedge t_r[A]=t_s[B]$}</center>
+
+<ul>
+<li>自然连接(Natural Join): $\theta$ is “&#x3D;” and $As &#x3D; Bs$ which combines As and Bs columns avoiding repeated attributes(As, Bs means a column or multiple columns)</li>
+</ul>
+<center>$R\bowtie S$ = {$t_r\cup t_s - t_s[B]|t_r\in R\wedge t_s\in S\wedge t_r[B]=t_s[B]$}</center>
+
+<h4 id="Practices"><a href="#Practices" class="headerlink" title="Practices"></a>Practices</h4><ul>
+<li><p>Used Tables</p>
+<ul>
+<li>S Table &#x3D; S(Sno, Sname, Ssex, Sage, Sdept)<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Sname</th>
+<th align="center">Ssex</th>
+<th align="center">Sage</th>
+<th align="center">Sdept</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">95001</td>
+<td align="center">李勇</td>
+<td align="center">男</td>
+<td align="center">20</td>
+<td align="center">CS</td>
+</tr>
+<tr>
+<td align="center">95002</td>
+<td align="center">刘晨</td>
+<td align="center">女</td>
+<td align="center">18</td>
+<td align="center">IS</td>
+</tr>
+<tr>
+<td align="center">95003</td>
+<td align="center">王敏</td>
+<td align="center">女</td>
+<td align="center">18</td>
+<td align="center">MA</td>
+</tr>
+<tr>
+<td align="center">95004</td>
+<td align="center">张立</td>
+<td align="center">男</td>
+<td align="center">19</td>
+<td align="center">IS</td>
+</tr>
+</tbody></table>
+</li>
+<li>SC Table &#x3D; SC(Sno, Cno, Grade)<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Cno</th>
+<th align="center">Grade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">95001</td>
+<td align="center">c1</td>
+<td align="center">92</td>
+</tr>
+<tr>
+<td align="center">95001</td>
+<td align="center">c2</td>
+<td align="center">65</td>
+</tr>
+<tr>
+<td align="center">95001</td>
+<td align="center">c4</td>
+<td align="center">88</td>
+</tr>
+<tr>
+<td align="center">95002</td>
+<td align="center">c2</td>
+<td align="center">90</td>
+</tr>
+<tr>
+<td align="center">95002</td>
+<td align="center">c5</td>
+<td align="center">73</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>SC$\times$SC Table</p>
+<table>
+<thead>
+<tr>
+<th align="center">SC1.Sno</th>
+<th align="center">SC1.Cno</th>
+<th align="center">SC1.Grade</th>
+<th align="center">SC2.Sno</th>
+<th align="center">SC2.Cno</th>
+<th align="center">SC2.Grade</th>
+</tr>
+</thead>
+</table>
+</li>
+<li><p>Problems</p>
+<ul>
+<li>查询选修了 $C_2$ 和 $C_4$ 课程的学生学号</li>
+</ul>
+<p>$$<br>pi_1(\sigma_{1&#x3D;4\wedge 2&#x3D;’c2’\wedge 5&#x3D;’c4’}(SC\times SC))<br>$$</p>
+<ul>
+<li>查询不学 $C_2$ 课程的学生学号</li>
+</ul>
+<p>$$<br>pi_{sno}(S)-\pi_{cno}(\sigma_{cno&#x3D;’c2’}(SC))<br>$$</p>
+</li>
+</ul>
+<ol>
+<li>关系模型由<strong>关系数据结构</strong>、<strong>关系操作集合</strong>和<strong>关系完整性约束</strong>组成</li>
+<li>关系数据结构：单一的结构类型即关系，表示现实世界的实体以及实体间的联系</li>
+<li>关系操作集合：查询、插入、删除、修改操作</li>
+<li>关系完整性约束：实体完整性、参照完整性、用户定义完整性约束</li>
+<li>关系数据库语言的共同特点：非过程化的集合操作语言</li>
+<li>关系数据语言：关系代数语言、关系演算语言、SQL</li>
+</ol>
+<h2 id="第三讲-数据库完整性"><a href="#第三讲-数据库完整性" class="headerlink" title="第三讲 数据库完整性"></a>第三讲 数据库完整性</h2><p>数据库完整性包括实体完整性、参照完整性和用户定义完整性。</p>
+<h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><ul>
+<li>CREATE TABLE 中用 PRIMARY KEY 定义关系模型的实体完整性</li>
+<li>单属性构成的码： 定义为列级约束条件&#x2F;定义为表级约束条件</li>
+<li>多个属性构成的码： 定义为表级约束条件</li>
+</ul>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43914604/article/details/105359554">BitHachi&#39;s Blog</a></li>
+</ul>
+<h2 id="第三讲-SQL概述"><a href="#第三讲-SQL概述" class="headerlink" title="第三讲 SQL概述"></a>第三讲 SQL概述</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://bithachi.blog.csdn.net/article/details/105217410">SQL概述及数据定义——BitHachi&#39;s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://bithachi.blog.csdn.net/article/details/105171740">SQL之数据查询——BitHachi&#39;s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://bithachi.blog.csdn.net/article/details/105243896">SQL之基本表更新——BitHachi&#39;s Blog</a></li>
+</ul>
+<h2 id="第六讲-关系数据理论之规范化"><a href="#第六讲-关系数据理论之规范化" class="headerlink" title="第六讲 关系数据理论之规范化"></a>第六讲 关系数据理论之规范化</h2><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><p>关系模式中<em>属性间存在某些依赖关系</em>导致<em>插入异常、删除异常、更新异常以及数据冗余</em>的问题</p>
+<h3 id="数据依赖"><a href="#数据依赖" class="headerlink" title="数据依赖"></a>数据依赖</h3><p>定义: 关系属性与属性之间的一种约束关系，即两个列或列组之间的约束，主要包含函数依赖与多值依赖。</p>
+<h4 id="函数依赖-Functional-Dependency-FD"><a href="#函数依赖-Functional-Dependency-FD" class="headerlink" title="函数依赖 (Functional Dependency, FD)"></a>函数依赖 (Functional Dependency, FD)</h4><p>定义: 对于任意关系 $r\in R(U)$, $r$ 中不可能存在两个元组在 $X$ 上的属性值相等，而在 $Y$ 上的属性值不等。</p>
+<ul>
+<li>$X\rightarrow Y$: $X$ 函数确定 $Y$ 或 $Y$ 函数依赖于 $X$</li>
+<li>Notes<ul>
+<li>函数依赖指 $R$ 的所有关系实例均要满足的约束条件</li>
+<li>函数依赖属于语义范畴概念，只能根据数据的语义来确定函数依赖</li>
+</ul>
+</li>
+<li>特殊函数依赖<ul>
+<li>非平凡的函数依赖：$X\rightarrow Y$ 且 $Y\nsubseteq X$</li>
+<li>平凡的函数依赖：$X\rightarrow Y$ 且 $Y\subseteq X$</li>
+<li>相互决定: $X\rightarrow Y$ 且 $Y\rightarrow X$, denotes $X\leftrightarrow Y$</li>
+<li>$Y$ 不函数依赖于 $X$: $X \nrightarrow Y$</li>
+<li>完全函数依赖：$X\rightarrow Y$ 且 $ \forall X’ \subset X, X’ \nrightarrow Y$, denotes $X\mathop{\longrightarrow}\limits^F Y$</li>
+<li>部分函数依赖：$X\rightarrow Y$ 且 $Y$ 不完全函数依赖于 $X$, denotes $X\mathop{\longrightarrow}\limits^P Y$</li>
+<li>传递函数依赖：$X\rightarrow Y, Y\rightarrow Z$ with conditions $Y\nsubseteq X, Y\nrightarrow X$，则 $X\rightarrow Z$, denotes $X\mathop{\longrightarrow}\limits^T Y$<ul>
+<li>如果 $Y\rightarrow X$ 即 $X\leftrightarrow Y$，则 $Z$ 直接依赖于 $X$</li>
+<li>如果 $Y\subseteq X$, 则 $X\mathop{\longrightarrow}\limits^P Z$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>候选码(Candidate Key)<ul>
+<li>For $K$ in $R&lt;U, F&gt;$, satisfy $K\mathop{\longrightarrow}\limits^F U$</li>
+<li>主码(Primary Key) 为选定的一个候选码</li>
+<li>性质<ul>
+<li>决定性：$K\rightarrow U$</li>
+<li>最小性: $\nexists K’\subset K$ let $K’\rightarrow U$</li>
+</ul>
+</li>
+<li>主属性(Prime Attribute): 所有候选码中出现的属性</li>
+<li>非主属性(Nonprime Attribute): 不出现在任何候选码中的属性</li>
+<li>全码(All Key): 由关系模式的所有属性构成码</li>
+<li>外码(Foreign Key): $X$ 并非是 $R$ 的码，而是另外一个关系模式的码</li>
+</ul>
+</li>
+</ul>
+<h3 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h3><h4 id="规范化设计"><a href="#规范化设计" class="headerlink" title="规范化设计"></a>规范化设计</h4><p>关系表的规范化设计就是要尽可能地减少关系表中列或者列组之间的依赖关系，即函数依赖</p>
+<h4 id="范式-Normal-Form-NF"><a href="#范式-Normal-Form-NF" class="headerlink" title="范式(Normal Form, NF)"></a>范式(Normal Form, NF)</h4><ul>
+<li><strong>Defination 1</strong>: 表示关系表的规范程度状态</li>
+<li><strong>Defination 2</strong>: 表示符合某一种级别的关系模式的集合</li>
+</ul>
+<h4 id="第一范式-First-Normal-Form-1NF"><a href="#第一范式-First-Normal-Form-1NF" class="headerlink" title="第一范式(First Normal Form, 1NF)"></a>第一范式(First Normal Form, 1NF)</h4><ul>
+<li><strong>Defination</strong>: 关系模式 $R$ 的所有属性都是<em>不可分的基本数据项</em>，denotes $R\in 1NF$</li>
+<li>不满足第一范式的数据库模式不是关系数据库</li>
+</ul>
+<h4 id="第二范式-Second-Normal-Form-2NF"><a href="#第二范式-Second-Normal-Form-2NF" class="headerlink" title="第二范式(Second Normal Form, 2NF)"></a>第二范式(Second Normal Form, 2NF)</h4><ul>
+<li><strong>Defination</strong>: $R\in 1NF$ 并且每一个非主属性都完全函数依赖于 $R$ 的任一候选码, denotes $R\in 2NF$</li>
+<li>Notes<ul>
+<li>不存在非主属性对码的部分依赖</li>
+<li>不属于 $2NF$ 关系模式问题：插入异常、删除异常、数据冗余大、修改异常</li>
+</ul>
+</li>
+</ul>
+<h4 id="第三范式-Third-Normal-Form-3NF"><a href="#第三范式-Third-Normal-Form-3NF" class="headerlink" title="第三范式(Third Normal Form, 3NF)"></a>第三范式(Third Normal Form, 3NF)</h4><ul>
+<li><strong>Defination</strong>: $R&lt;U, F&gt;$ 中不存在码 $X$、属性组 $Y$ 及非主属性 $Z(Z\nsubseteq Y)$ 使得 $X\rightarrow Y(Y\nrightarrow X), Y\rightarrow Z$, denotes $R\in 3NF$</li>
+<li>Notes<ul>
+<li>If $Z\subseteq Y$, then when $X\rightarrow Y$, get $X\rightarrow Z$</li>
+<li>不存在非主属性对码的传递依赖</li>
+<li>不属于 $3NF$ 关系模式问题：插入异常、删除异常、数据冗余大、修改异常</li>
+</ul>
+</li>
+</ul>
+<h4 id="修正第三范式-Boyce-Codd-Normal-Form-BCNF"><a href="#修正第三范式-Boyce-Codd-Normal-Form-BCNF" class="headerlink" title="修正第三范式(Boyce Codd Normal Form, BCNF)"></a>修正第三范式(Boyce Codd Normal Form, BCNF)</h4><ul>
+<li><strong>Defination</strong>: $R\in 1NF$, for any $X\rightarrow Y(Y\nsubseteq X)$ and $X$ 必包含码, denotes $R\in BCNF$</li>
+<li>Notes<ul>
+<li>每一个函数依赖的决定因素都包含码</li>
+</ul>
+</li>
+</ul>
+<h2 id="Handwritten-Notes"><a href="#Handwritten-Notes" class="headerlink" title="Handwritten Notes"></a>Handwritten Notes</h2><img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page1.51yc1mwj6wc0.png"/>
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page2.5zhwap4c8nw0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page3.6sisp43v1pk0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page4.23jsf44s5qow.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page5.41nf6qoealc0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page6.330yrzif8iw0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page7.39y9yuxk8gg0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page8.2wdw8hhua8u0.webp" />
+<img src="https://cdn.jsdelivr.net/gh/LZHMS/picx-images-hosting@master/EBlog/Courses/数据库原理笔记_Page9.3ehx9lj0jui0.webp" />
+
+<h2 id="数据库系统期末复习笔记"><a href="#数据库系统期末复习笔记" class="headerlink" title="数据库系统期末复习笔记"></a>数据库系统期末复习笔记</h2><iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/DatabaseNotes.pdf" style='width:100%;height:800px'></iframe>
+
+<h2 id="数据库系统课程实验报告"><a href="#数据库系统课程实验报告" class="headerlink" title="数据库系统课程实验报告"></a>数据库系统课程实验报告</h2><iframe src="/pdfjs/web/viewer.html?file=/pdf/collaboration/DatabaseSystem.pdf" style='width:100%;height:800px'></iframe>
+
+<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Zhihao Li, Computer Science and Technology, Xidian University</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://zhihaoli.top">
+            https://zhihaoli.top
+        </a>
+    </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Changrong You, Computer Science and Technology, Xidian University</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://cryoushiwo.github.io/">
+            https://cryoushiwo.github.io/
+        </a>
+    </p>
+</div>
+
+<h2 id="References-1"><a href="#References-1" class="headerlink" title="References"></a>References</h2><div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>李翠敏. 2023年秋, 数据库系统, 西安电子科技大学.</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://mooc1.chaoxing.com/mooc-ans/course/236212833.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/236212833.html
+        </a>
+    </p>
+</div></div><div class="article-licensing box"><div class="licensing-title"><p>数据库系统概论</p><p><a href="https://lzhms.github.io/collaboration/DataBase/">https://lzhms.github.io/collaboration/DataBase/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Zhihao Li</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2023-10-19</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-11-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/Collaboration-Project/">Collaboration Project </a></div></div><div class="sharethis-inline-reaction-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=6713c7a4f9d5250012f5d817&amp;product=inline-reaction-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/blog/OpenSSLConnectionWithGithub/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Solution to OpenSSL Connection Problems With Github</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/ARMImmediateNumber/"><span class="level-item">关于 ARM 指令体系中立即数范围的扩散机制</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdnjs.loli.net/ajax/libs/twikoo/1.6.30/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://twikoo-netlify-comment.netlify.app/.netlify/functions/twikoo',
+            region: "ap-guangzhou",
+            lang: "en",
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-96x96 mx-auto mb-2"><img class="avatar is-rounded" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/avatar.png" alt="Zhihao Li"></figure><p class="title is-size-4 is-block" style="line-height: 'inherit';">Zhihao Li</p><p style="white-space: pre-line; font-style: italic; margin-bottom: 0.50rem; font-size: 1.0em">Computer Science
+Machine Learning
+</p><p class="is-size-5 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Xidian University, Xi&#039;an, China</span></p></div></div></nav><nav class="level menu-list is-mobile" style="margin-bottom:1rem"><a class="level-item has-text-centered is-marginless" href="/archives/"><div><p class="heading">Posts</p><div><p class="title">52</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/categories/"><div><p class="heading">Categories</p><div><p class="title">6</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/tags/"><div><p class="heading">Tags</p><div><p class="title">40</p></div></div></a></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LZHMS" target="_blank" rel="noopener"><i class="fab fa-github"></i>  Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/2079836440"><i class="iconfont icon-bilibili"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Cnblog" href="https://www.cnblogs.com/LZHMS/"><i class="iconfont icon-cnblogs"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/1730463517285_temp_qrcode_share_9993.64dv175zqu.webp"><i class="iconfont icon-QQ1"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="WeChat" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/0add852711e38990022788ba88dd062.3nrmm9y3ql.webp"><i class="iconfont icon-wechat-"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:zhihaoli@stu.xidian.edu.cn"><i class="iconfont icon-email2"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#第一讲-数据库系统概述"><span class="level-left"><span class="level-item">1</span><span class="level-item">第一讲 数据库系统概述</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#数据库基本概念"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">数据库基本概念</span></span></a></li><li><a class="level is-mobile" href="#数据库发展阶段"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">数据库发展阶段</span></span></a></li><li><a class="level is-mobile" href="#数据模型"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">数据模型</span></span></a></li><li><a class="level is-mobile" href="#数据库系统结构"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">数据库系统结构</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第二讲-关系模型"><span class="level-left"><span class="level-item">2</span><span class="level-item">第二讲 关系模型</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#关系数据结构"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">关系数据结构</span></span></a></li><li><a class="level is-mobile" href="#关系代数"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">关系代数</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#传统集合运算"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">传统集合运算</span></span></a></li><li><a class="level is-mobile" href="#专门关系运算"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">专门关系运算</span></span></a></li><li><a class="level is-mobile" href="#Practices"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">Practices</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#第三讲-数据库完整性"><span class="level-left"><span class="level-item">3</span><span class="level-item">第三讲 数据库完整性</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#实体完整性"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">实体完整性</span></span></a></li><li><a class="level is-mobile" href="#References"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">References</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第三讲-SQL概述"><span class="level-left"><span class="level-item">4</span><span class="level-item">第三讲 SQL概述</span></span></a></li><li><a class="level is-mobile" href="#第六讲-关系数据理论之规范化"><span class="level-left"><span class="level-item">5</span><span class="level-item">第六讲 关系数据理论之规范化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#存在的问题"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">存在的问题</span></span></a></li><li><a class="level is-mobile" href="#数据依赖"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">数据依赖</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#函数依赖-Functional-Dependency-FD"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item">函数依赖 (Functional Dependency, FD)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#规范化"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">规范化</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#规范化设计"><span class="level-left"><span class="level-item">5.3.1</span><span class="level-item">规范化设计</span></span></a></li><li><a class="level is-mobile" href="#范式-Normal-Form-NF"><span class="level-left"><span class="level-item">5.3.2</span><span class="level-item">范式(Normal Form, NF)</span></span></a></li><li><a class="level is-mobile" href="#第一范式-First-Normal-Form-1NF"><span class="level-left"><span class="level-item">5.3.3</span><span class="level-item">第一范式(First Normal Form, 1NF)</span></span></a></li><li><a class="level is-mobile" href="#第二范式-Second-Normal-Form-2NF"><span class="level-left"><span class="level-item">5.3.4</span><span class="level-item">第二范式(Second Normal Form, 2NF)</span></span></a></li><li><a class="level is-mobile" href="#第三范式-Third-Normal-Form-3NF"><span class="level-left"><span class="level-item">5.3.5</span><span class="level-item">第三范式(Third Normal Form, 3NF)</span></span></a></li><li><a class="level is-mobile" href="#修正第三范式-Boyce-Codd-Normal-Form-BCNF"><span class="level-left"><span class="level-item">5.3.6</span><span class="level-item">修正第三范式(Boyce Codd Normal Form, BCNF)</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Handwritten-Notes"><span class="level-left"><span class="level-item">6</span><span class="level-item">Handwritten Notes</span></span></a></li><li><a class="level is-mobile" href="#数据库系统期末复习笔记"><span class="level-left"><span class="level-item">7</span><span class="level-item">数据库系统期末复习笔记</span></span></a></li><li><a class="level is-mobile" href="#数据库系统课程实验报告"><span class="level-left"><span class="level-item">8</span><span class="level-item">数据库系统课程实验报告</span></span></a></li><li><a class="level is-mobile" href="#Contributors"><span class="level-left"><span class="level-item">9</span><span class="level-item">Contributors</span></span></a></li><li><a class="level is-mobile" href="#References-1"><span class="level-left"><span class="level-item">10</span><span class="level-item">References</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/collaboration/"><span class="level-start"><span class="level-item">collaboration</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/essay/"><span class="level-start"><span class="level-item">essay</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/knowledge/"><span class="level-start"><span class="level-item">knowledge</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/projects/"><span class="level-start"><span class="level-item">projects</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/readings/"><span class="level-start"><span class="level-item">readings</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/3D-Vision/"><span class="tag">3D Vision</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/3DGS/"><span class="tag">3DGS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AIGC/"><span class="tag">AIGC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Collaboration-Project/"><span class="tag">Collaboration Project</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/College-Life/"><span class="tag">College Life</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Graphics/"><span class="tag">Computer Graphics</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Network/"><span class="tag">Computer Network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Principle/"><span class="tag">Computer Principle</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Vision/"><span class="tag">Computer Vision</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Visualization/"><span class="tag">Data Visualization</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Deep-Model-Deployment/"><span class="tag">Deep Model Deployment</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Diffusion-Model/"><span class="tag">Diffusion Model</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Eletromagnetic-Physics/"><span class="tag">Eletromagnetic Physics</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Embedded-System/"><span class="tag">Embedded System</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Few-Shots-Learning/"><span class="tag">Few Shots Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Health/"><span class="tag">Health</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Life-Knowledge/"><span class="tag">Life Knowledge</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Literature-Survey/"><span class="tag">Literature Survey</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Machine-Learning/"><span class="tag">Machine Learning</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathematical-Modeling/"><span class="tag">Mathematical Modeling</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathematical-Theory/"><span class="tag">Mathematical Theory</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Microarchitecture/"><span class="tag">Microarchitecture</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Microcomputer/"><span class="tag">Microcomputer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mountain-Climbing/"><span class="tag">Mountain Climbing</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/My-Research/"><span class="tag">My Research</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NLP/"><span class="tag">NLP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Noisy-Label-Learning/"><span class="tag">Noisy Label Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Object-Detection/"><span class="tag">Object Detection</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenSSL/"><span class="tag">OpenSSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Professional-Knowledge/"><span class="tag">Professional Knowledge</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Habits/"><span class="tag">Project Habits</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Tools/"><span class="tag">Project Tools</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Prompt-Learning/"><span class="tag">Prompt Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Research-Habits/"><span class="tag">Research Habits</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Software-Engineering/"><span class="tag">Software Engineering</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Transformer/"><span class="tag">Transformer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Visual-Language-Models/"><span class="tag">Visual Language Models</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img class="logo-img" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_dark.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2023-2024 Zhihao Li</span><br><span id="busuanzi_container_site_uv"><span id="busuanzi_container_site_uv">Site UV: <span id="busuanzi_value_site_uv"></span></span>   <span id="busuanzi_container_site_pv">Site PV: <span id="busuanzi_value_site_pv"></span></span></span></p><p class="is-size-7"> </p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="HuggingFace" href="https://huggingface.co/LZHMS"><i class="iconfont icon-huggingface"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="ZhiHu" href="https://www.zhihu.com/people/zhao.li"><i class="iconfont icon-zhihu"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CSDN" href="https://blog.csdn.net/weixin_63554791"><i class="iconfont icon-csdn"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.css"><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/auto-render.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><!--!--><script data-pjax src="/js/main.js" defer></script><script data-pjax src="/js/night.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><div id="dark" onclick="switchDarkMode()"></div><script type="text/javascript" src="/js/universe.js"></script></body></html>

@@ -1,0 +1,1900 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>计算机通信与网络 - Zhihao Li - Zhihao Li&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="msapplication-TileImage" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="计科院数据通信与网络课程学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="计算机通信与网络"><meta property="og:url" content="https://lzhms.github.io/collaboration/ComputerNetwork/"><meta property="og:site_name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta property="og:description" content="计科院数据通信与网络课程学习笔记"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg"><meta property="article:published_time" content="2023-09-13T11:37:05.000Z"><meta property="article:modified_time" content="2024-11-20T11:17:28.554Z"><meta property="article:author" content="Zhihao Li"><meta property="article:tag" content="Computer Network"><meta property="article:tag" content="Collaboration Project"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lzhms.github.io/collaboration/ComputerNetwork/"},"headline":"计算机通信与网络","image":["https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg"],"datePublished":"2023-09-13T11:37:05.000Z","dateModified":"2024-11-20T11:17:28.554Z","author":{"@type":"Person","name":"Zhihao Li"},"publisher":{"@type":"Organization","name":"Zhihao Li - Zhihao Li's Blog","logo":{"@type":"ImageObject","url":"https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"}},"description":"计科院数据通信与网络课程学习笔记"}</script><link rel="canonical" href="https://lzhms.github.io/collaboration/ComputerNetwork/"><link rel="icon" href="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/icons/iconfont.css"><link data-pjax rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img class="logo-img" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_dark.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">ZHIHAO LI&#039;S LOG BOOK</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/knowledge">KNOWLEDGE</a><a class="navbar-item" href="/publications">PUBLICATIONS</a><a class="navbar-item" href="/projects">PROJECTS</a><a class="navbar-item" href="/essay">ESSAY</a><a class="navbar-item" href="/readings">READINGS</a><a class="navbar-item" href="/collaboration">COLLABORATION</a><a class="navbar-item" href="/archives">ARCHIVES</a><a class="navbar-item" href="/categories">CATEGORIES</a><a class="navbar-item" href="/tags">TAGS</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/LZHMS"><i class="iconfont icon-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Gitee" href="https://gitee.com/LZHMS"><i class="iconfont icon-gitee1"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/covers/xdu/wp6638385-internet-of-things-wallpapers.jpg" alt="计算机通信与网络"></span></div><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">计算机通信与网络</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-09-13T11:37:05.000Z" title="2023-09-13T11:37:05.000Z">2023-09-13</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-11-20T11:17:28.554Z" title="2024-11-20T11:17:28.554Z">2024-11-20</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/collaboration/">collaboration</a></span><span class="level-item"><i class="far fa-clock"></i> 2 hours read (About 14647 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><article class="message is-info">
+        
+        <div class="message-body">
+            <p><a target="_blank" rel="noopener" href="https://www.alipan.com/s/rJAV6soimWs">课程复习、期末试题资源详见阿里云盘链接</a></p>
+
+        </div>
+    </article>
+
+<h2 id="数据通信与网络课件"><a href="#数据通信与网络课件" class="headerlink" title="数据通信与网络课件"></a>数据通信与网络课件</h2><h3 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h3><h4 id="1-1-第一讲-绪论"><a href="#1-1-第一讲-绪论" class="headerlink" title="1.1 第一讲 绪论"></a>1.1 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_ef96e540e446ee3f9ed44bf8d7d6125e?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第一讲 绪论</a></h4><h4 id="1-2-第二讲-网络模型"><a href="#1-2-第二讲-网络模型" class="headerlink" title="1.2 第二讲 网络模型"></a>1.2 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_058144e67b80da68f6a754534820243e?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二讲 网络模型</a></h4><h3 id="第二章-物理层和介质"><a href="#第二章-物理层和介质" class="headerlink" title="第二章 物理层和介质"></a>第二章 物理层和介质</h3><h4 id="2-1-第三讲-物理层"><a href="#2-1-第三讲-物理层" class="headerlink" title="2.1 第三讲 物理层"></a>2.1 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_cb0406c94b9462220e84f2fa64c4ffef?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第三讲 物理层</a></h4><h4 id="2-2-第四讲-数字传输"><a href="#2-2-第四讲-数字传输" class="headerlink" title="2.2 第四讲 数字传输"></a>2.2 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_bfb1894785458e306d8d9b9765a2bfdb?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第四讲 数字传输</a></h4><h4 id="2-3-第五讲-模拟传输"><a href="#2-3-第五讲-模拟传输" class="headerlink" title="2.3 第五讲 模拟传输"></a>2.3 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_7fd98019a6d79538f54d6e880fe12bb0?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第五讲 模拟传输</a></h4><h4 id="2-4-第六讲-带宽利用"><a href="#2-4-第六讲-带宽利用" class="headerlink" title="2.4 第六讲 带宽利用"></a>2.4 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_2471c467c7a860fca2024ec22fade1bc?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第六讲 带宽利用</a></h4><h4 id="2-5-第七讲-传输介质"><a href="#2-5-第七讲-传输介质" class="headerlink" title="2.5 第七讲 传输介质"></a>2.5 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_7ee3233e862ebddd1ea010075a89a10e?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第七讲 传输介质</a></h4><h4 id="2-6-第八讲-交换"><a href="#2-6-第八讲-交换" class="headerlink" title="2.6 第八讲 交换"></a>2.6 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_6797361452e472fe3a899811275b0a25?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第八讲 交换</a></h4><h4 id="2-7-第九讲-使用电话网和有线电视网进行数据传输"><a href="#2-7-第九讲-使用电话网和有线电视网进行数据传输" class="headerlink" title="2.7 第九讲 使用电话网和有线电视网进行数据传输"></a>2.7 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_6797361452e472fe3a899811275b0a25?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第九讲 使用电话网和有线电视网进行数据传输</a></h4><h3 id="第三章-数据链路层"><a href="#第三章-数据链路层" class="headerlink" title="第三章 数据链路层"></a>第三章 数据链路层</h3><h4 id="3-1-第十讲-检错与纠错"><a href="#3-1-第十讲-检错与纠错" class="headerlink" title="3.1 第十讲 检错与纠错"></a>3.1 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_5397050f6cce47688f13c10ed47cafbc?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十讲 检错与纠错</a></h4><h4 id="3-2-第十一讲-数据链路控制"><a href="#3-2-第十一讲-数据链路控制" class="headerlink" title="3.2 第十一讲 数据链路控制"></a>3.2 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_d36e32ecf8dfebc99de1c15c16cb1076?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十一讲 数据链路控制</a></h4><h4 id="3-3-第十二讲-多路访问"><a href="#3-3-第十二讲-多路访问" class="headerlink" title="3.3 第十二讲 多路访问"></a>3.3 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_3e54cc3d4223ae9d497ffc4fad18ced3?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十二讲 多路访问</a></h4><h4 id="3-4-第十三讲-有线局域网：以太网"><a href="#3-4-第十三讲-有线局域网：以太网" class="headerlink" title="3.4 第十三讲 有线局域网：以太网"></a>3.4 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_72b5494c9bc23b3c80cccea4b79c8a8d?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十三讲 有线局域网：以太网</a></h4><h4 id="3-5-第十四讲-无线局域网"><a href="#3-5-第十四讲-无线局域网" class="headerlink" title="3.5 第十四讲 无线局域网"></a>3.5 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_4b71a421bcb9355d1f21a14b961423de?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十四讲 无线局域网</a></h4><h4 id="3-6-第十五讲-连接局域网、主干网和虚拟局域网"><a href="#3-6-第十五讲-连接局域网、主干网和虚拟局域网" class="headerlink" title="3.6 第十五讲 连接局域网、主干网和虚拟局域网"></a>3.6 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_a3c978ea7067b5862589d2b12477628e?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十五讲 连接局域网、主干网和虚拟局域网</a></h4><h4 id="3-7-第十七讲-广域网"><a href="#3-7-第十七讲-广域网" class="headerlink" title="3.7 第十七讲 广域网"></a>3.7 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_4dd2985cf08b7232e82b8c9f5f61d6ef?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十七讲 广域网</a></h4><h4 id="3-8-第十八讲-虚电路网络：帧中断和ATM"><a href="#3-8-第十八讲-虚电路网络：帧中断和ATM" class="headerlink" title="3.8 第十八讲 虚电路网络：帧中断和ATM"></a>3.8 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_a07b7a5f6315b7392dcd9418b3eab3cb?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十八讲 虚电路网络：帧中断和ATM</a></h4><h3 id="第四章-网络层"><a href="#第四章-网络层" class="headerlink" title="第四章 网络层"></a>第四章 网络层</h3><h4 id="4-1-第十九讲-逻辑寻址"><a href="#4-1-第十九讲-逻辑寻址" class="headerlink" title="4.1 第十九讲 逻辑寻址"></a>4.1 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_3ec17ceb11c559a948711a8aeec37ac7?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第十九讲 逻辑寻址</a></h4><h4 id="4-2-第二十讲-IP协议"><a href="#4-2-第二十讲-IP协议" class="headerlink" title="4.2 第二十讲 IP协议"></a>4.2 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_75498068b5a725241439e243ed578887?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二十讲 IP协议</a></h4><h4 id="4-3-第二十一讲-地址映射、差错报告和多播"><a href="#4-3-第二十一讲-地址映射、差错报告和多播" class="headerlink" title="4.3 第二十一讲 地址映射、差错报告和多播"></a>4.3 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_eb85cbf3d973354b532ab46333957f1d?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二十一讲 地址映射、差错报告和多播</a></h4><h4 id="4-4-第二十二讲-传递、转发和路由选择"><a href="#4-4-第二十二讲-传递、转发和路由选择" class="headerlink" title="4.4 第二十二讲 传递、转发和路由选择"></a>4.4 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_0cf3e9e56475b909cccf6a39c8d92399?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二十二讲 传递、转发和路由选择</a></h4><h3 id="第五章-传输层"><a href="#第五章-传输层" class="headerlink" title="第五章 传输层"></a>第五章 传输层</h3><h4 id="5-1-第二十三讲-UDP、TCP和SCTP"><a href="#5-1-第二十三讲-UDP、TCP和SCTP" class="headerlink" title="5.1 第二十三讲 UDP、TCP和SCTP"></a>5.1 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_8248427093857b0d84ae243f1c0740f6?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二十三讲 UDP、TCP和SCTP</a></h4><h4 id="5-2-第二十四讲-拥塞控制和服务质量"><a href="#5-2-第二十四讲-拥塞控制和服务质量" class="headerlink" title="5.2 第二十四讲 拥塞控制和服务质量"></a>5.2 <a target="_blank" rel="noopener" href="http://pan-yz.chaoxing.com/screen/file_8bde11ca5bbf38ae73ae4440392d968d?ext=%7B%22_from_%22:%22231806185_70331816_191400022_2d43128dff3d8f0a00b506a88974575e%22%7D">第二十四讲 拥塞控制和服务质量</a></h4><h2 id="计算机通信与网络课程总复习知识点"><a href="#计算机通信与网络课程总复习知识点" class="headerlink" title="计算机通信与网络课程总复习知识点"></a>计算机通信与网络课程总复习知识点</h2><h3 id="第一部分-概述"><a href="#第一部分-概述" class="headerlink" title="第一部分 概述"></a>第一部分 概述</h3><h4 id="第1章-绪论"><a href="#第1章-绪论" class="headerlink" title="第1章 绪论"></a>第1章 绪论</h4><p>1、数据通信基本概念及模型<br><strong>数据通信</strong>是在两台设备之间通过诸如线缆的某种形式的传输介质进行的数据交换。<br>【数据通信系统模型】——五个组成部分</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>报文：进行通信的信息（数据）<br>发送方：发送数据报文的设备<br>接收方：接受报文的设备<br>传输介质：报文从发送方到接收方之间所经过的物理通路<br>协议：管理数据通信的一组规则，表示通信设备之间的一组约定</p>
+
+        </div>
+    </article>
+
+<p>2、数据流：单工、半双工、全双工</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>单工模式（Simplex Mode)：通信是单方向的，两台设备只有一台能够发送，另一台则只能接受<br>半双工模式（Half-duplex Mode)：每台主机均能发送和接受，但不能同时进行<br>全双工模式（Full-duplex Mode)：双方主机都能同时发送和接受</p>
+
+        </div>
+    </article>
+
+<p>3、连接类型和拓扑结构</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>点到点连接：提供两台设备之间专用的链路，链路全部的能力均为两台设备之间的传输所共用<br>多点连接：两台以上设备共享单一链路的情形，通道的能力在空间和时间上共享<br>拓扑结构：网状、星型、总线、环状</p>
+
+        </div>
+    </article>
+
+<p>4、网络分类：局域网、城域网、广域网</p>
+<table>
+<thead>
+<tr>
+<th align="center">网络</th>
+<th align="center">规模</th>
+<th align="center">介质</th>
+<th align="center">拓扑结构</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">局域网LAN</td>
+<td align="center">小于2英里</td>
+<td align="center">一种类型的传输介质</td>
+<td align="center">总线结构、环状结构和星型结构</td>
+</tr>
+<tr>
+<td align="center">城域网MAN</td>
+<td align="center">十几英里</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">广域网WAN</td>
+<td align="center">世界范围</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>5、协议和标准<br>【协议三要素】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>语法：指数据的结构或格式，即它们是以何种顺序表示的<br>语义：指每一位片段的含义：如何解释一个特别的位模式<br>时序：报文发送的时间和发送的顺序</p>
+
+        </div>
+    </article>
+
+<p>【TCP&#x2F;IP】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输控制协议（TCP）负责高层功能，比如分段、重组和差错控制<br>网际协议（TP）负责处理数据包路由</p>
+
+        </div>
+    </article>
+
+<h4 id="第2章-网络模型"><a href="#第2章-网络模型" class="headerlink" title="第2章 网络模型"></a>第2章 网络模型</h4><p>1、层次结构、层间接口和封装的概念<br>【层次结构】：把相关的网络功能组合在一层中，每层都使用其直接下层提供的服务，保持网络灵活且易修改<br>【层间接口】：数据和网络信息从高层向低层传递和从低层向高层传递都通过相邻两层的接口进行，每一层接口都定义了该层必须向上层提供信息和服务<br>【封装】：第N-1层的分组中的数据部分是第N层的完整分组（数据、头部、也可能有尾部）<br>2、OSI参考模型<br>【开放系统互联（Open System Interconnection)模型】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>对等协议：传输层、会话层、表示层、应用层<br>中间节点只涉及下三层：物理层、数据链路层、网络层</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>物理层：负责位从一个节点到另一个节点的传递</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>位的表示：要进行位流的传输必须将位编码成信号——电信号或光信号（物理层定义编码的类型）<br>数据速率：定义传输速率（每秒发送的位数）<br>位同步：发送方与接收方不仅使用相同的比特率还必须位同步保证时钟同步<br>线路配置：点到点连接或多点共享连接<br>物理拓扑结构：定义设备连接成网络的连接方式（网状、星型、总线、环状）<br>传输方式：定义两台设备之间的传输方式（单工、半双工和全双工）</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>数据链路层：负责帧从一跳到下一跳的传递</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>成帧：数据链路层将接收到的来自网络层的位流分成称为帧的易处理数据单元<br>物理寻址：1、不同系统  数据链路层在帧的头部添加发送方的物理地址和接收方的物理地址   2、不同网络  数据链路层在帧的头部添加发送方的物理地址和连接下一个网络的路由地址<br>流量控制：采用流量控制机制防止接收方过载<br>差错控制：检测与重发损坏帧或丢失帧</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>网络层：负责将各个分组从源地址传递到目的地址</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>逻辑寻址：物理寻址负责处理本地网络寻址问题（数据链路层），逻辑寻址负责处理分组通过网络边界的寻址问题<br>路由选择：在互联网中由连接设备（路由器或网关）负责把分组送到指定网络的目的地</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>传输层：负责一个报文从一个进程到另一个进程的传递</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>端口寻址：传输层信息的头部必须包含端口地址（服务点地址），将整个报文传送到计算机上的指定进程<br>分段和组装：将报文分解成可传输的片段并进行编号，使得1、传输层可以在接收端将报文正确地组装  2、用来标识和替换传输中丢失的分组<br>连接控制：传输层可以是无连接的或面向连接的<br>流量控制：负责端到端上的流量控制而不是单条链路<br>差错控制：负责进程到进程上的差错控制而不是单条链路上</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>会话层：负责对话控制和同步</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>对话控制：允许两个进程之间以半双工或全双工方式进行通信<br>同步：会话层允许一个进程在数据流中增加检查点或同步点</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>表示层：负责翻译、加密和压缩数据</li>
+<li>应用层：负责向用户提供服务</li>
+</ul>
+<p>3、TCP&#x2F;IP协议族<br>【层次组成】：物理层和数据链路层（主机到网络层）、网络层、传输层和应用层</p>
+<ul>
+<li><p>网络层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>  IP协议：不可靠、无连接、主机到主机协议<br>  组成部分：</p>
+<blockquote>
+<p>地址解析协议（ARP)：将逻辑地址与物理地址联系起来<br>逆地址解析协议（RARP)：允许主机在仅知道物理地址的情况下寻找因特网地址<br>因特网控制报协议（ICMP)：用来向发送方通知数据报所发生的问题<br>因特网组报文协议（IGMP)：用于将一个报文发送给一组接收者</p>
+</blockquote>
+
+        </div>
+    </article>
+</li>
+<li><p>传输层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用户数据报协议（UDP)：进程到进程的协议即端到端的协议<br>传输控制协议（TCP)：是面向连接的、可靠的流传输协议<br>流控制传输协议（SCTP）</p>
+
+        </div>
+    </article></li>
+</ul>
+<p>4、寻址<br>【物理（链路）地址（MAC地址）】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用于物理层和数据链路层<br>以太网中使用6个字节（48位）物理地址，标明在网卡上，长度格式可变</p>
+
+        </div>
+    </article>
+
+<p>【逻辑（IP）地址】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用于网络层<br>因特网的逻辑地址是32位地址，唯一地标识了连接到因特网上的一台主机</p>
+
+        </div>
+    </article>
+
+<p>【端口地址】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用于传输层<br>赋予进程的标识符称为端口地址，长度固定16位地址</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center"><strong><em>跳到跳时物理地址将改变，但逻辑地址和端口地址保持不变</em></strong></th>
+</tr>
+</thead>
+</table>
+<p>【专用地址】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用于应用层</p>
+
+        </div>
+    </article>
+
+<h3 id="第二部分-物理层和介质"><a href="#第二部分-物理层和介质" class="headerlink" title="第二部分 物理层和介质"></a>第二部分 物理层和介质</h3><h4 id="第3章-物理层"><a href="#第3章-物理层" class="headerlink" title="第3章 物理层"></a>第3章 物理层</h4><p>1、数字信号传输<br>【电平编码】</p>
+<center>信号电平数 $L$，编码电平需要比特位数: $N=\log_2L$</center>
+注：通过对多电平编码可以增加每个电平表示的比特位
+
+<table>
+<thead>
+<tr>
+<th align="center">数字信号是无穷大带宽的复合模拟信号</th>
+</tr>
+</thead>
+</table>
+<p>【基带传输】<br>$Define:$</p>
+<center>通过通道发送数字信号而不转换为模拟信号，即以信号本身的频谱进行传输</center>
+
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>只能用带宽下限频率为 $0$ 的低通通道<br>在基带传输中，所需的带宽与比特率成正比</p>
+
+        </div>
+    </article>
+
+<p>$Eample\ 1:$</p>
+<center>基带传输发送比特率 $n=1Mbps$，求低通通道所需带宽</center>
+<center>最小带宽、使用第一谐波 $\Longrightarrow B_1=\frac{n}{2}=500KHz$</center>
+<center>使用第一、三谐波 $\Longrightarrow B_3=3\times B_1=1.5MHz$</center>
+<center>使用第一、三、五谐波 $\Longrightarrow B_5=5\times B_1=2.5MHz$</center>
+$Eample\ 2:$
+<center>一条带宽 $B=100kHz$ 的低通通道，求最大比特率</center>
+<center>使用第一谐波得到最大比特率 $\Longrightarrow n = 2\times B=200kbps$</center>
+
+<p>【宽带传输】<br>$Define:$</p>
+<center>宽带传输或调制把数字信号转换成模拟信号进行传输</center>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>调制允许使用带通通道，即带宽不从0开始的通道<br>发送模拟信号用带通通道</p>
+
+        </div>
+    </article>
+
+<p>2、典型的传输减损<br>【衰减】<br>$Define:$</p>
+<center>通过某种介质传输时，信号能量下降；分贝表示信号损失或增益强度</center>
+<center>$dB=10\log_{10}\frac{P_2}{P_1}$</center>
+其中，$P_1$、$P_2$ 表示信号前后的功率
+
+<p>【失真】<br>$Define:$</p>
+<center>不同信号成分具有不同的传播速度导致信号波形失真</center>
+
+<p>【噪声】<br>$Define:$</p>
+<center>外界干扰，电缆中的电子随机移动而产生的额外信号</center>
+
+<p>【信噪比】<br>$Define:$</p>
+<center>信号功率与噪声功率的比率</center>
+<center>$SNR = \frac{P_1}{P_2}$</center>
+其中，$P_1$、$P_2$ 表示平均信号功率和平均噪声功率
+<center>分贝单位$\Longrightarrow SNR_dB = 10\log_{10}SNR$</center>
+
+<p>3、数据速率限制<br>【尼奎斯特定理】——无噪声通道</p>
+<center>$S = 2B$</center>
+注：有限带宽 $B$ 下，通道的极限波特率(码元速率)为 $2B$
+
+<p>【奈奎斯特速率】——无噪声通道</p>
+<center>$N = 2\times B\times log_2L$</center>
+注：定义了给定带宽下理论上的最大比特率
+
+<p>【香农容量定理】——有噪声通道</p>
+<center>$C = B\times \log_2(1+SNR)$</center>
+其中通道容量是指通道的传输容量，即每秒的比特数等于比特率
+
+<p>注：确定噪声通道理论上的最高数据速率</p>
+<p>当 $SNR$ 较大时，$SNR+1\approx SNR$，则 $C &#x3D; B\times \frac{SNR_{dB}}{3}$</p>
+<p>$Eample:$<br>一通道带宽 $B&#x3D;1MHz$，信噪比 $SNR&#x3D;63$，求合适的比特率以及信号电平<br>解：由香农公式确定比特率上限：</p>
+<p>$$<br>C &#x3D; B\log_2(1+SNR)&#x3D;6Mbps<br>$$</p>
+<p>为了获得更好的性能，取通道比特率 $N&#x3D;4Mbps$<br>由奈奎斯特公式计算信号电平数:</p>
+<p>$$<br>N &#x3D; 2B\log_2L\rightarrow L&#x3D;4<br>$$</p>
+<table>
+<thead>
+<tr>
+<th align="center">香农容量定理给出数据速率的上限，奈奎斯特公式给出所需的信号电平数</th>
+</tr>
+</thead>
+</table>
+<p>4、性能<br>【带宽】——链路的潜在衡量值，链路最大的数据传输速率<br>【吞吐量】——发送速度快慢的实际衡量值，小于带宽<br>【延迟】——第一个位开始发出到整个报文完全到达目标所经历的时间</p>
+<center>延迟=传播时间+传输时间+排队时间+处理延迟</center>
+
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传播时间——一个位从源传输到目标所需时间（与介质相关）</p>
+
+        </div>
+    </article>
+
+<p>$$<br>Tp &#x3D; \frac{d}{v}<br>$$</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输时间——传输一个报文的时间</p>
+
+        </div>
+    </article>
+
+<p>$$<br>Tt &#x3D; \frac{LF}{B}<br>$$</p>
+<p>其中，帧长 $LF$ 表示一个报文长度</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>排队时间——每个中间或端设备在处理报文前保持报文所需的时间</p>
+
+        </div>
+    </article>
+
+<p>【带宽与延迟乘积】——定义了能充满链路的位数（通常用的是传播时延）</p>
+<h4 id="第4章-数字传输"><a href="#第4章-数字传输" class="headerlink" title="第4章 数字传输"></a>第4章 数字传输</h4><p>1、线路编码——将数字数据（比特位）转换为数字信号（高低电平）的过程<br>【数据元素】表示一块信息的最小实体即位<br>【信号元素】承载数据单元，是数字信号的最小单元<br>$Define:$</p>
+<center>承载比率 $r$: 每个信号元素承载的数据元素的数量</center>
+$$
+r = \log_2L
+$$
+
+<p>【数据速率（比特率）】表示1秒发送的数据元素（位）的数量（单位：bps）<br>【信号速率（波特率）】表示1秒发送的信号元素的数量（单位：波特baud)<br>比特率和波特率关系:</p>
+<p>$$<br>S &#x3D; c\times N\times \frac{1}{r}\ \ baud<br>$$</p>
+<p>其中，$N$ 表示比特率，$S$ 表示波特率，$c$ 表示情形因子(一般取 $0.5$)，$r$ 表示承载比率</p>
+<table>
+<thead>
+<tr>
+<th align="center">波特率决定了数字信号的带宽，并且带宽与波特率成正比</th>
+</tr>
+</thead>
+</table>
+<p>【最小带宽】</p>
+<p>$$<br>B_{min}&#x3D;c\times N\times \frac{1}{r}<br>$$</p>
+<table>
+<thead>
+<tr>
+<th align="center">最小带宽$B_{min}$与波特率相等（至少保证能够传输信号）</th>
+</tr>
+</thead>
+</table>
+<p>当通道带宽为 $B$ 时，得出最大数据速率：</p>
+<center>$B_{min}=c\times N\times\frac{1}{r}\leq B\rightarrow N\leq \frac{1}{c}\times B\times r$</center>
+<center>$\Longrightarrow N_{max}=\frac{1}{c}\times B\times r$</center>
+注：$B_{min}$ 表示信号所需最小带宽，$B$ 表示通道带宽
+
+<p>【直流分量】——信号电平保持一段时间的恒定，使得频谱中对应的频率很低称为 DC（直流）分量<br>【自同步】——接收方的位间隔必须与发送方的位间隔一致</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>数字信号在传输的数据中包含有定时信息：提示接收方起始、中间和结束位置的脉冲的跳变</p>
+
+        </div>
+    </article>
+
+<p>2、线路编码方案<br>不同编码方案平均带宽计算:</p>
+<center>$B_{min}=S = c\times N\times\frac{1}{r}$</center>
+<center>$c=0.5\Longrightarrow B_{min} = \frac{N}{2r}$</center>
+
+<div class="tabs my-3 is-toggle">
+        <ul class="mx-0 my-0">
+            <li class="is-active">
+          <a href="#1">
+              <p>单极性编码</p>
+
+          </a>
+      </li><li>
+          <a href="#2">
+              <p>极性编码方案(NRZ-L)</p>
+
+          </a>
+      </li><li>
+          <a href="#3">
+              <p>极性编码方案(NRZ-I)</p>
+
+          </a>
+      </li><li>
+          <a href="#4">
+              <p>归零码(RZ)</p>
+
+          </a>
+      </li>
+        </ul>
+    </div>
+    <div id="1" class="tab-content">
+          <center>正电平定义成位 $1$ 而零电平定义成位 $0$，位中间信号不会回到 $0$</center>
+<center>$r=1$，平均带宽 $B = \frac{N}{2}$</center>
+<center>成本高，$0$ 或 $1$ 的长序列没有自同步，存在 $DC$ 问题</center>
+
+      </div><div id="2" class="tab-content is-hidden">
+          <center>正电平定义成位 $0$ 而零电平定义成位 $1$，位中间信号不会回到 $0$，电平决定位值</center>
+<center>$r=1$，平均带宽 $B = \frac{N}{2}$</center>
+<center>全 $0$ 或全 $1$ 的长序列没有自同步，存在基线偏移，$DC$ 问题</center>
+
+      </div><div id="3" class="tab-content is-hidden">
+          <center>信号电平是否反相转决定了位值，位中间信号不会回到 $0$</center>
+<center>对于本位，如果本位电平相比上位电平有反相，$bite = 1$，否则 $bite=0$</center>
+<center>$r=1$，平均带宽 $B = \frac{N}{2}$</center>
+<center>全 $0$ 的长序列没有自同步，存在基线偏移，$DC$ 问题</center>
+
+      </div><div id="4" class="tab-content is-hidden">
+          <center>使用正值、负值和零三个信号电平</center>
+<center>正电平定义成位 $1$，负电平定义成位 $0$，只是信号在位中间跳变回到 $0\Rightarrow$ 解决同步问题</center>
+<center>$r=\frac{1}{2}$，平均带宽 $B = N$</center>
+<center>能够自同步，没有 $DC$ 问题，但是需要高带宽</center>
+
+      </div>
+
+<div class="tabs my-3 is-toggle">
+        <ul class="mx-0 my-0">
+            <li class="is-active">
+          <a href="#5">
+              <p>双相编码——曼彻斯特编码</p>
+
+          </a>
+      </li><li>
+          <a href="#6">
+              <p>双相编码——差分曼彻斯特编码</p>
+
+          </a>
+      </li><li>
+          <a href="#7">
+              <p>双极性编码——AMI</p>
+
+          </a>
+      </li><li>
+          <a href="#8">
+              <p>双极性编码——伪三元编码</p>
+
+          </a>
+      </li>
+        </ul>
+    </div>
+    <div id="5" class="tab-content">
+          <center>$RZ+NRZ-L$</center>
+<center>使用正值、负值两个电平，正电平定义成位 $0$，负电平定义成位 $1$，位中间跳变成另一电平 $\Rightarrow$ 解决同步问题</center>
+
+      </div><div id="6" class="tab-content is-hidden">
+          <center>$RZ+NRZ-I$</center>
+<center>使用正值、负值两个电平，正电平定义成位 $0$</center>
+<center>位中间跳变，如果下一位是 $1$，位开始处不跳变，否则进行跳变 $\Rightarrow$ 解决同步问题</center>
+
+      </div><div id="7" class="tab-content is-hidden">
+          <center>使用正值、负值和零三个电平，位 $0$ 始终由零电平表示，而位 $1$ 由交替正负电平表示</center>
+<center>$r=1$，平均带宽 $B = \frac{N}{2}$</center>
+<center>全 $0$ 的长序列没有自同步，无 $DC$ 问题</center>
+
+      </div><div id="8" class="tab-content is-hidden">
+          <center>使用正值、负值和零三个电平，位 $1$ 始终由零电平表示，而位 $0$ 由交替正负电平表示</center>
+<center>$r=1$</center>
+
+      </div>
+
+<p>3、块编码：4B&#x2F;5B、8B&#x2F;10B(了解)<br>4、扰码<br>【B8ZS】——8零置换的双极编码方案</p>
+<p>$$<br>B8ZS:00000000\Rightarrow 000VB0VB<br>$$</p>
+<p>其中，$V$ 表示与前一个非零脉冲极性相同的极性，$B$ 表示与前一个非零脉冲极性相反的极性</p>
+<p>5、脉冲码调制PCM<br>【采样】——方顶采样<br>模拟信号采样周期$T_S$，采样频率$f_S&#x3D;\frac{1}{T_S}$<br>根据奈奎斯定理，采样速率必须至少是信号所含最高频率的 $2$ 倍:</p>
+<p>$$<br>f_S\geq 2f_m<br>$$</p>
+<p>【量化】</p>
+<ul>
+<li>将最低振幅 $V_{min}$ 和最高振幅 $V_{max}$ 范围量化为 $L$ 个区间</li>
+<li>区间高度：$\Delta &#x3D; \frac{V_{max}-V_{min}}{L}$</li>
+<li>标准化 $PAM$ 值&#x2F;振幅&#x3D; 实际振幅&#x2F;$\Delta$</li>
+<li>标准化量化值&#x3D;样本所在区间的中间量化值(单位为 $\Delta$)</li>
+<li>量化误差&#x3D;标准化量化值-标准化振幅值，一般 $-\frac{\Delta}{2}\leq$ 误差 $\leq\frac{\Delta}{2}$</li>
+<li>量化码：$0\thicksim7$ 编码对应 $-4\Delta\thicksim 4\Delta$ 每一个区间</li>
+<li>编码码字：$0\thicksim7\Longrightarrow 000\thicksim111$</li>
+</ul>
+<p>【量化等级】——取决于模拟信号的振幅范围<br>【量化误差】<br>对信号 $SNR_{dB}$ 的影响：</p>
+<p>$$<br>SNR_{dB}&#x3D;6.02n_b+1.76dB<br>$$</p>
+<p>其中，$n_b$ 表示每个样本的编码位数，$n_b&#x3D;log_2L$ ($L$ 表示量化等级数即电平数)</p>
+<p>【PCM数字化模拟信号的比特率和带宽】</p>
+<center>$f_S=2f_m$</center>
+<center>$\Rightarrow N = f_S\times n_b
+=2f_m\times\log_2L$</center>
+<center>$B_{min}=c\times N\times\frac{1}{r}$</center>
+<center>$=c\times f_S\times n_b\times \frac{1}{r}$</center>
+<center>$=c\times 2\times B_{analog}\times n_b\times \frac{1}{r}$</center>
+<center>$=n_b\times B_{analog}$</center>
+其中，$B_{analog}$ 表示低通模拟信号的带宽即信号最高频率
+
+<p>6、Delta调制 (DM)的概念<br>【调制】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>数字数据生成：将模拟信号的值与梯形信号的最后一个值比较，如果模拟信号的振幅大，则数字数据下一个位为 $1$，否则为 $0$;<br>梯形信号生成：如果数字数据下一位为 $1$，则梯形信号的最后一个点上移 $\delta$，否则下移 $\delta$;</p>
+
+        </div>
+    </article>
+
+<p>7、传输模式<br>【并行传输】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>使用 $n$ 个通信线路同时发送n位<br>优点：速度快，用于短距离通信<br>缺点：成本高</p>
+
+        </div>
+    </article>
+
+<p>【串行传输】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>包括异步和同步传输<br>优点：成本低，适合远距离通信<br>缺点：速度慢</p>
+
+        </div>
+    </article>
+
+<p>【异步传输】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>在传输中信号的时序并不重要<br>信息的接受和转换通过约定的模式进行<br>字节级异步：将位流组成字节(通常是 $8$ 位)的方式进行分组发送<br>字节内同步：没有同步时钟，每个字节增加起始位和停止位，并且每个字节之间有一个时间间隔</p>
+
+        </div>
+    </article>
+
+<p>【同步传输】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>位流被组合成更长的帧，一帧包含多个字节，按序发送<br>依次发送位流而不含起始位、停止位和间隙，接收方负责将位进行分组<br>帧间可能有不等的时间间隔，常用于大块二进制数据传送</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">同步传输比异步传输速度快</th>
+</tr>
+</thead>
+</table>
+<h4 id="第5章-模拟传输"><a href="#第5章-模拟传输" class="headerlink" title="第5章 模拟传输"></a>第5章 模拟传输</h4><p>1、比特率和波特率<br>$Define:$<br>$$<br>r &#x3D; log_2L\newline<br>S&#x3D;N\times\frac{1}{r}<br>$$<br>其中，$L$ 表示不同类型的信号元素个数(数字传输中 $L$ 为电平个数)</p>
+<p>2、数字到模拟转换的概念</p>
+<center>数字数据转换为带通模拟信号 $\Rightarrow$ 数字到模拟转换</center>
+<center>低通模拟信号转换为带通模拟信号 $\Rightarrow$ 模拟到模拟转换</center>
+
+<p>【幅移键控（(B)ASK）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">通过改变载波信号的振幅来生成信号元素，只有振幅变化而频率和相位保持不变</th>
+</tr>
+</thead>
+</table>
+<p>【带宽】</p>
+<center>$B=(1+d)\times S$</center>
+<center>$S = N\times \frac{1}{r}\Rightarrow B = (1+d)\times N\times\frac{1}{r}$ 反推 $N$</center>
+
+<p>【频移键控（(B)FSK）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">通过改变载波信号的频率来生成信号元素，只有频率变化而振幅和相位保持不变</th>
+</tr>
+</thead>
+</table>
+<p>【带宽】</p>
+<p>$$<br>B&#x3D;(1+d)\times S+2\Delta f<br>$$</p>
+<p>其中，$\Delta f$ 表示两个信号元素的频率差</p>
+<p>【相移键控（PSK）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">通过改变载波信号的相位来生成信号元素，只有相位变化而振幅和频率保持不变</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">BPSK：二进制PSK，只用两个信号元素，一个相位是$0$ 度，另一个相位是 $180$ 度</td>
+</tr>
+<tr>
+<td align="center">QPSK：正交PSK，使用两个独立的BPSK调制，一个是同向的，另一个是正交的</td>
+</tr>
+</tbody></table>
+<p>QPSK中相位可能是 $45$ 度，$-45$ 度，$135$ 度和 $-135$度之一，输出信号有 $4$ 种信号元素，每个信号元素可以承载 $2$ 位<br>【带宽】</p>
+<center>$B=(1+d)\times S=(1+d)\times N\times\frac{1}{r}$</center>
+<center>$BPSK:\ r=1\Longrightarrow B = (1+d)\times N$</center>
+<center>$QPSK:\ r=2\Longrightarrow B = (1+d)\times \frac{N}{2}$</center>
+
+<p>【正交振幅调制（QAM）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">ASK+PSK:使用两个载波，一个同向而另一个正交，每个载波都用不同的振幅</th>
+</tr>
+</thead>
+</table>
+<p>【n-QAM带宽】</p>
+<p>$$<br>r &#x3D; \log_2n\Rightarrow B &#x3D; (1+d)\times N\times\frac{1}{r}<br>$$</p>
+<h4 id="第6章-带宽利用"><a href="#第6章-带宽利用" class="headerlink" title="第6章 带宽利用"></a>第6章 带宽利用</h4><p>1、复用：FDM、同步TDM、统计TDM和WDM概念<br>【复用带宽要求】<br>连接两台设备的介质带宽要比设备间传输所要求的带宽高<br>【频分复用（FDM）】——用于模拟信号</p>
+<table>
+<thead>
+<tr>
+<th align="center">链路带宽（以Hz为单位）大于要传输的信号的带宽之和</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">将链路带宽进行分频给每个信号通道，通道间存在未使用的带宽即防护频带</td>
+</tr>
+</tbody></table>
+<p>【波分复用（WDM）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">用于具有高数据速率传输能力的光缆，是合并多个光信号的模拟多路复用技术</th>
+</tr>
+</thead>
+</table>
+<p>【时分复用（TDM）】</p>
+<table>
+<thead>
+<tr>
+<th align="center">TDM在时间上共享，每个连接占用链路的一个时间段，是组合多个低速的通道为一个高速通道数据的复用技术</th>
+</tr>
+</thead>
+</table>
+<p>【同步TDM】</p>
+<table>
+<thead>
+<tr>
+<th align="center">每个输出单元的持续时间是输入单元的$n$ 分之一，其中 $n$ 表示连接数</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">链路速率是数据速率的$n$ 倍，并且比单元持续时间短 $n$ 倍</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>帧同步</strong>，每帧开始增加一位帧指示位，交替变换为 $0$ 和 $1$</th>
+</tr>
+</thead>
+</table>
+<p>【同步TDM数据速率管理】<br>各数据线数据速率不相等时处理技术：</p>
+<table>
+<thead>
+<tr>
+<th align="center">处理策略</th>
+<th align="center">使用情况</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">多级复用</td>
+<td align="center">一条输入数据线数据速率是其他一些输入数据线数据速率的整倍数</td>
+<td align="center">合并低数据速率通道，$m\times n$，$m$表示连接数</td>
+</tr>
+<tr>
+<td align="center">多时隙复用</td>
+<td align="center">在一个帧中允许对一条输入分配多个时隙</td>
+<td align="center">分离高数据速率通道，$\frac{n}{m}$，$m$表示分配的连接数</td>
+</tr>
+<tr>
+<td align="center">脉冲填充</td>
+<td align="center">输入线的比特率不是其他每个输入线比特率的整数倍</td>
+<td align="center">低速率的输入线添加虚位</td>
+</tr>
+</tbody></table>
+<p>【统计TDM】——动态分配时隙，提高链路利用率</p>
+<center>输出时隙必须携带数据和目的地址(目的地址+数据)</center>
+$N$ 条输出线编码表示：
+$$
+n=\log_2N
+$$
+<center>无同步位，存在通道寻址因此不需要同步位</center>
+<center>链路容量小于各通道之和</center>
+
+<p>【脉冲调制PCM体制两大国际标准】</p>
+<div class="tabs my-3 is-toggle">
+        <ul class="mx-0 my-0">
+            <li class="is-active">
+          <a href="#9">
+              <p>北美24路T1载波</p>
+
+          </a>
+      </li><li>
+          <a href="#10">
+              <p>欧洲30路E1载波</p>
+
+          </a>
+      </li>
+        </ul>
+    </div>
+    <div id="9" class="tab-content">
+          <center>服务 $DS-1$       线路 $T-1$</center>
+<center>速率：$1.544Mbps$</center>
+<center>用途：传输音/视频，也可用于模拟传输</center>
+<center>语音通道：$24$ 个</center>
+<center>时分多路复用技术(TDM)</center>
+<center>$DS-1$ 需要 $8kbps$ 开销</center>
+
+      </div><div id="10" class="tab-content is-hidden">
+          <center>欧洲版 $T$ 线路</center>
+<center>速率：$2.048Mbps$</center>
+<center>语音通道：$30$ 个</center>
+<center>时分多路复用技术(TDM)</center>
+
+      </div>
+
+<table>
+<thead>
+<tr>
+<th align="center">我国采用的是欧洲的E1标准</th>
+</tr>
+</thead>
+</table>
+<p>3、波分和码分的概念<br>4、FHSS和DSSS的概念</p>
+<h4 id="第7章-传输介质"><a href="#第7章-传输介质" class="headerlink" title="第7章 传输介质"></a>第7章 传输介质</h4><p>1、有向介质：双绞线及其特点、同轴电缆和光纤的概念<br>2、无线传输介质：无线波谱、无线电波、微波和红外波</p>
+<h4 id="第8章-交换（传输时延分析）"><a href="#第8章-交换（传输时延分析）" class="headerlink" title="第8章 交换（传输时延分析）"></a>第8章 交换（传输时延分析）</h4><p>1、电路交换网络——效率低、延迟最小<br>电路交换网络是由物理链路连接的一组交换机组成的，每条链路划分成 $n$ 个通道，两个站点的连接是由一条或多条链路组成的<strong>专用路径</strong>来实现</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>电路交换在物理层<br>资源预留：通信开始前，站点需要对通信所用的资源进行预留<br>连续数据流：数据传输不打包<br>数据传输期间无寻址</p>
+
+        </div>
+    </article>
+
+<p>【建立阶段】——每条链路上预定一个通道，联合起来指定一条专用路径</p>
+<table>
+<thead>
+<tr>
+<th align="center">建立阶段进行资源预留、端到端寻址</th>
+</tr>
+</thead>
+</table>
+<p>【网络延迟】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <center>延迟时间=建立连接时间+数据传输时间+拆除电路时间</center>
+<center>建立连接时间=请求信号传播+请求信号传输时间+确认信号传播时间+确认信号传输时间</center>
+<center>数据传输时间=数据传播时间+数据传输时间</center>
+        </div>
+    </article>
+
+<p>2、分组交换网</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>数据报网络<br>虚电路网络</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">分组交换网中，不存在资源预留，资源按需分配</th>
+</tr>
+</thead>
+</table>
+<p>3、数据报网络——效率较高，延迟较长</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>每个分组独立处理，数据报交换在网络层<br>不需要建立连接阶段和拆除阶段<br>每个分组头部包含目的地址，且在分组传送期间保持不变（物理地址会变）</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">数据报网中的交换机使用基于目的地址的路由表</th>
+</tr>
+</thead>
+</table>
+<p>【网络延迟】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <center>延迟时间=传输时间+传播时间+等待时间</center>
+<center>$Example:$ 分组通过两个交换机传送分析：</center>
+<center>总延迟时间 $=3\times$ 传输时间 $+3\times$ 传播时间 $+$ 在交换机 $1$ 处等待时间 $+$ 在交换机 $2$ 处等待时间</center>
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">因特网在网络层用数据报方法对数据进行交换</th>
+</tr>
+</thead>
+</table>
+<p>4、虚电路网络——</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>电路交换+数据报网络<br>虚电路网络在数据链路层实现<br>在数据传输阶段，存在建立阶段与拆除阶段<br>按需在建立阶段期间分配资源<br>每一分组头部含有目的地址，具有本地权限而非端到端权限（定义下一个交换机和分组的通道地址，虚电路标识符实现）<br>所有分组沿着建立的路径进行传送</p>
+
+        </div>
+    </article>
+
+<p>【虚电路标识符（VCI）】<br>一个VCI仅是在交换机范围内的小数字，由两个交换机之间的帧来使用，通过交换机时更新VCI<br>【虚电路网络表】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>表项构成：输入端口，输入VCI，输出端口，输出VCI</p>
+
+        </div>
+    </article>
+
+<p>【网络延迟】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <center>延迟时间=传输时间+传播时间+建立阶段延迟+拆除阶段延迟</center>
+<center>$Example:$ 分组通过两个交换机传送分析：</center>
+<center>总延迟时间 $=3\times$ 传输时间 $+3\times$ 传播时间 $+$ 建立阶段延迟 $+$ 拆除阶段延迟</center>
+        </div>
+    </article>
+
+<h3 id="第三部分-数据链路层"><a href="#第三部分-数据链路层" class="headerlink" title="第三部分 数据链路层"></a>第三部分 数据链路层</h3><h4 id="第10章-检错与纠错"><a href="#第10章-检错与纠错" class="headerlink" title="第10章 检错与纠错"></a>第10章 检错与纠错</h4><p>1、差错的类型<br>【单个位差错】——数据单元仅有一位发生变化<br>【突发性差错】——数据单元有两位或多位发生变化<br>2、块编码</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>报文划分成块，每个块有k位——数据字<br>数据字+r个冗余位形成长度n&#x3D;k+r的块——码字</p>
+
+        </div>
+    </article>
+
+<center>数据字: $2^k$     码字: $2^n$</center>
+<center>$\Longrightarrow$ 非法码: $2^n-2^k\ (n>k)$</center>
+
+<p>3、纠错方法<br>【汉明距离】——两个相同长度的字的汉明距离是对应位不同的数量</p>
+<p>$$<br>10101\oplus 11110&#x3D;01011\Rightarrow d(10101, 11110)&#x3D;3<br>$$</p>
+<p>【最小汉明距离】——一组字中所有可能对中的最小汉明距离</p>
+<center>$d_{min} = \min${两两间的汉明距离}</center>
+
+<table>
+<thead>
+<tr>
+<th align="center">为了<strong>检测</strong>出所有情况下最多$s$个差错，块编码中最小汉明距离一定是$d_{min}&#x3D;s+1$</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">为了<strong>纠正</strong>所有情况下最多$t$个差错，块编码中最小汉明距离一定是$d_{min}&#x3D;2t+1$</th>
+</tr>
+</thead>
+</table>
+<p>4、线性块编码<br>【线性块编码最小距离】——最小汉明距离</p>
+<table>
+<thead>
+<tr>
+<th align="center">最小汉明距离是具有最少1的个数的非$0$ 有效码字中 $1$ 的个数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">注：每个非零码字中，具有最少$1$ 的码字对应 $1$ 的个数</td>
+</tr>
+</tbody></table>
+<p>【简单奇偶校检码】</p>
+<table>
+<thead>
+<tr>
+<th align="center">校检编码$n&#x3D;k+1、d_{min}&#x3D;2$，单个位或奇数个位检错编码，不能纠错</th>
+</tr>
+</thead>
+</table>
+<p>【二维奇偶校检码】——最多能检测 $3$ 个差错<br>【汉明编码】</p>
+<center>$n=2^m-1,\ \ k=n-m$</center>
+<center>$\Longrightarrow$ 校检位个数: $r=m$</center>
+<center>$d_{min}=3\Rightarrow$ 校检 $2$ 位，纠正 $1$ 位</center>
+
+<p><strong><em>编码分析</em></strong></p>
+<center>$a_3a_2a_1a_0r_2r_1r_0\Longrightarrow b_3b_2b_1b_0q_2q_1q_0$</center>
+奇偶校检位:
+<center>$r_0=a_2+a_1+a_0$</center>
+<center>$r_1=a_3+a_2+a_1$</center>
+<center>$r_2=a_3+a_1+a_0$</center>
+奇偶校检方程:
+<center>$s_0=b_2+b_1+b_0+q_0$</center>
+<center>$s_1=b_3+b_2+b_1+q_1$</center>
+<center>$s_2=b_3+b_1+b_0+q_2$</center>
+
+<table>
+<thead>
+<tr>
+<th align="center">校正子</th>
+<th align="center">$s_2s_1s_0$</th>
+<th align="center">出错位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">6</td>
+<td align="center">110</td>
+<td align="center">$b_3$</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">011</td>
+<td align="center">$b_2$</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">111</td>
+<td align="center">$b_1$</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">101</td>
+<td align="center">$b_0$</td>
+</tr>
+</tbody></table>
+<p>5、循环冗余编码校检码（CRC码）</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <center>数据字：$k$位，码字：$n$位，校检位：$n-k$位，除数：$n-k+1$位，余数：$n-k$位</center>
+        </div>
+    </article>
+
+<p><strong><em>编码分析</em></strong></p>
+<center>余数=(数据字+($n-k$)位 $0$) $\%$ 除数  (模 $2$ 除法)</center>
+<center>$\Longrightarrow$ 校检位=余数</center>
+<center>$\Longrightarrow$ 码字=数据字+校检位</center>
+校检：
+<center>校正子=码字$\%$除数</center>
+<center>if 校正子== $0$:  接受数据字 else 丢弃数据字</center>
+
+<table>
+<thead>
+<tr>
+<th align="center">检错类型</th>
+<th align="center">（除数）生成多项式$g(x)$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">捕捉单个位差错</td>
+<td align="center">$g(x)$至少有两项并且$x^0$的系数为1</td>
+</tr>
+<tr>
+<td align="center">两个独立的单个位差错</td>
+<td align="center">$g(x)$不能整除$x^t+1(t\in [0,n-1], t\in Z)$</td>
+</tr>
+<tr>
+<td align="center">奇数个差错</td>
+<td align="center">$g(x)$有因式$x+1$</td>
+</tr>
+<tr>
+<td align="center">突发性差错</td>
+<td align="center">所有$L\leq r$的差错均可被检测;$L&#x3D;r+1$的差错被检测概率$P&#x3D;1-{\frac{1}{2}}^{r-1}$;$L&gt;r+1$的差错被检测概率$P&#x3D;1-{\frac{1}{2}}^r$;（其中$L$表示差错长度，$r$表示冗余位长度</td>
+</tr>
+</tbody></table>
+<p>6、校检和及其计算方法</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>需要将数据划分为多组的16bits数据<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823223707.png" alt="校检和计算" width="80%"/></p>
+
+        </div>
+    </article>
+
+<h4 id="第11章-数据链路控制"><a href="#第11章-数据链路控制" class="headerlink" title="第11章 数据链路控制"></a>第11章 数据链路控制</h4><p>1、组帧</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>在数据链路层，成帧将一条从源端到目的端的报文分离开来，或者将到不同目的端的报文分离开来</p>
+
+        </div>
+    </article>
+
+<p>【固定长度成帧】——不需要定义帧的边界，长度本身可以用作分隔符<br>【可变长度成帧】</p>
+<ul>
+<li>面向字符协议——帧的开始和结尾加一个字节的标记<br>帧格式：标记+头部+可变数量的字符（来自上层的数据）+尾部+标记<br>转义字节：$01111101$【PPP协议】</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">标记冲突解决：字节填充，在字符标记的前面添加一个字节（换义字符ESC）以跳过该字符标记</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>面向位协议<br>帧格式：标记+头部+可变数量的位（来自上层的数据）+尾部+标记<br>特定的标记：$01111110$【HDLC协议】</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">标记冲突解决：位填充，遇到一个$0$ 后面紧跟 $5$ 个 $1$ 便添加一个 $0$</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">数据链路控制：流量控制+差错控制</th>
+</tr>
+</thead>
+</table>
+<p>2、流量控制与差错控制<br>【流量控制】——一系列程序，用来限制发送方在等到确认之前发送的数据数量<br>【差错控制】——基于自动重复请求（ARQ）进行差错检测和重传<br>【ARQ】<br>ARQ技术就是自动请求重发技术，结合了流控和自动重发技术，该技术的主要思想是利用差错检测技术自动对丢失的帧和错误帧请求重发</p>
+<p>3、停止等待ARQ——有噪声通道</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>差错检测由保留已发送帧的副本并当计时器到时重传这个帧来实现<br>使用序列号给帧编号，该序列号基于模 $2$ 运算<br>确认号总是以模2运算宣布期待收到下一帧的编号</p>
+
+        </div>
+    </article>
+
+<p>【链路利用率】</p>
+<center>带宽 $B$，一个位往返时间：$t$，数据帧的长度：$L$</center>
+<center>$\Longrightarrow$ 带宽延迟乘积=$B\times t$</center>
+<center>$\Longrightarrow$ 链路利用率 = $L$/带宽延迟乘积</center>
+
+<p>4、后退N帧ARQ——有噪声通道</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>序列号是模 $2^m$，$m$ 表示以位为单位的序列号字段长度<br>一个ACK可以确认一个以上的帧</p>
+
+        </div>
+    </article>
+
+<p>【协议原理】</p>
+<ul>
+<li>后退 $N$ 帧ARQ协议就是从出错处重发已发过的 $N$ 个帧；</li>
+<li>在后退 $N$ 帧协议中，发送方按照窗口中帧的编号顺序连续发送帧，接收方窗口大小总是 $1$；</li>
+<li>接收方只能按顺序接受，并按顺序发送应答信号；</li>
+<li>对于没有按顺序达到的帧丢弃，以后要重新发送</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">发送方窗口大小$2^m-1$ (一定要小于 $2^m$)，接收方窗口大小为 $1$</th>
+</tr>
+</thead>
+</table>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224115.png" alt="后退N帧ARQ窗口变化" width="80%"/>
+
+<p>5、选择重发ARQ——有噪声通道</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>发送方窗口大小 $\leq2^{m-1}$，接收方窗口大小与发送方一致</p>
+
+        </div>
+    </article>
+
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224214.png" alt="选择重发ARQ" width="80%"/>
+
+<p>6、高级数据链路控制（HDLC）</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p><strong>面向比特</strong>的点到点和多点链路进行通信的协议</p>
+
+        </div>
+    </article>
+
+<p>【正常响应方式】<br>【异步平衡方式】<br>【定义帧】</p>
+<ul>
+<li>信息帧</li>
+<li>管理帧</li>
+<li>无编号帧</li>
+</ul>
+<p>7、点到点（PPP）协议——面向字节的方式</p>
+<h4 id="第12章-多路访问"><a href="#第12章-多路访问" class="headerlink" title="第12章 多路访问"></a>第12章 多路访问</h4><p>1、随机访问<br>【纯ALOHA】——每个站点有帧要发送，就发送帧</p>
+<ul>
+<li>脆弱时间: $2\times T_{fr}$</li>
+<li>吞吐量: $S &#x3D; G\times e^{-2G}$<br>当 $G&#x3D;\frac{1}{2}$ 时，则 $S_{max}&#x3D;0.184$<br>其中，$G$ 表示一个帧传输时间内系统产生的帧的平均数量</li>
+</ul>
+<p>【时隙ALOHA】——强制站点只有在时隙开始之时才能进行发送</p>
+<ul>
+<li>脆弱时间: $T_{fr}$</li>
+<li>吞吐量: $S &#x3D; G\times e^{-G}$<br>当 $G&#x3D;1$ 时，则 $S_{max}&#x3D;0.184$<br>其中，$G$ 表示一个帧传输时间内系统产生的帧的平均数量</li>
+</ul>
+<p>【载波侦听多路访问CSMA】——传输前先侦听</p>
+<ul>
+<li>脆弱时间&#x3D;传播时间: $T_{p}$</li>
+<li>吞吐量: $S &#x3D; G\times e^{-G}$<br>当 $G&#x3D;1$ 时，则 $S_{max}&#x3D;0.184$<br>其中，$G$ 表示一个帧传输时间内系统产生的帧的平均数量</li>
+<li>持续方法：1-持续、非持续、p-持续</li>
+</ul>
+<p>【带冲突检测的载波侦听多路访问CSMA&#x2F;CD】——边发边听<br>$Example:$ CMSA&#x2F;CD网络，带宽 $B&#x3D;10Mbps$，最大传播时间 $T_{p}&#x3D;25.6\mu s$，求帧的最小长度<br>解：帧的传输时间 $T_{fr}&#x3D;2\times T_{p}&#x3D;51.2\mu s\ (T_{fr}\geq T_{p})$<br>帧的最小长度$&#x3D;B\times T_{fr}&#x3D;B\times 2T_{p}&#x3D;512\ bits$</p>
+<p>【带冲突避免的载波侦听多路访问CSMA&#x2F;CA】</p>
+<ul>
+<li>三种方法：帧间间隔、竞争窗口、确认</li>
+</ul>
+<p>2、受控访问</p>
+<ul>
+<li>预约</li>
+<li>轮询</li>
+<li>令牌环</li>
+</ul>
+<p>3、通道化：FDMA、TDMA、CDMA</p>
+<h4 id="第13章-有线局域网：以太网"><a href="#第13章-有线局域网：以太网" class="headerlink" title="第13章 有线局域网：以太网"></a>第13章 有线局域网：以太网</h4><p>1、IEEE标准</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据链路层划分为两个子层：逻辑链路控制层（LLC）和介质访问控制层（MAC）</th>
+</tr>
+</thead>
+</table>
+<p>2、标准以太网的MAC子层<br>【帧格式】——最小长度 $64$ 字节<br>【MAC地址】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>源地址一定是单播地址<br>$6$ 字节 &#x3D; $12$ 十六进制数字 &#x3D; $48$位</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">第一个字节的最低位为0则地址是单播地址否则是多播地址</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">广播地址是多播地址的一个特例，所有位（48位）都是1</th>
+</tr>
+</thead>
+</table>
+<p>【编码和解码】</p>
+<table>
+<thead>
+<tr>
+<th align="center">标准以太网中实现的编码是曼彻斯特编码</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">IEEE 802.5中实现的编码是差分曼彻斯特编码</th>
+</tr>
+</thead>
+</table>
+<p>【$10$Base$5$】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输速度 $10Mbps$，基带传输，传输最大距离 $500$ 米<br>粗缆以太网<br>半双工</p>
+
+        </div>
+    </article>
+
+<p>【$10$Base$2$】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输速度 $10Mbps$，基带传输，传输最大距离 $200$ 米<br>细缆以太网<br>半双工</p>
+
+        </div>
+    </article>
+<p>【$10$Base-T】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输速度 $10Mbps$，基带传输，双绞线<br>最大长度：$100$米<br>双绞线以太网<br>全双工</p>
+
+        </div>
+    </article>
+<p>【$10$Base-F】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输速度 $10Mbps$，基带传输，光纤<br>最大长度：$2000$ 米<br>光纤以太网<br>全双工</p>
+
+        </div>
+    </article>
+<p>【桥接以太网】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>存在网桥——作用：提高带宽和分割冲突域</p>
+
+        </div>
+    </article>
+<p>【交换式以太网】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>存在交换机</p>
+
+        </div>
+    </article>
+<p>【全双工以太网】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>站点和交换机之间使用两条链路</p>
+
+        </div>
+    </article>
+<p>3、快速以太网、千兆以太网</p>
+<h4 id="第14章-无线局域网"><a href="#第14章-无线局域网" class="headerlink" title="第14章 无线局域网"></a>第14章 无线局域网</h4><p>1、IEEE $802.11$ 标准——涵盖物理层和数据链路层<br>【基本服务集（BSS）】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>服务点AP：中央基站</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">不带AP的BSS称为特别网络，带AP的BSS称为基础网络</th>
+</tr>
+</thead>
+</table>
+<p>【扩展服务集（ESS）】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>由两个或多个带有AP的BSS组成<br>各个BSS通过一个分布式系统（通常是有线局域网）连接BSS中的AP而组合起来</p>
+
+        </div>
+    </article>
+
+<p>2、$802.11$ MAC子层（DCF和PCF）<br>【分布式协调功能DCF】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>访问方式：CSMA&#x2F;CA<br>需要竞争使用信道</p>
+
+        </div>
+    </article>
+<p>【点协调功能PCF】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>集中式的、无竞争的轮询访问方式<br>PCF的优先级高于DCF</p>
+
+        </div>
+    </article>
+<p>【帧格式】</p>
+<ul>
+<li>帧控制（FC）——$2$ 字节</li>
+<li>D——$2$ 字节</li>
+<li>地址——有四个地址字段，每个 $6$ 字节</li>
+<li>序列控制——$2$ 字节，用于流量控制</li>
+<li>帧主体——$0\sim2312$ 字节</li>
+<li>FCS——$4$字节，CRC-$32$的差错检测序列</li>
+</ul>
+<p>【帧类型】<br>IEEE $802.11$ 定义帧类型：管理帧、控制帧和数据帧<br>3、隐藏站点和暴露站点<br>【隐藏站点】——B和C对于A来说是相互隐藏的</p>
+<table>
+<thead>
+<tr>
+<th align="center">CSMA&#x2F;CA握手中的CTS帧可以避免来自隐藏站点的冲突</th>
+</tr>
+</thead>
+</table>
+<p>【暴露站点】——站点被限制使用通道，而这个通道是可用的</p>
+<h4 id="第15章-连接局域网、主干网和虚拟局域网"><a href="#第15章-连接局域网、主干网和虚拟局域网" class="headerlink" title="第15章 连接局域网、主干网和虚拟局域网"></a>第15章 连接局域网、主干网和虚拟局域网</h4><p>1、连接设备<br>【无源集线器】——工作在物理层以下</p>
+<table>
+<thead>
+<tr>
+<th align="center">集线器是冲突点</th>
+</tr>
+</thead>
+</table>
+<p>【中继器】——工作在物理层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>中继器连接一个局域网的各个网段，因此不能连接两个不同协议的局域网<br>中继器转发每一帧，没有过滤能力<br>是再生器，重新生成信号，不是放大器</p>
+
+        </div>
+    </article>
+<p>【有源集线器（hub）】——工作在物理层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>所有的端口是一个广播域，也是一个冲突域</p>
+
+        </div>
+    </article>
+<p>【网桥】——工作在物理层和数据链路层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>所有的端口是一个广播域，每个端口是一个冲突域（需要竞争使用）<br>网桥具有过滤能力，有一个过滤决策的表<br>可靠性高：网络故障只影响其所在的网段<br>不改变帧中所包含的物理地址<br>连接局域网</p>
+
+        </div>
+    </article>
+<p>【透明网桥】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>是一个它所连接的站点完全意识不到其存在的网桥</p>
+
+        </div>
+    </article>
+<p>【生成树】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>从网桥到LAN的跳数为 $1$，而从LAN到网桥的跳数为 $0$</p>
+
+        </div>
+    </article>
+
+<ul>
+<li>选择 $ID$ 最小的网桥作为根网桥</li>
+<li>找到从根网桥到其他每个网桥或LAN的最短路径</li>
+<li>最短路径的组合生成了最短的树</li>
+</ul>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>转发端口：属于生成树部分的端口<br>阻塞端口：不属于生成树部分的端口</p>
+
+        </div>
+    </article>
+<p>【两层交换机】——工作在物理层和数据链路层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>没有通信量的竞争<br>对帧的MAC地址具有过滤决策<br>所有端口是一个广播域，每个端口是一个冲突域</p>
+
+        </div>
+    </article>
+
+<p>【路由器】——工作在物理层、数据链路层和网络层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>在硬件上实现了路由器的分组转发逻辑<br>基于分组的逻辑地址进行路由转发<br>每个端口是一个广播域也是一个冲突域</p>
+
+        </div>
+    </article>
+
+<p>【三层交换机】——工作在物理层、数据链路层和网络层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>每个端口是一个广播域也是一个冲突域</p>
+
+        </div>
+    </article>
+
+<p>【网关】——工作在所有五层或OSI模型全部七层</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>不仅仅包含路由、交换功能，还包括应用级的功能</p>
+
+        </div>
+    </article>
+
+<p>2、虚拟局域网</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>虚拟局域网: 通过软件而非物理线路来配置的局域网</p>
+
+        </div>
+    </article>
+<p>【站点分组的依据】——端口号、MAC地址、IP地址、多播IP地址、联合使用</p>
+<h4 id="第18章-虚电路网络：帧中继和ATM"><a href="#第18章-虚电路网络：帧中继和ATM" class="headerlink" title="第18章 虚电路网络：帧中继和ATM"></a>第18章 虚电路网络：帧中继和ATM</h4><p>1、【帧中继特点】——虚电路广域网</p>
+<ul>
+<li>速率较高</li>
+<li>允许突发性数据</li>
+<li>花费少</li>
+<li>工作在物理层和数据链路层</li>
+<li>仅在数据链路层有错误检测，没有流量和错误控制</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">帧中继不提供流量和差错控制，这些必须由上层协议提供</th>
+</tr>
+</thead>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">帧中继提供拥塞控制和服务质量</th>
+</tr>
+</thead>
+</table>
+<p>【帧中继的结构】</p>
+<ul>
+<li>帧中继是一种虚电路网络，虚电路用数据链路连接标识符（DLCI）定义</li>
+<li>帧中继中的VCI（虚电路标识符）称为DLCI</li>
+</ul>
+<p>2、异步传输模式（ATM）——信元交换网路</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>信元中继协议<br>传输的数据单元：信元（长度不变）<br>使用异步时分复用技术处理来自不同通道的信元<br>具有先进的拥塞控制和服务质量<br>需要建立虚电路进行通信</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">信元网络使用信元作为数据交换的基本单位，信元定义为一个小的、固定大小的信息块($53$B&#x3D;$5$B头部+$48$B数据)</th>
+</tr>
+</thead>
+</table>
+<p>【传输路径（TP）、虚路径（VP）和虚电路（VC）】</p>
+<ul>
+<li>传输路径是一个端点与一个交换机或者两个交换机之间的物理连接</li>
+<li>虚路径提供两个交换机之间的一条连接或连接的集合</li>
+<li>虚电路是属于同一报文的所有信元沿着同一虚电路传输，同时保持原始次序</li>
+</ul>
+<p>【虚路径标识符（VPI）、虚电路标识符（VCI）】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>VPI定义特定的VP，VCI定义特定的VC</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">一个虚连接由一对数字定义：VPI、VCI，其包含在信元的头部</th>
+</tr>
+</thead>
+</table>
+<h3 id="第四部分-网络层"><a href="#第四部分-网络层" class="headerlink" title="第四部分 网络层"></a>第四部分 网络层</h3><h4 id="第19章-逻辑寻址"><a href="#第19章-逻辑寻址" class="headerlink" title="第19章 逻辑寻址"></a>第19章 逻辑寻址</h4><p>1、IPv4地址分类，掩码，子网和超网的概念</p>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224349.png" alt="IPv4地址划分" width="80%"/>
+
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>可指派网络号范围</th>
+<th>可指派的网络数</th>
+<th>可分配的IP地址数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>0000 0001— 1111 1110</td>
+<td>2^7 -2</td>
+<td>2^24 -2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>128.0—191.255</td>
+<td>2^24</td>
+<td>2^16 -2</td>
+</tr>
+<tr>
+<td>C</td>
+<td>192.0.0—223.255.255</td>
+<td>2^21</td>
+<td>2^8-2</td>
+</tr>
+<tr>
+<td>D</td>
+<td>多播地址</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>E</td>
+<td>保留</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>【子网掩码】</p>
+<table>
+<thead>
+<tr>
+<th>将IP地址的主机号部分借用几位作为子网号以区分同一网络下的不同网络(子网)</th>
+</tr>
+</thead>
+</table>
+<p>【超网】</p>
+<p>超网(CIDR)消除了传统的A类、B类和C类地址以及划分子网的概念，将网络前缀相同的IP地址组成一个地址块</p>
+<p>记法：IP地址   +  “&#x2F;” 			（斜线后写上网络前缀所占的比特数量）</p>
+<p>2、子网划分方法、子网范围计算</p>
+<ol>
+<li>子网掩码用连续 $1$ 表示对应的网络号和子网号；连续 $0$ 表示主机号</li>
+<li>将IPv4地址与子网掩码“相与”，即可得到所在子网的网络地址</li>
+</ol>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224429.png" width="80%" alt=""/>
+
+<p>由子网掩码说明只借用了主机号一位，所以共划分出两个子网，每个子网可分配的地址数为：</p>
+<p>$$<br>2^7-2<br>$$</p>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224508.png" width="80%" alt=""/>
+
+<p>3、NAT</p>
+<table>
+<thead>
+<tr>
+<th>为了解决地址短缺，内部可有大量地址，对外通信采用的一个外部格式；能使得大量使用内部专用地址的用户共享外部的全球地址，以访问因特网主机资源</th>
+</tr>
+</thead>
+</table>
+<p>4、IPv6地址及其缩短形式<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224537.png" alt="IPv6地址" width="80%"/></p>
+<h4 id="第20章-IP协议"><a href="#第20章-IP协议" class="headerlink" title="第20章 IP协议"></a>第20章 IP协议</h4><p>1、IP数据报的格式</p>
+<table>
+<thead>
+<tr>
+<th align="center">固定首部+数据载荷</th>
+</tr>
+</thead>
+</table>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224622.png" alt="" width="80%"/>
+
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224651.png" alt="" width="80%"/>
+
+<p>2、分片与MTU</p>
+<p>【MTU】</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>最大传送单元  :</strong> MTU 是链路层可封装数据 的上限</th>
+</tr>
+</thead>
+</table>
+<p>【分片】</p>
+<table>
+<thead>
+<tr>
+<th>更多操作 IP 分组的 MTU 是 1500 字节 , 当网络层的 IP 分组超过 1500 字节 , 此时就要进行分片，将数据报分割，使其能通过不同的网络</th>
+</tr>
+</thead>
+</table>
+<p><strong>根据首部的标识 , 标志 , 片偏移（必须为整数） 进行相应处理</strong></p>
+<p>3、IPv4校验和</p>
+<table>
+<thead>
+<tr>
+<th>更多操作将校验和置$0$，以 $16$bit为一组求校验和</th>
+</tr>
+</thead>
+</table>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224719.png" alt="" width="80%"/>
+
+<p>4、IPv6分组格式</p>
+<table>
+<thead>
+<tr>
+<th align="center">基本头部固定为$40$B，有效载荷 $Max&#x3D;65536$B</th>
+</tr>
+</thead>
+</table>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224742.png" alt="" width="80%"/>
+
+<p>5、IPv4和IPv6混合</p>
+<ol>
+<li><strong>隧道技术</strong>：两台使用IPv6电脑的报文通过IPv4区域时，IPv6分组封装成IPv4的技术</li>
+<li><strong>头部转换</strong>：发送方用IPv6，接收方用IPv4，则IPv6头部应该转换为IPv4</li>
+</ol>
+<h4 id="第21章-地址映射、差错报告和多播"><a href="#第21章-地址映射、差错报告和多播" class="headerlink" title="第21章 地址映射、差错报告和多播"></a>第21章 地址映射、差错报告和多播</h4><p>1、APR</p>
+<p>【<strong>概念</strong>】</p>
+<table>
+<thead>
+<tr>
+<th><strong>逻辑地址映射到物理地址，</strong> <strong>ARP</strong> <strong>（</strong>Address Resolution Protocol）</th>
+</tr>
+</thead>
+</table>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224807.png" alt="" width="80%"/>
+
+<p>【<strong>过程</strong>】<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224832.png" alt="" width="80%"/></p>
+<p>2、DHCP的概念</p>
+<table>
+<thead>
+<tr>
+<th>可以提供静态&#x2F;动态&#x2F;自动&#x2F;人工的地址配置</th>
+</tr>
+</thead>
+</table>
+<p>3、ICMP</p>
+<p>【<strong>概念作用</strong>】<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224853.png" alt="" width="80%"/><br>【<strong>差错报告</strong>】<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224919.png" alt="" width="80%"/><br>ICMP<strong>差错报文总是将报文传递给源方</strong></p>
+<p>4、IGMP</p>
+<table>
+<thead>
+<tr>
+<th>IGMP是组管理协议，它为多播路由器提供有关连接到该网络上成员的相关信息</th>
+</tr>
+</thead>
+</table>
+<h4 id="第22章-传递、转发和路由协议"><a href="#第22章-传递、转发和路由协议" class="headerlink" title="第22章 传递、转发和路由协议"></a>第22章 传递、转发和路由协议</h4><p>1、转发技术与转发过程</p>
+<table>
+<thead>
+<tr>
+<th>转发是指将分组路由到它的目的端</th>
+</tr>
+</thead>
+</table>
+<ul>
+<li>下一跳方法：路由表只保留下一跳地址</li>
+<li>路由方法：保留完整路由信息</li>
+<li>特定主机&#x2F;特定网络方法</li>
+</ul>
+<p>2、路由表、地址聚合和最长掩码匹配<br><img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823224951.png" alt="" width="80%"/><br>3、单播路由协议</p>
+<p>【RIP】：以距离向量衡量，用于应用层</p>
+<p>【OSPF】：以链路状态衡量，用于传输层</p>
+<p>【BGP】：以路径向量衡量，用于应用层</p>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225013.png" alt="" width="80%"/>
+<img src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/xdu/collaboration/20240823225032.png" alt="" width="80%"/>
+
+<p>4、多播的概念和多播路由协议（了解）</p>
+<h3 id="第五部分-传输层"><a href="#第五部分-传输层" class="headerlink" title="第五部分 传输层"></a>第五部分 传输层</h3><h4 id="第23章-传输层三种协议：UDP、TCP和SCTP"><a href="#第23章-传输层三种协议：UDP、TCP和SCTP" class="headerlink" title="第23章 传输层三种协议：UDP、TCP和SCTP"></a>第23章 传输层三种协议：UDP、TCP和SCTP</h4><p>1、端口（重要端口）、套接字</p>
+<table>
+<thead>
+<tr>
+<th align="center">层结构</th>
+<th align="center">传输地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数据链路层</td>
+<td align="center">MAC地址</td>
+</tr>
+<tr>
+<td align="center">网络层</td>
+<td align="center">IP地址</td>
+</tr>
+<tr>
+<td align="center">传输层</td>
+<td align="center">端口地址</td>
+</tr>
+</tbody></table>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>端口号：$16$bits$\Rightarrow 0\thicksim 65535$<br>端口划分:</p>
+<ul>
+<li>熟知端口: $0\thicksim 1023$</li>
+<li>注册端口: $1024\thicksim 49151$(防止端口被重用)</li>
+<li>动态端口(临时端口): $49152\thicksim 65535$(可随意使用)</li>
+</ul>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">套接字地址：IP地址+端口号</th>
+</tr>
+</thead>
+</table>
+<p>2、UDP协议</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>用户数据报协议（UDP）<br>无连接服务、不可靠、无流量控制和差错控制</p>
+
+        </div>
+    </article>
+
+<p>【数据报结构】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>UDP分组称为用户数据报，有8字节的固定头部<br>固定头部：源端口号、目的端口号、长度（定义数据报总长度）、校检和<br>UDP被封装成IP数据报：伪头部是IP分组的头部一部分，而头部是UDP的一部分<br>数据（必须进行填充是数据是16位的倍数）</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">UDP长度&#x3D;IP长度-IP头部长度</th>
+</tr>
+</thead>
+</table>
+<p>【校检和的计算】——针对UDP的头部加上去除填充的数据</p>
+<table>
+<thead>
+<tr>
+<th align="center">每两个字节模2求和，最后结果取反得到校检和</th>
+</tr>
+</thead>
+</table>
+<p>3、TCP协议</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>传输控制协议（TCP）<br>全双工、面向连接、可靠的、提供流量控制和差错控制<br>建立虚拟连接，逻辑上的连接<br>TCP允许发送进程以字节流的形式传递数据，并设置有发送和接受缓冲区<br>TCP将多个字节组合在一起成为一个分组，称为段<br>段的头部包含有序号、确认号两个字段（序号指字节序号开始于一个随机数编号而非段序号）<br>段序号指该段的第一个字节的序号，段中确认字段定义了接收方预期接受的下一字节的编号</p>
+
+        </div>
+    </article>
+
+<p>【连接建立（三次握手）】——SYN表示序列同步号</p>
+<ul>
+<li>客户发送第一个段SYN段，用于序列号同步，不携带数据但占用一个序列号</li>
+<li>服务器发送第二个段，SYN+ACK段，SYN表示另一方向通信的SYN段（全双工），ACK表示对第一个SYN的确认，不携带数据但占用一个序列号</li>
+<li>客户发送第三个段，ACK段进行确认，不携带数据也不占用序列号</li>
+</ul>
+<p>【终止连接（三次握手）】——将SYN换做FIN<br>【流量控制】——信贷滑窗协议</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>面向字节的、窗口大小可变<br>窗口的张开、合拢和收缩由接收方控制</p>
+
+        </div>
+    </article>
+
+<center>窗口大小=$\min(rwnd,cwnd)$</center>
+
+<p>【差错控制】——校检和、确认和重传</p>
+<ul>
+<li>ACK段不占用序列号，不需要确认</li>
+<li>超时重传：重传计时器到时，快速重传：发送方接收到三个重复的ACK</li>
+<li>数据可以失序到达，并被接受的TCP暂时存储，但是TCP确保传递给进程的段是无失序的</li>
+</ul>
+<h4 id="第24章-拥塞控制和服务质量"><a href="#第24章-拥塞控制和服务质量" class="headerlink" title="第24章 拥塞控制和服务质量"></a>第24章 拥塞控制和服务质量</h4><p>1、TCP拥塞控制<br>【慢启动过程】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>每次接收到一个确认时，窗口大小增加一个MSS值<br>以 $2$ 的幂次增加，单位是MSS值</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">在慢启动算法中，拥塞窗口大小按指数规律增长直到达到阈值</th>
+</tr>
+</thead>
+</table>
+<p>【拥塞避免：加性增加】</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>当拥塞窗口达到慢速启动的阈值时，慢速启动阶段停止，加性增加阶段开始<br>每次整个窗口所有段都被确认时，拥塞窗口才增加 $1$</p>
+
+        </div>
+    </article>
+
+<table>
+<thead>
+<tr>
+<th align="center">拥塞避免算法中，拥塞窗口大小加性增加直到检测到拥塞</th>
+</tr>
+</thead>
+</table>
+<p>【拥塞检测：乘性减少】</p>
+<table>
+<thead>
+<tr>
+<th align="center">发生拥塞时，拥塞窗口阈值下降一半</th>
+</tr>
+</thead>
+</table>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>如果计时器到时，开始一个新的慢速启动阶段<br>如果检测出三个ACK，开始一个新的拥塞避免阶段</p>
+
+        </div>
+    </article>
+
+<p>2、服务质量<br>【概念】数据流所追求的某种目标</p>
+<h3 id="第六部分-应用层"><a href="#第六部分-应用层" class="headerlink" title="第六部分 应用层"></a>第六部分 应用层</h3><h4 id="第25章-域名系统"><a href="#第25章-域名系统" class="headerlink" title="第25章 域名系统"></a>第25章 域名系统</h4><p>1、域名空间DNS<br>【域名树】——最多有 $128$ 级，$0$ 级根节点，节点标号为字符串，根节点标号为空串</p>
+<article class="message is-info is-default">
+        
+        <div class="message-body">
+            <p>从下向上读，最后一个字符为 $’.’$<br>全称域名：以空字符串结束，最后一个字符是 $’.’$<br>部分域名：起始于一个节点，但未到根节点</p>
+
+        </div>
+    </article>
+
+<p>2、域名空间三个部分：反向域、通用域和国家域<br>【通用域】按照已经注册的主机的一般行为对主机进行定义</p>
+<center>com  edu  gov  info  int  mil  org  pro</center>
+【国家域】
+<center>cn  us</center>
+
+<p>【反向域】用于将地址映射为名字<br>3、域名解析<br>【递归解析】<br>将客户机的请求不断传递给父服务器并等待响应，查询得到解析后响应后向传送直到最终到达发出请求的客户机<br>【迭代解析】<br>服务器或者发送应答，或者返回另一个服务器的IP地址，由客户机负责再次发送请求<br>4、DNS报文<br>【查询报文】——头部+查询记录<br>【响应报文】——头部+查询记录+响应记录+授权部分+附加部分<br>5、URL<br>访问Web的主机统一命名：协议：&#x2F;&#x2F;主机：&#x2F;&#x2F;端口：&#x2F;&#x2F;路径</p>
+<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Zhihao Li, Computer Science and Technology, Xidian University</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://zhihaoli.top">
+            https://zhihaoli.top
+        </a>
+    </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Jiawei Hu, Computer Science and Technology, Xidian University</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://jiaweihu-xdu.github.io/">
+            https://jiaweihu-xdu.github.io/
+        </a>
+    </p>
+</div>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 15px;">
+    <p>Behrouz, a.forouzan. (n.d.). 数据通信与网络 (原书第 4 版)</p>
+    <p>
+        <a target="_blank" rel="noopener" href="http://m.cmpedu.com/books/book/2011466.htm">
+            http://m.cmpedu.com/books/book/2011466.htm
+        </a>
+    </p>
+</div>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+    <p>杨力. 2023年春, 计算机通信与网络, 西安电子科技大学.</p>
+    <p>
+        <a target="_blank" rel="noopener" href="https://mooc1.chaoxing.com/mooc-ans/course/231806185.html">
+            https://mooc1.chaoxing.com/mooc-ans/course/231806185.html
+        </a>
+    </p>
+</div>
+
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>计算机通信与网络</p><p><a href="https://lzhms.github.io/collaboration/ComputerNetwork/">https://lzhms.github.io/collaboration/ComputerNetwork/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Zhihao Li</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2023-09-13</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-11-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/Computer-Network/">Computer Network,</a><a class="link-muted" rel="tag" href="/tags/Collaboration-Project/">Collaboration Project </a></div></div><div class="sharethis-inline-reaction-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=6713c7a4f9d5250012f5d817&amp;product=inline-reaction-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/collaboration/Physics/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">大学物理之电磁场学</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/BlogConfiguration/"><span class="level-item">Blog Configuration on Icarus Theme</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdnjs.loli.net/ajax/libs/twikoo/1.6.30/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://twikoo-netlify-comment.netlify.app/.netlify/functions/twikoo',
+            region: "ap-guangzhou",
+            lang: "en",
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-96x96 mx-auto mb-2"><img class="avatar is-rounded" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/avatar.png" alt="Zhihao Li"></figure><p class="title is-size-4 is-block" style="line-height: 'inherit';">Zhihao Li</p><p style="white-space: pre-line; font-style: italic; margin-bottom: 0.50rem; font-size: 1.0em">Computer Science
+Machine Learning
+</p><p class="is-size-5 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Xidian University, Xi&#039;an, China</span></p></div></div></nav><nav class="level menu-list is-mobile" style="margin-bottom:1rem"><a class="level-item has-text-centered is-marginless" href="/archives/"><div><p class="heading">Posts</p><div><p class="title">52</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/categories/"><div><p class="heading">Categories</p><div><p class="title">6</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/tags/"><div><p class="heading">Tags</p><div><p class="title">40</p></div></div></a></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LZHMS" target="_blank" rel="noopener"><i class="fab fa-github"></i>  Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/2079836440"><i class="iconfont icon-bilibili"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Cnblog" href="https://www.cnblogs.com/LZHMS/"><i class="iconfont icon-cnblogs"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/1730463517285_temp_qrcode_share_9993.64dv175zqu.webp"><i class="iconfont icon-QQ1"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="WeChat" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/0add852711e38990022788ba88dd062.3nrmm9y3ql.webp"><i class="iconfont icon-wechat-"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:zhihaoli@stu.xidian.edu.cn"><i class="iconfont icon-email2"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">1</span><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#数据通信与网络课件"><span class="level-left"><span class="level-item">2</span><span class="level-item">数据通信与网络课件</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第一章-概述"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">第一章 概述</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#1-1-第一讲-绪论"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">1.1 第一讲 绪论</span></span></a></li><li><a class="level is-mobile" href="#1-2-第二讲-网络模型"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">1.2 第二讲 网络模型</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第二章-物理层和介质"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">第二章 物理层和介质</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-1-第三讲-物理层"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">2.1 第三讲 物理层</span></span></a></li><li><a class="level is-mobile" href="#2-2-第四讲-数字传输"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">2.2 第四讲 数字传输</span></span></a></li><li><a class="level is-mobile" href="#2-3-第五讲-模拟传输"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">2.3 第五讲 模拟传输</span></span></a></li><li><a class="level is-mobile" href="#2-4-第六讲-带宽利用"><span class="level-left"><span class="level-item">2.2.4</span><span class="level-item">2.4 第六讲 带宽利用</span></span></a></li><li><a class="level is-mobile" href="#2-5-第七讲-传输介质"><span class="level-left"><span class="level-item">2.2.5</span><span class="level-item">2.5 第七讲 传输介质</span></span></a></li><li><a class="level is-mobile" href="#2-6-第八讲-交换"><span class="level-left"><span class="level-item">2.2.6</span><span class="level-item">2.6 第八讲 交换</span></span></a></li><li><a class="level is-mobile" href="#2-7-第九讲-使用电话网和有线电视网进行数据传输"><span class="level-left"><span class="level-item">2.2.7</span><span class="level-item">2.7 第九讲 使用电话网和有线电视网进行数据传输</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第三章-数据链路层"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">第三章 数据链路层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-1-第十讲-检错与纠错"><span class="level-left"><span class="level-item">2.3.1</span><span class="level-item">3.1 第十讲 检错与纠错</span></span></a></li><li><a class="level is-mobile" href="#3-2-第十一讲-数据链路控制"><span class="level-left"><span class="level-item">2.3.2</span><span class="level-item">3.2 第十一讲 数据链路控制</span></span></a></li><li><a class="level is-mobile" href="#3-3-第十二讲-多路访问"><span class="level-left"><span class="level-item">2.3.3</span><span class="level-item">3.3 第十二讲 多路访问</span></span></a></li><li><a class="level is-mobile" href="#3-4-第十三讲-有线局域网：以太网"><span class="level-left"><span class="level-item">2.3.4</span><span class="level-item">3.4 第十三讲 有线局域网：以太网</span></span></a></li><li><a class="level is-mobile" href="#3-5-第十四讲-无线局域网"><span class="level-left"><span class="level-item">2.3.5</span><span class="level-item">3.5 第十四讲 无线局域网</span></span></a></li><li><a class="level is-mobile" href="#3-6-第十五讲-连接局域网、主干网和虚拟局域网"><span class="level-left"><span class="level-item">2.3.6</span><span class="level-item">3.6 第十五讲 连接局域网、主干网和虚拟局域网</span></span></a></li><li><a class="level is-mobile" href="#3-7-第十七讲-广域网"><span class="level-left"><span class="level-item">2.3.7</span><span class="level-item">3.7 第十七讲 广域网</span></span></a></li><li><a class="level is-mobile" href="#3-8-第十八讲-虚电路网络：帧中断和ATM"><span class="level-left"><span class="level-item">2.3.8</span><span class="level-item">3.8 第十八讲 虚电路网络：帧中断和ATM</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第四章-网络层"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">第四章 网络层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#4-1-第十九讲-逻辑寻址"><span class="level-left"><span class="level-item">2.4.1</span><span class="level-item">4.1 第十九讲 逻辑寻址</span></span></a></li><li><a class="level is-mobile" href="#4-2-第二十讲-IP协议"><span class="level-left"><span class="level-item">2.4.2</span><span class="level-item">4.2 第二十讲 IP协议</span></span></a></li><li><a class="level is-mobile" href="#4-3-第二十一讲-地址映射、差错报告和多播"><span class="level-left"><span class="level-item">2.4.3</span><span class="level-item">4.3 第二十一讲 地址映射、差错报告和多播</span></span></a></li><li><a class="level is-mobile" href="#4-4-第二十二讲-传递、转发和路由选择"><span class="level-left"><span class="level-item">2.4.4</span><span class="level-item">4.4 第二十二讲 传递、转发和路由选择</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第五章-传输层"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">第五章 传输层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#5-1-第二十三讲-UDP、TCP和SCTP"><span class="level-left"><span class="level-item">2.5.1</span><span class="level-item">5.1 第二十三讲 UDP、TCP和SCTP</span></span></a></li><li><a class="level is-mobile" href="#5-2-第二十四讲-拥塞控制和服务质量"><span class="level-left"><span class="level-item">2.5.2</span><span class="level-item">5.2 第二十四讲 拥塞控制和服务质量</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#计算机通信与网络课程总复习知识点"><span class="level-left"><span class="level-item">3</span><span class="level-item">计算机通信与网络课程总复习知识点</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第一部分-概述"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">第一部分 概述</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第1章-绪论"><span class="level-left"><span class="level-item">3.1.1</span><span class="level-item">第1章 绪论</span></span></a></li><li><a class="level is-mobile" href="#第2章-网络模型"><span class="level-left"><span class="level-item">3.1.2</span><span class="level-item">第2章 网络模型</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第二部分-物理层和介质"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">第二部分 物理层和介质</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第3章-物理层"><span class="level-left"><span class="level-item">3.2.1</span><span class="level-item">第3章 物理层</span></span></a></li><li><a class="level is-mobile" href="#第4章-数字传输"><span class="level-left"><span class="level-item">3.2.2</span><span class="level-item">第4章 数字传输</span></span></a></li><li><a class="level is-mobile" href="#第5章-模拟传输"><span class="level-left"><span class="level-item">3.2.3</span><span class="level-item">第5章 模拟传输</span></span></a></li><li><a class="level is-mobile" href="#第6章-带宽利用"><span class="level-left"><span class="level-item">3.2.4</span><span class="level-item">第6章 带宽利用</span></span></a></li><li><a class="level is-mobile" href="#第7章-传输介质"><span class="level-left"><span class="level-item">3.2.5</span><span class="level-item">第7章 传输介质</span></span></a></li><li><a class="level is-mobile" href="#第8章-交换（传输时延分析）"><span class="level-left"><span class="level-item">3.2.6</span><span class="level-item">第8章 交换（传输时延分析）</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第三部分-数据链路层"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">第三部分 数据链路层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第10章-检错与纠错"><span class="level-left"><span class="level-item">3.3.1</span><span class="level-item">第10章 检错与纠错</span></span></a></li><li><a class="level is-mobile" href="#第11章-数据链路控制"><span class="level-left"><span class="level-item">3.3.2</span><span class="level-item">第11章 数据链路控制</span></span></a></li><li><a class="level is-mobile" href="#第12章-多路访问"><span class="level-left"><span class="level-item">3.3.3</span><span class="level-item">第12章 多路访问</span></span></a></li><li><a class="level is-mobile" href="#第13章-有线局域网：以太网"><span class="level-left"><span class="level-item">3.3.4</span><span class="level-item">第13章 有线局域网：以太网</span></span></a></li><li><a class="level is-mobile" href="#第14章-无线局域网"><span class="level-left"><span class="level-item">3.3.5</span><span class="level-item">第14章 无线局域网</span></span></a></li><li><a class="level is-mobile" href="#第15章-连接局域网、主干网和虚拟局域网"><span class="level-left"><span class="level-item">3.3.6</span><span class="level-item">第15章 连接局域网、主干网和虚拟局域网</span></span></a></li><li><a class="level is-mobile" href="#第18章-虚电路网络：帧中继和ATM"><span class="level-left"><span class="level-item">3.3.7</span><span class="level-item">第18章 虚电路网络：帧中继和ATM</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第四部分-网络层"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">第四部分 网络层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第19章-逻辑寻址"><span class="level-left"><span class="level-item">3.4.1</span><span class="level-item">第19章 逻辑寻址</span></span></a></li><li><a class="level is-mobile" href="#第20章-IP协议"><span class="level-left"><span class="level-item">3.4.2</span><span class="level-item">第20章 IP协议</span></span></a></li><li><a class="level is-mobile" href="#第21章-地址映射、差错报告和多播"><span class="level-left"><span class="level-item">3.4.3</span><span class="level-item">第21章 地址映射、差错报告和多播</span></span></a></li><li><a class="level is-mobile" href="#第22章-传递、转发和路由协议"><span class="level-left"><span class="level-item">3.4.4</span><span class="level-item">第22章 传递、转发和路由协议</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第五部分-传输层"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">第五部分 传输层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第23章-传输层三种协议：UDP、TCP和SCTP"><span class="level-left"><span class="level-item">3.5.1</span><span class="level-item">第23章 传输层三种协议：UDP、TCP和SCTP</span></span></a></li><li><a class="level is-mobile" href="#第24章-拥塞控制和服务质量"><span class="level-left"><span class="level-item">3.5.2</span><span class="level-item">第24章 拥塞控制和服务质量</span></span></a></li></ul></li><li><a class="level is-mobile" href="#第六部分-应用层"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">第六部分 应用层</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#第25章-域名系统"><span class="level-left"><span class="level-item">3.6.1</span><span class="level-item">第25章 域名系统</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#Contributors"><span class="level-left"><span class="level-item">4</span><span class="level-item">Contributors</span></span></a></li><li><a class="level is-mobile" href="#References"><span class="level-left"><span class="level-item">5</span><span class="level-item">References</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/collaboration/"><span class="level-start"><span class="level-item">collaboration</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/essay/"><span class="level-start"><span class="level-item">essay</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/knowledge/"><span class="level-start"><span class="level-item">knowledge</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/projects/"><span class="level-start"><span class="level-item">projects</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/readings/"><span class="level-start"><span class="level-item">readings</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/3D-Vision/"><span class="tag">3D Vision</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/3DGS/"><span class="tag">3DGS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AIGC/"><span class="tag">AIGC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Collaboration-Project/"><span class="tag">Collaboration Project</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/College-Life/"><span class="tag">College Life</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Graphics/"><span class="tag">Computer Graphics</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Network/"><span class="tag">Computer Network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Principle/"><span class="tag">Computer Principle</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Vision/"><span class="tag">Computer Vision</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Visualization/"><span class="tag">Data Visualization</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Deep-Model-Deployment/"><span class="tag">Deep Model Deployment</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Diffusion-Model/"><span class="tag">Diffusion Model</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Eletromagnetic-Physics/"><span class="tag">Eletromagnetic Physics</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Embedded-System/"><span class="tag">Embedded System</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Few-Shots-Learning/"><span class="tag">Few Shots Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Health/"><span class="tag">Health</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Life-Knowledge/"><span class="tag">Life Knowledge</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Literature-Survey/"><span class="tag">Literature Survey</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Machine-Learning/"><span class="tag">Machine Learning</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathematical-Modeling/"><span class="tag">Mathematical Modeling</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathematical-Theory/"><span class="tag">Mathematical Theory</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Microarchitecture/"><span class="tag">Microarchitecture</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Microcomputer/"><span class="tag">Microcomputer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mountain-Climbing/"><span class="tag">Mountain Climbing</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/My-Research/"><span class="tag">My Research</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NLP/"><span class="tag">NLP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Noisy-Label-Learning/"><span class="tag">Noisy Label Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Object-Detection/"><span class="tag">Object Detection</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenSSL/"><span class="tag">OpenSSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Professional-Knowledge/"><span class="tag">Professional Knowledge</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Habits/"><span class="tag">Project Habits</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Tools/"><span class="tag">Project Tools</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Prompt-Learning/"><span class="tag">Prompt Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Research-Habits/"><span class="tag">Research Habits</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Software-Engineering/"><span class="tag">Software Engineering</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Transformer/"><span class="tag">Transformer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Visual-Language-Models/"><span class="tag">Visual Language Models</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img class="logo-img" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_dark.png" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2023-2024 Zhihao Li</span><br><span id="busuanzi_container_site_uv"><span id="busuanzi_container_site_uv">Site UV: <span id="busuanzi_value_site_uv"></span></span>   <span id="busuanzi_container_site_pv">Site PV: <span id="busuanzi_value_site_pv"></span></span></span></p><p class="is-size-7"> </p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="HuggingFace" href="https://huggingface.co/LZHMS"><i class="iconfont icon-huggingface"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="ZhiHu" href="https://www.zhihu.com/people/zhao.li"><i class="iconfont icon-zhihu"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CSDN" href="https://blog.csdn.net/weixin_63554791"><i class="iconfont icon-csdn"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.css"><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/auto-render.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><!--!--><script data-pjax src="/js/main.js" defer></script><script data-pjax src="/js/night.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><div id="dark" onclick="switchDarkMode()"></div><script type="text/javascript" src="/js/universe.js"></script></body></html>
