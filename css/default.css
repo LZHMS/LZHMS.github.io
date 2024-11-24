@@ -11483,6 +11483,26 @@ figure.highlight.foldable div.level-left {
     overflow-y: scroll;
   }
 }
+.more-link {
+  margin-top: 10px;
+  text-align: center;
+}
+.more-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+.more-link a:hover {
+  text-decoration: underline;
+}
+.latest-announcement {
+  opacity: 1;
+  color: inherit;
+}
+.faded-announcement {
+  opacity: 0.6; /* 不透明度降低 */
+  color: #6c757d; /* 更淡的灰色 */
+  transition: opacity 0.3s, color 0.3s; /* 添加平滑过渡效果 */
+}
 .donate {
   position: relative;
 }

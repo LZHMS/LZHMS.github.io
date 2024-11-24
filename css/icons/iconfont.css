@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1732428447648') format('woff2'),
-       url('iconfont.woff?t=1732428447648') format('woff'),
-       url('iconfont.ttf?t=1732428447648') format('truetype');
+       url('iconfont.woff2?t=1732432686526') format('woff2'),
+       url('iconfont.woff?t=1732432686526') format('woff'),
+       url('iconfont.ttf?t=1732432686526') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,16 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tongzhixiaoxi:before {
+  content: "\e659";
+}
+
+.icon-tongzhi1:before {
+  content: "\e62e";
+  font-size: 20px;
+  margin-right: 4px;
 }
 
 .icon-chengjidan:before {
