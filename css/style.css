@@ -11494,6 +11494,17 @@ figure.highlight.foldable div.level-left {
 .more-link a:hover {
   text-decoration: underline;
 }
+.anno-link {
+  margin-top: 1px;
+  text-align: left;
+}
+.anno-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+.anno-link a:hover {
+  text-decoration: underline;
+}
 .latest-announcement {
   opacity: 1;
   color: inherit;
