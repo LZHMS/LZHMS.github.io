@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1731819118975') format('woff2'),
-       url('iconfont.woff?t=1731819118975') format('woff'),
-       url('iconfont.ttf?t=1731819118975') format('truetype');
+       url('iconfont.woff2?t=1732428447648') format('woff2'),
+       url('iconfont.woff?t=1732428447648') format('woff'),
+       url('iconfont.ttf?t=1732428447648') format('truetype');
 }
 
 .iconfont {
@@ -15,20 +15,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-github2:before {
-  content: "\e7ac";
+.icon-chengjidan:before {
+  content: "\e613";
 }
 
-.icon-github5:before {
-  content: "\e731";
+.icon-26manage:before {
+  content: "\e62c";
+}
+
+.icon-chengjidan1:before {
+  content: "\e83e";
+  font-size: 24px;
 }
 
 .icon-GitHub:before {
   content: "\ea09";
-}
-
-.icon-github6:before {
-  content: "\e603";
 }
 
 .icon-github7:before {
