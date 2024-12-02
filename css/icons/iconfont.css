@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1732432686526') format('woff2'),
-       url('iconfont.woff?t=1732432686526') format('woff'),
-       url('iconfont.ttf?t=1732432686526') format('truetype');
+       url('iconfont.woff2?t=1733135207859') format('woff2'),
+       url('iconfont.woff?t=1733135207859') format('woff'),
+       url('iconfont.ttf?t=1733135207859') format('truetype');
 }
 
 .iconfont {
@@ -15,8 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tongzhixiaoxi:before {
-  content: "\e659";
+.icon-dianzikeji:before {
+  content: "\e60c";
+}
+
+.icon-beijingdaxue:before {
+  content: "\e63d";
 }
 
 .icon-tongzhi1:before {
@@ -27,6 +31,7 @@
 
 .icon-chengjidan:before {
   content: "\e613";
+  font-size: 22px;
 }
 
 .icon-26manage:before {
@@ -35,11 +40,7 @@
 
 .icon-chengjidan1:before {
   content: "\e83e";
-  font-size: 24px;
-}
-
-.icon-GitHub:before {
-  content: "\ea09";
+  font-size: 26px;
 }
 
 .icon-github7:before {
@@ -137,7 +138,6 @@
 
 .icon-bilibili:before {
   content: "\e609";
-  font-size: 20px;
 }
 
 .icon-bilibili1:before {
