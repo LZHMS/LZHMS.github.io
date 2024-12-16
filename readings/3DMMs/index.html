@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>3D Morphable Face Models—Past, Present, and Future - Zhihao Li - Zhihao Li&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="msapplication-TileImage" content="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="3D Morphable Face Models—Past, Present, and Future."><meta property="og:type" content="blog"><meta property="og:title" content="3D Morphable Face Models—Past, Present, and Future"><meta property="og:url" content="https://lzhms.github.io/readings/3DMMs/"><meta property="og:site_name" content="Zhihao Li - Zhihao Li&#039;s Blog"><meta property="og:description" content="3D Morphable Face Models—Past, Present, and Future."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://lzhms.github.io/img/og_image.png"><meta property="article:published_time" content="2024-12-16T06:57:39.000Z"><meta property="article:modified_time" content="2024-12-16T08:08:33.960Z"><meta property="article:author" content="Zhihao Li"><meta property="article:tag" content="Literature Survey"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://lzhms.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lzhms.github.io/readings/3DMMs/"},"headline":"3D Morphable Face Models—Past, Present, and Future","image":["https://lzhms.github.io/img/og_image.png"],"datePublished":"2024-12-16T06:57:39.000Z","dateModified":"2024-12-16T08:08:33.960Z","author":{"@type":"Person","name":"Zhihao Li"},"publisher":{"@type":"Organization","name":"Zhihao Li - Zhihao Li's Blog","logo":{"@type":"ImageObject","url":"https://lzhms.github.io/images/logo.svg"}},"description":"3D Morphable Face Models—Past, Present, and Future."}</script><link rel="canonical" href="https://lzhms.github.io/readings/3DMMs/"><link rel="icon" href="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/logo_light.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="/css/icons/iconfont.css"><link data-pjax rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.css"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img class="logo-img" src="/images/logo.svg" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="/images/logo.svg" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">ZHIHAO LI&#039;S LOG BOOK</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/intuition">INTUITION</a><a class="navbar-item" href="/publications">PUBLICATIONS</a><a class="navbar-item" href="/projects">PROJECTS</a><a class="navbar-item" href="/essay">ESSAY</a><a class="navbar-item" href="/readings">READINGS</a><a class="navbar-item" href="/collaboration">COLLABORATION</a><a class="navbar-item" href="/archives">ARCHIVES</a><a class="navbar-item" href="/categories">CATEGORIES</a><a class="navbar-item" href="/tags">TAGS</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/LZHMS"><i class="iconfont icon-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="Gitee" href="https://gitee.com/LZHMS"><i class="iconfont icon-gitee1"></i></a><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">3D Morphable Face Models—Past, Present, and Future</h1><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-12-16T06:57:39.000Z" title="2024-12-16T06:57:39.000Z">2024-12-16</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-12-16T08:08:33.960Z" title="2024-12-16T08:08:33.960Z">2024-12-16</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/readings/">readings</a></span><span class="level-item"><i class="far fa-clock"></i> 18 minutes read (About 2698 words)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>&nbsp;visits</span></div></div><div class="content"><h1 id="Summary-Sheet"><a href="#Summary-Sheet" class="headerlink" title="Summary Sheet"></a>Summary Sheet</h1><iframe src="/pdfjs/web/viewer.html?file=/pdf/readings/3DMorphableFaceModels.pdf" style='width:100%;height:800px'></iframe>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>A 3D Morphable Face Model is a generative model for face shape and appearance that is based on two key ideas.</p>
+<ol>
+<li><p>All faces are in dense point-to-point correspondence.</p>
+</li>
+<li><p>Separate facial shape and color and to disentangle these from external factors such as illumination and camera parameters.</p>
+</li>
+</ol>
+<p>3DMMs 最初是一个人脸分布的统计模型，后续引入了其他生成式学习模型。3DMMs发展的前提假设是类别的先验知识对视觉任务很重要，被设计用于从一组样本中自动学习以捕获这样的先验知识。</p>
+<h2 id="Research-Development"><a href="#Research-Development" class="headerlink" title="Research Development"></a>Research Development</h2><h3 id="I-Eigenfaces"><a href="#I-Eigenfaces" class="headerlink" title="I: Eigenfaces"></a>I: Eigenfaces</h3><ol>
+<li><strong>Eigenfaces [1987, 1991]</strong>: explicit face representation and operated on gray levels, images of faces is a vector space and the eigenvectors represent variation in space. ——influential</li>
+</ol>
+<p><strong>Drawbacks</strong>: fixed pose and illumination, no shape differences.</p>
+<ol start="2">
+<li><strong>Eigenfaces in 3D [1996]</strong>: model shading variations in 3D faces.</li>
+</ol>
+<h3 id="II-Correspondence-based"><a href="#II-Correspondence-based" class="headerlink" title="II: Correspondence-based"></a>II: Correspondence-based</h3><p>通过添加 2D 形状变换的特征分解得到明确的 shape model 和 aligned Eigenface model. 传统的 Eigenface 方法只对齐一个单独的点，而新的方法建立了大量点的对应。</p>
+<ol start="3">
+<li><p><strong>Landmark-based Face Warping [1991, 1995]</strong>: a statistical shape model using landmarks. ——innovative</p>
+</li>
+<li><p><strong>Active Appearance Models [1998]</strong>: a combination of shape and appearance. ——successful and influential</p>
+</li>
+<li><p><strong>Dense Pixel-wise Image Correspondences [1999, 1998]</strong>: computed dense pixel-wise image correspondences with optic-flow algorithms for modeling the facial shape variations.</p>
+</li>
+</ol>
+<p>以上的 2D models 能够有效捕获对应于一个固定姿势和照明环境的形状变换，并可以拓展到姿势的变换、其他类别。且证实图像中形状和纹理信息的分离可以建模脸部的变化。引入姿势和照明环境变换代价高昂且条件受限，后续受益于 3D 图形学的发展，造就了 3DMMs 的诞生。</p>
+<h3 id="III-3DMMs"><a href="#III-3DMMs" class="headerlink" title="III: 3DMMs"></a>III: 3DMMs</h3><ol start="6">
+<li><strong>3DMMs [1999]</strong>: new face representation and using analysis-by-synthesis to map between the 3D and 2D domain. ——influential</li>
+</ol>
+<p><strong>Drawbacks</strong>: high computational price, costly optimization, more complex.</p>
+<p>通过利用 3D 模型操控现有的图像以及在 3D 表面应用 2D 算法来充分挖掘 2D 和 3D 世界是一个关键点。</p>
+<h2 id="Face-Capture"><a href="#Face-Capture" class="headerlink" title="Face Capture"></a>Face Capture</h2><p>3DMM中最关键的部分是一组3D形状表示，以及相应的外观数据。</p>
+<h3 id="Shape-Acquisition"><a href="#Shape-Acquisition" class="headerlink" title="Shape Acquisition"></a>Shape Acquisition</h3><p>形状表示最常用的是三角形网格，利用这种方法进行密集对应需要所有样本都表现出相同的拓扑结构以及顶点编码相同的语义点。</p>
+<h4 id="Geometric-Methods"><a href="#Geometric-Methods" class="headerlink" title="Geometric Methods"></a>Geometric Methods</h4><p>几何测量方法直接估计 3D coordinates of a shape:</p>
+<ol>
+<li><p>观测多视点中的相同表面点，挑战在于识别出多张图像中对应的坐标点。</p>
+</li>
+<li><p>观测 projected pattern，挑战在于识别出已知投影模式与投影图像之间的对应关系。</p>
+</li>
+</ol>
+<h4 id="Photometric-Methods"><a href="#Photometric-Methods" class="headerlink" title="Photometric Methods"></a>Photometric Methods</h4><p>光度测量方法通常估计表面方向，从中通过积分恢复 3D 形状。</p>
+<p>挑战在于选择能够精确捕获表面反射特性的模型，并获得足够的测量结果保证模型 well-posed.</p>
+<blockquote>
+<p><strong>Well-posed VS Ill-posed</strong><br>适定性（well-posedness）是由法国数学家哈达玛（Jacques Hadamard）提出的一个概念，满足以下三个条件可以为认为是适定的（well-posed），否则认为是非适定的（ill-posed）。</p>
+<ol>
+<li>解的存在性：问题有解；</li>
+<li>解的唯一性：解是唯一的；</li>
+<li>解的稳定性：解对测量数据的小变化（误差）不敏感。</li>
+</ol>
+</blockquote>
+<p>反演是适定的（the inversion of these models is well-posed），意思是指模型通过测量数据准确地描述（反推出）表面反射特性（存在解），数据可以反推出唯一的表面反射特性（解唯一），测量误差不会导致反射特性结果不可靠（解稳定），因此称模型是<strong>适定的</strong>。</p>
+<p>与几何方法相比，光度测量方法通常提供更高的形状细节，并且不依赖于可匹配特征的存在（因此适用于光滑、无特征的表面），但经常遭受由反射率建模误差引起的重建位置的低频偏差和照明。</p>
+<h4 id="Hybrid-Methods"><a href="#Hybrid-Methods" class="headerlink" title="Hybrid Methods"></a>Hybrid Methods</h4><p>混合方法结合了几何以及光度测量方法的优势，具体而言，它减少了在光度测量方法中的低频偏差，同时增加了几何测量方法中的高频细节。</p>
+<p>各种几何与光度测量方法的组合实现了许多不错的效果。</p>
+<h3 id="Appearance-Capture"><a href="#Appearance-Capture" class="headerlink" title="Appearance Capture"></a>Appearance Capture</h3><p>理论上，网格的每个顶点都可以具有关联的外观属性，通常形状被参数化 2D 域，纹理用于存储外观属性。</p>
+<p>外观可以向将图像的颜色反投影到形状上一样简单，但这会导致烘培阴影效果（shaddnig effects to be backed in）。</p>
+<p>3DMMs 中的外观模型大都结合从多个相机获取的对人脸全面覆盖的图像与漫射照明估计反射率。</p>
+<p>内在分解（Intrinsic Decomposition）是将阴影与皮肤颜色显式分离可以达到更好的效果。这允许在新的入射照明条件下重新照亮面部，并且基于此类数据构建的 3DMM 可以真实地模拟面部的内在特征。</p>
+<h3 id="Face-Part-Specific-Methods"><a href="#Face-Part-Specific-Methods" class="headerlink" title="Face Part Specific Methods"></a>Face Part Specific Methods</h3><p>重建人脸的特定部分需要一些专门的获取方法和设备，因为这些人脸部分都违背了之前方法做出的假设条件。</p>
+<ol>
+<li><p>眼睛最前面的部分角膜是完全透明的，而且会扭曲虹膜外观；</p>
+</li>
+<li><p>具有挑战性的牙齿的外观；</p>
+</li>
+<li><p>头发违反了重建形状是光滑连续表示的常见假设，以及头发数据获取基于静态重建，运动中捕获还需要模拟头发运动以获取对应的物理属性。</p>
+</li>
+</ol>
+<h3 id="Dynamic-Capture"><a href="#Dynamic-Capture" class="headerlink" title="Dynamic Capture"></a>Dynamic Capture</h3><p>3DMMs 一直关注于静态形状的构建，而当该领域中开始引入更高时间信息到模型中去捕获脸部如何在表情之间转换，动态捕获系统就开始兴起了。</p>
+<p>主动系统（Active Systems）在几何和光度测量方法中都开始被考虑。这种技术可以提供具有对应点的形状，而不需要后处理中进行表面点的对应。</p>
+<p>面部捕捉领域比人脸建模发展的更超前，在捕获的数据质量与 3DMMs 实际采用的数据质量存在很大差距。面部捕捉技术用于获取尽可能高质量的人脸数据，是人脸建模的先导。</p>
+<p>面部捕获领域也存在着许多问题限制了进一步的发展，</p>
+<ol>
+<li><p>面部捕获技术已经能够捕获到足够高质量的数据，但是缺乏公开可用的数据集。</p>
+</li>
+<li><p>我们至少需要捕获多少人脸可以构建一个表示模型？</p>
+</li>
+<li><p>人脸表情不自然引起的捕获数据存在偏差问题。</p>
+</li>
+<li><p>正确的采样策略是怎样的，对于不同年龄、性别、种族等。</p>
+</li>
+<li><p>一些伦理与数据隐私相关的问题。</p>
+</li>
+</ol>
+<h2 id="Modeling"><a href="#Modeling" class="headerlink" title="Modeling"></a>Modeling</h2><p>建模一个3维数字人脸主要考虑以下三种变化：</p>
+<ol>
+<li>形状模型捕获不同身份人脸的几何变化；</li>
+<li>表情模型捕获不同人脸表情的几何变化；</li>
+<li>外观模型捕获人脸的外观和照明变化。</li>
+</ol>
+<h3 id="Shape-Model"><a href="#Shape-Model" class="headerlink" title="Shape Model"></a>Shape Model</h3><p> 形状模型主要包括 global model 表示整个人脸表面的变化，以及 localized model 表示人脸各部分的变化。</p>
+<p>处理 3D 扫描数据：将一个模板网格变形到所有 3D 扫描数据上，以建立扫描点之间的结构对应关系。</p>
+<p>形式化地定义，预处理的 mesh 表面记为 $S$，其对应的 $i$ th 顶点记为 $v_i\in R^3$ 及其关联的向量 $c\in R^{3n}$ 以固定的次序包好 $v_i$ 的坐标。</p>
+<p>形状空间定义为一个 $d$ 维的参数空间（$d\ll n$），表示 plausible 三维人脸，每一个人脸都与一个参数向量 $w\in R^d$ 相关。</p>
+<p>在 3DMMs 中，statistical shape analysis 被用作生成模型，其形状空间都有一个关联的称为先验的概率分布，被定义为一个密度函数 $f(w)$，衡量真实的3D人脸由特定的向量 $w$ 表示的似然程度。这可以进一步地构造 generator function:<br>$$<br>c: R^d \rightarrow R^{3n}<br>$$</p>
+<p>上式将低维空间中的参数向量 $w$ 映射为所有顶点坐标的向量 $c(w)\in R^{3n}$，值得关注的是怎样实现这样的密度函数。</p>
+<h4 id="Global-Models"><a href="#Global-Models" class="headerlink" title="Global Models"></a>Global Models</h4><p>定义 $\lbrace S_i\rbrace_i$ 为所有的训练形状，$\lbrace c_i\rbrace_i$ 为关联的坐标向量。</p>
+<p>第一篇工作提出采用 principal component analysis (PCA) 计算 linear generator function:<br>$$<br>c(w) &#x3D; \overline{c} +Ew<br>$$</p>
+<p>其中，$\overline{c}$ 表示所有训练数据的平均值，即平均脸，$E\in R^{3n\times d}$ 表示根据形状差异计算出的协方差矩阵的 $d$ 个最主要的特征向量。</p>
+<p>Hypothesis:</p>
+<ol>
+<li><p>训练的人脸可以通过线性插值生成新的 3D 人脸。（从生成器函数中即可看出线性运算，即对平均脸进行了平移）</p>
+</li>
+<li><p>参数化的形状空间 $R^d$ 遵循一个多变量正态分布，可以直接从对应于 $E$ 的特征值推导出来。</p>
+</li>
+</ol>
+<p>这表明密度函数 $f(w)$ 只是一个简单的 $w$ 到原点的 Mahalanobis distance。后续也有针对 Mahalanobis distance 做出改进的工作以及提出非线性形状空间的解决方案。</p>
+<h4 id="Local-Models"><a href="#Local-Models" class="headerlink" title="Local Models"></a>Local Models</h4><p>原因是全局的 generator function 不会建模到更加精细的几何细节，局部模型主要用来提高对一些重要区域的建模。最初的研究方法主要是手动将眼睛分成若干区域并对每个区域单独学习 PCA 模型，能够实现更高保真度的重建，但是代价是造成不紧凑的特征向量表示 $w$。</p>
+<p>自动分割区域的方法主要基于从训练集中相应顶点的位移中学到的信息。</p>
+<p>细粒度的几何细节也可以通过特征金字塔建模，通过考虑光滑的表面与分辨率逐渐提高的几何表示之间的差异。</p>
+<p>不仅仅局限于 PCA，利用其它统计方法进行局部分析也是可行的。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>3D Morphable Face Models—Past, Present, and Future</p><p><a href="https://lzhms.github.io/readings/3DMMs/">https://lzhms.github.io/readings/3DMMs/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Zhihao Li</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2024-12-16</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2024-12-16</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted" rel="tag" href="/tags/Literature-Survey/">Literature Survey </a></div></div><div class="sharethis-inline-reaction-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=6713c7a4f9d5250012f5d817&amp;product=inline-reaction-buttons&amp;source=platform" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/blog/VolumeRendering/"><span class="level-item">体渲染(Volume Rendering)公式推导</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">Comments</h3><div class="content twikoo" id="twikoo"></div><script src="https://cdnjs.loli.net/ajax/libs/twikoo/1.6.30/twikoo.all.min.js"></script><script>twikoo.init({
+            envId: 'https://twikoo-netlify-comment.netlify.app/.netlify/functions/twikoo',
+            region: "ap-guangzhou",
+            lang: "en",
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-96x96 mx-auto mb-2"><img class="avatar is-rounded" src="https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/avatar.png" alt="Zhihao Li"></figure><p class="title is-size-4 is-block" style="line-height: 'inherit';">Zhihao Li</p><p style="white-space: pre-line; font-style: italic; margin-bottom: 0.50rem; font-size: 1.0em">Computer Science
+Graphics &amp; 3D Vision
+</p><p class="is-size-5 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Xidian University, Xi&#039;an, China</span></p></div></div></nav><nav class="level menu-list is-mobile" style="margin-bottom:1rem"><a class="level-item has-text-centered is-marginless" href="/archives/"><div><p class="heading">Posts</p><div><p class="title">53</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/categories/"><div><p class="heading">Categories</p><div><p class="title">5</p></div></div></a><a class="level-item has-text-centered is-marginless" href="/tags/"><div><p class="heading">Tags</p><div><p class="title">41</p></div></div></a></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LZHMS" target="_blank" rel="noopener"><i class="fab fa-github"></i>  Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="QQ" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/1730463517285_temp_qrcode_share_9993.64dv175zqu.webp"><i class="iconfont icon-QQ1"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="WeChat" href="https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/0add852711e38990022788ba88dd062.3nrmm9y3ql.webp"><i class="iconfont icon-wechat-"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:zhihaoli@stu.xidian.edu.cn"><i class="iconfont icon-email2"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Transcript_EN" href="/./pdf/profile/transcript_en.pdf"><i class="iconfont icon-chengjidan1"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Transcript_ZH" href="/./pdf/profile/transcript_zh.pdf"><i class="iconfont icon-chengjidan"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Summary-Sheet"><span class="level-left"><span class="level-item">1</span><span class="level-item">Summary Sheet</span></span></a></li><li><a class="level is-mobile" href="#Introduction"><span class="level-left"><span class="level-item">2</span><span class="level-item">Introduction</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Definition"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">Definition</span></span></a></li><li><a class="level is-mobile" href="#Research-Development"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">Research Development</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#I-Eigenfaces"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">I: Eigenfaces</span></span></a></li><li><a class="level is-mobile" href="#II-Correspondence-based"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">II: Correspondence-based</span></span></a></li><li><a class="level is-mobile" href="#III-3DMMs"><span class="level-left"><span class="level-item">2.2.3</span><span class="level-item">III: 3DMMs</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Face-Capture"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">Face Capture</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Shape-Acquisition"><span class="level-left"><span class="level-item">2.3.1</span><span class="level-item">Shape Acquisition</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Geometric-Methods"><span class="level-left"><span class="level-item">2.3.1.1</span><span class="level-item">Geometric Methods</span></span></a></li><li><a class="level is-mobile" href="#Photometric-Methods"><span class="level-left"><span class="level-item">2.3.1.2</span><span class="level-item">Photometric Methods</span></span></a></li><li><a class="level is-mobile" href="#Hybrid-Methods"><span class="level-left"><span class="level-item">2.3.1.3</span><span class="level-item">Hybrid Methods</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Appearance-Capture"><span class="level-left"><span class="level-item">2.3.2</span><span class="level-item">Appearance Capture</span></span></a></li><li><a class="level is-mobile" href="#Face-Part-Specific-Methods"><span class="level-left"><span class="level-item">2.3.3</span><span class="level-item">Face Part Specific Methods</span></span></a></li><li><a class="level is-mobile" href="#Dynamic-Capture"><span class="level-left"><span class="level-item">2.3.4</span><span class="level-item">Dynamic Capture</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Modeling"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Modeling</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Shape-Model"><span class="level-left"><span class="level-item">2.4.1</span><span class="level-item">Shape Model</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Global-Models"><span class="level-left"><span class="level-item">2.4.1.1</span><span class="level-item">Global Models</span></span></a></li><li><a class="level is-mobile" href="#Local-Models"><span class="level-left"><span class="level-item">2.4.1.2</span><span class="level-item">Local Models</span></span></a></li></ul></li></ul></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/blog/"><span class="level-start"><span class="level-item">blog</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/collaboration/"><span class="level-start"><span class="level-item">collaboration</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/essay/"><span class="level-start"><span class="level-item">essay</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/projects/"><span class="level-start"><span class="level-item">projects</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/readings/"><span class="level-start"><span class="level-item">readings</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Embedded-System/"><span class="tag">Embedded System</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Tools/"><span class="tag">Project Tools</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Computer-Graphics/"><span class="tag">Computer Graphics</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Professional-Knowledge/"><span class="tag">Professional Knowledge</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Diffusion-Model/"><span class="tag">Diffusion Model</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/AIGC/"><span class="tag">AIGC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Project-Habits/"><span class="tag">Project Habits</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GAN/"><span class="tag">GAN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathematical-Modeling/"><span class="tag">Mathematical Modeling</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Data-Visualization/"><span class="tag">Data Visualization</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OpenSSL/"><span class="tag">OpenSSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Volume-Rendering/"><span class="tag">Volume Rendering</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">1</span></a></div></div><div class="more-link"><a href="/tags/">View All Tags &gt;&gt;</a></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img class="logo-img" src="/images/logo.svg" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"><img class="logo-img-dark" src="/images/logo.svg" alt="Zhihao Li - Zhihao Li&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2023-2024 Zhihao Li</span><br><span id="busuanzi_container_site_uv"><span id="busuanzi_container_site_uv">Site UV: <span id="busuanzi_value_site_uv"></span></span>   <span id="busuanzi_container_site_pv">Site PV: <span id="busuanzi_value_site_pv"></span></span></span></p><p class="is-size-7"> </p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="HuggingFace" href="https://huggingface.co/LZHMS"><i class="iconfont icon-huggingface"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Bilibili" href="https://space.bilibili.com/2079836440"><i class="iconfont icon-bilibili"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="CSDN" href="https://blog.csdn.net/weixin_63554791"><i class="iconfont icon-csdn"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.css"><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/auto-render.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script><!--!--><script data-pjax src="/js/main.js" defer></script><script data-pjax src="/js/night.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><div id="dark" onclick="switchDarkMode()"></div><script type="text/javascript" src="/js/universe.js"></script></body></html>
