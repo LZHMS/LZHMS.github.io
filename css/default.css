@@ -11747,8 +11747,11 @@ figure.highlight.foldable div.level-left {
     max-width: 1216px;
     width: 1216px;
   }
-  .is-1-column .container,
   .is-2-column .container {
+    max-width: 1216px;
+    width: 1216px;
+  }
+  .is-1-column .container {
     max-width: 1024px;
     width: 1024px;
   }
@@ -11759,8 +11762,8 @@ figure.highlight.foldable div.level-left {
     width: 1344px;
   }
   .is-2-column .container {
-    max-width: 1152px;
-    width: 1152px;
+    max-width: 1344px;
+    width: 1344px;
   }
   .is-1-column .container {
     max-width: 960px;
