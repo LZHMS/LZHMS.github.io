@@ -188,7 +188,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/202412212345583.jpg'); /* 图像链接 */
+  background-image: url('https://lzhms.oss-cn-hangzhou.aliyuncs.com/images/blog/profile/202412212345583.png'); /* 图像链接 */
   background-size: contain; /* 使图像适配宽高 */
   background-repeat: no-repeat;
   vertical-align: middle;
