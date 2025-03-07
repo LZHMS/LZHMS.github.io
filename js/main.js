@@ -138,4 +138,25 @@
 
     $('div.container div.card[data-type=tags]').addClass('is-hidden-mobile');
     $('div.container div.card[data-type=archives]').addClass('is-hidden-mobile');
+
+    // Busuanzi Init
+    var config = window.IcarusThemeSettings;
+    if (typeof config !== 'undefined' && typeof config.busuanzi_site_offset_uv !== 'undefined'
+        && typeof config.busuanzi_site_offset_pv !== 'undefined' && config.busuanzi == true) {
+        $(document).ready(function () {
+            var int = setInterval(fixCount, 100);
+            var busuanziSiteOffsetUV = parseInt(config.busuanzi_site_offset_uv);
+            var busuanziSiteOffsetPV = parseInt(config.busuanzi_site_offset_pv);
+            function fixCount() {
+                if ($("#busuanzi_container_site_uv").css("display") != "none" && parseInt($("#busuanzi_value_site_uv").html()) > 0) {
+                    clearInterval(int);
+                    $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSiteOffsetUV);
+                }
+                if ($("#busuanzi_container_site_pv").css("display") != "none" && parseInt($("#busuanzi_value_site_pv").html()) > 0) {
+                    clearInterval(int);
+                    $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffsetPV);
+                }
+            }
+        });
+    }
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
