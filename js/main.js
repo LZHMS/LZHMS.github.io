@@ -145,11 +145,16 @@
         && typeof config.busuanzi_site_offset !== 'undefined' && config.busuanzi == true) {
         $(document).ready(function () {
             var int = setInterval(fixCount, 100);
-            var busuanziSiteOffset = parseInt(config.busuanzi_site_offset);
+            var busuanziSiteOffsetUV = parseInt(config.busuanzi_site_offset_uv);
+            var busuanziSiteOffsetPV = parseInt(config.busuanzi_site_offset_pv);
             function fixCount() {
                 if ($("#busuanzi_container_site_uv").css("display") != "none" && parseInt($("#busuanzi_value_site_uv").html()) > 0) {
                     clearInterval(int);
-                    $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSiteOffset);
+                    $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSiteOffsetUV);
+                }
+                if ($("#busuanzi_container_site_pv").css("display") != "none" && parseInt($("#busuanzi_value_site_pv").html()) > 0) {
+                    clearInterval(int);
+                    $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffsetPV);
                 }
             }
         });
