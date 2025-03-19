@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "zsft-443";
+  src: url("https://static.zeoseven.com/zsft/443/main.woff2") format('woff2'), url("https://static-host.zeoseven.com/zsft/443/main.woff2") format('woff2');
+  font-display: swap;
+}
 @-moz-keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -418,7 +423,7 @@ code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei';
+  font-family: "zsft-443", LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei';
 }
 body {
   color: #4a4a4a;
@@ -1076,7 +1081,7 @@ a.has-text-grey-lightest:focus {
   font-family: monospace !important;
 }
 .is-family-code {
-  font-family: LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei' !important;
+  font-family: "zsft-443", LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei' !important;
 }
 .is-block {
   display: block !important;
@@ -11366,7 +11371,7 @@ figure.highlight figcaption * {
 }
 figure.highlight figcaption span {
   font-weight: 500;
-  font-family: LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei';
+  font-family: "zsft-443", LXGW WenKai Screen, Cambria, 'Source Code Pro', monospace, 'Microsoft YaHei';
 }
 figure.highlight figcaption .level-left *:not(:last-child) {
   margin-right: 0.5em;
