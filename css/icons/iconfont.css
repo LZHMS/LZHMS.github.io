@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1733135207859') format('woff2'),
-       url('iconfont.woff?t=1733135207859') format('woff'),
-       url('iconfont.ttf?t=1733135207859') format('truetype');
+       url('iconfont.woff2?t=1743142732784') format('woff2'),
+       url('iconfont.woff?t=1743142732784') format('woff'),
+       url('iconfont.ttf?t=1743142732784') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,11 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-RSS:before {
+  content: "\e78a";
+  font-size: 20px;
 }
 
 .icon-dianzikeji:before {
@@ -84,7 +89,6 @@
 
 .icon-icon-test:before {
   content: "\e604";
-  font-size: 20px;
 }
 
 .icon-logo_gitee_g_red:before {
