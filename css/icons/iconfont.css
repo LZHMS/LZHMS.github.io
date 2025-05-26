@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1743142732784') format('woff2'),
-       url('iconfont.woff?t=1743142732784') format('woff'),
-       url('iconfont.ttf?t=1743142732784') format('truetype');
+       url('iconfont.woff2?t=1748251628942') format('woff2'),
+       url('iconfont.woff?t=1748251628942') format('woff'),
+       url('iconfont.ttf?t=1748251628942') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,11 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-log:before {
+  content: "\e602";
+  font-size: 23px;
 }
 
 .icon-RSS:before {
