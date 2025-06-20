@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1748251628942') format('woff2'),
-       url('iconfont.woff?t=1748251628942') format('woff'),
-       url('iconfont.ttf?t=1748251628942') format('truetype');
+       url('iconfont.woff2?t=1750378613318') format('woff2'),
+       url('iconfont.woff?t=1750378613318') format('woff'),
+       url('iconfont.ttf?t=1750378613318') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-typst:before {
+  content: "\e6ed";
 }
 
 .icon-log:before {
