@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3684051 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1750378613318') format('woff2'),
-       url('iconfont.woff?t=1750378613318') format('woff'),
-       url('iconfont.ttf?t=1750378613318') format('truetype');
+       url('iconfont.woff2?t=1752831568309') format('woff2'),
+       url('iconfont.woff?t=1752831568309') format('woff'),
+       url('iconfont.ttf?t=1752831568309') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-feishu:before {
+  content: "\e612";
+}
+
+.icon-OneDrive:before {
+  content: "\e60d";
+}
+
+.icon-Fusion:before {
+  content: "\e60f";
 }
 
 .icon-typst:before {
@@ -61,14 +73,6 @@
   content: "\e63a";
 }
 
-.icon-hexo:before {
-  content: "\e6cc";
-}
-
-.icon-email:before {
-  content: "\e60d";
-}
-
 .icon-email1:before {
   content: "\e66f";
 }
@@ -102,10 +106,6 @@
 
 .icon-logo_gitee_g_red:before {
   content: "\e607";
-}
-
-.icon-notion:before {
-  content: "\ec37";
 }
 
 .icon-bokeyuan1:before {
@@ -159,10 +159,6 @@
 
 .icon-huggingface:before {
   content: "\e624";
-}
-
-.icon-bilibili3:before {
-  content: "\eb78";
 }
 
 .icon-huggingface1:before {
