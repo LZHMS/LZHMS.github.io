@@ -11818,56 +11818,15 @@ figure.highlight.foldable div.level-left {
 }
 .widget[data-type="dailyImage"] .daily-image-widget-container {
   padding: 0.5rem 0;
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 8px;
-  box-shadow: 0 2px 8px rgba(102,126,234,0.3);
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-icon {
-  margin-right: 8px;
-  font-size: 1.1rem;
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-text {
-  letter-spacing: 0.5px;
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper {
-  width: 100%;
-  margin-bottom: 6px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img:hover {
-  transform: scale(1.05);
+  flex-direction: column;
 }
 .widget[data-type="dailyImage"] .daily-image-widget-container .image-description-box {
-  background: linear-gradient(to right, #f8f9fa, #e9ecef);
-  border-left: 4px solid #667eea;
-  padding: 10px 12px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 4px;
+  order: 1;
 }
 .widget[data-type="dailyImage"] .daily-image-widget-container .image-description-box .description-text {
   margin: 0;
@@ -11875,6 +11834,45 @@ figure.highlight.foldable div.level-left {
   color: #495057;
   line-height: 1.6;
   font-weight: 400;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background: transparent;
+  color: #999;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  box-shadow: none;
+  order: 2;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-icon {
+  display: none;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-text {
+  letter-spacing: 0.2px;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  order: 3;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img:hover {
+  transform: scale(1.02);
 }
 .widget[data-type="dailyImage"] .no-image {
   text-align: center;
