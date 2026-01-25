@@ -11816,26 +11816,26 @@ figure.highlight.foldable div.level-left {
     padding: 1.5rem 1rem;
   }
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container {
+.widget[data-type="moments"] .daily-image-widget-container {
   padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-description-box {
+.widget[data-type="moments"] .daily-image-widget-container .image-description-box {
   background: transparent;
   border: none;
   padding: 0;
   margin-bottom: 4px;
   order: 1;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-description-box .description-text {
+.widget[data-type="moments"] .daily-image-widget-container .image-description-box .description-text {
   margin: 0;
   font-size: 0.9rem;
   color: #495057;
   line-height: 1.6;
   font-weight: 400;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge {
+.widget[data-type="moments"] .daily-image-widget-container .image-date-badge {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -11850,13 +11850,13 @@ figure.highlight.foldable div.level-left {
   box-shadow: none;
   order: 2;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-icon {
+.widget[data-type="moments"] .daily-image-widget-container .image-date-badge .date-icon {
   display: none;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-date-badge .date-text {
+.widget[data-type="moments"] .daily-image-widget-container .image-date-badge .date-text {
   letter-spacing: 0.2px;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper {
+.widget[data-type="moments"] .daily-image-widget-container .image-wrapper {
   width: 100%;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -11864,27 +11864,27 @@ figure.highlight.foldable div.level-left {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   order: 3;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img {
+.widget[data-type="moments"] .daily-image-widget-container .image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-.widget[data-type="dailyImage"] .daily-image-widget-container .image-wrapper img:hover {
+.widget[data-type="moments"] .daily-image-widget-container .image-wrapper img:hover {
   transform: scale(1.02);
 }
-.widget[data-type="dailyImage"] .no-image {
+.widget[data-type="moments"] .no-image {
   text-align: center;
   color: #999;
   padding: 20px 0;
   font-style: italic;
 }
-.widget[data-type="dailyImage"] .more-link {
+.widget[data-type="moments"] .more-link {
   margin-top: 6px;
   text-align: center;
 }
-.widget[data-type="dailyImage"] .more-link a {
+.widget[data-type="moments"] .more-link a {
   color: #667eea;
   font-size: 1rem;
   font-weight: 500;
@@ -11893,12 +11893,12 @@ figure.highlight.foldable div.level-left {
   display: inline-flex;
   align-items: center;
 }
-.widget[data-type="dailyImage"] .more-link a:hover {
+.widget[data-type="moments"] .more-link a:hover {
   color: #764ba2;
   transform: translateX(3px);
   text-decoration: underline;
 }
-.widget[data-type="dailyImage"] .more-link a::after {
+.widget[data-type="moments"] .more-link a::after {
   content: '';
   display: inline-block;
   width: 0;
@@ -11909,7 +11909,7 @@ figure.highlight.foldable div.level-left {
   margin-left: 6px;
   transition: margin-left 0.3s;
 }
-.widget[data-type="dailyImage"] .more-link a:hover::after {
+.widget[data-type="moments"] .more-link a:hover::after {
   margin-left: 10px;
 }
 #universe {
